@@ -143,18 +143,35 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-two">
-                        <div class="vertical-center">
+                        <div class="vertical-center-video">
 
-                            <div id="content-background-img">
+                           <!--  <div id="content-background-img">
                                 <vs-button @click="changeBackground=!changeBackground">
                                     Fondo
                                 </vs-button>
-                            </div>
+                            </div> -->
 
-                            <div id="content-agenda-book">
+                            <!-- <div id="content-agenda-book">
+                                <vs-button @click="changeBackground=!changeBackground">
+                                    Fondo
+                                </vs-button>
+
                                 <vs-button @click="agendaBook=!agendaBook">
                                     Agenda del dia
                                 </vs-button>
+                            </div> -->
+                            <div class="row" style="padding: 0; margin: 0;">
+                                <div class="col-4">
+                                    <vs-button @click="changeBackground=!changeBackground" class="color-button-book">
+                                        Fondo
+                                    </vs-button>
+                                </div>
+                                <div class="col-4"></div>
+                                <div class="col-4">
+                                    <vs-button @click="agendaBook=!agendaBook" class="color-button-book">
+                                        Agenda del dia
+                                    </vs-button>
+                                </div>
                             </div>
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
@@ -547,6 +564,15 @@
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
+    .vertical-center-video {
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
 
 
     /* Style content second iframe */
@@ -572,6 +598,9 @@
     }
     div#content-agenda-book {
         margin: 0 0 0 75%;
+    }
+    .color-button-book {
+        background: #9f793d;
     }
     div#content-agenda-book button {
         background: #9f793d;
