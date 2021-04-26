@@ -158,54 +158,56 @@
                             </div>
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
-                                <div id="content-dialog-book" class="con-content" >
-                                    <h3 class="text-center color-white font-weight-bold">Programa</h3>
-                                    <p class="text-center">
-                                        <img src="/image/img-dialog.png" alt="img dialog">
-                                    </p>
-                                    <div class="row">
-                                        <div class="col-4 text-center color-white">
-                                            <h4>3:30</h4>
-                                            <span>Bienvenida</span>
+                                <a id="pdf-download" href="/book/Lo que leo.pdf" download="download">
+                                    <div id="content-dialog-book" class="con-content" >
+                                        <h3 class="text-center color-white font-weight-bold">Programa</h3>
+                                        <p class="text-center">
+                                            <img src="/image/img-dialog.png" alt="img dialog">
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-4 text-center color-white">
+                                                <h4>3:30</h4>
+                                                <span>Bienvenida</span>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <h4>4:30</h4>
+                                                <span>Conferencia magistral <br>Julieta Pinasco</span>
+                                            </div>
+                                            <div class="col-4 text-center color-white">
+                                                <h4>6:45</h4>
+                                                <span>Taller <br>Raquel Cuperman</span>
+                                            </div>
                                         </div>
-                                        <div class="col-4 text-center">
-                                            <h4>4:30</h4>
-                                            <span>Conferencia magistral <br>Julieta Pinasco</span>
+                                        <div class="row mt-2">
+                                            <div class="col-4 text-center">
+                                                <h4>3:35</h4>
+                                                <span>Cata de libros</span>
+                                            </div>
+                                            <div class="col-4 text-center color-white">
+                                                <h4>5:15</h4>
+                                                <span>Taller <br>Alejandra Jaramillo</span>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <h4>7:30</h4>
+                                                <span>Cierre</span>
+                                            </div>
                                         </div>
-                                        <div class="col-4 text-center color-white">
-                                            <h4>6:45</h4>
-                                            <span>Taller <br>Raquel Cuperman</span>
+                                        <div class="row mt-2">
+                                            <div class="col-4 text-center color-white">
+                                                <h4>4:15</h4>
+                                                <span>¿Qué pasó en la cata? <br>Los profesores lo cuentan</span>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <h4>6:00</h4>
+                                                <span>Conferencia magistral <br>Eduardo Escallón</span>
+                                            </div>
+                                            <div class="col-4 text-center">
+                                                <h4>7:30</h4>
+                                                <span>Cierre</span>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="row mt-2">
-                                        <div class="col-4 text-center">
-                                            <h4>3:35</h4>
-                                            <span>Cata de libros</span>
-                                        </div>
-                                        <div class="col-4 text-center color-white">
-                                            <h4>5:15</h4>
-                                            <span>Taller <br>Alejandra Jaramillo</span>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <h4>7:30</h4>
-                                            <span>Cierre</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col-4 text-center color-white">
-                                            <h4>4:15</h4>
-                                            <span>¿Qué pasó en la cata? <br>Los profesores lo cuentan</span>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <h4>6:00</h4>
-                                            <span>Conferencia magistral <br>Eduardo Escallón</span>
-                                        </div>
-                                        <div class="col-4 text-center">
-                                            <h4>7:30</h4>
-                                            <span>Cierre</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                </a>
                             </vs-dialog>
 
                             <div class="card animate__animated animate__slideInRight animate__slower">
@@ -576,6 +578,12 @@
     }
     .color-white {
         color: #fff;
+    }
+    a#pdf-download {
+        color: #212529;
+    }
+    a#pdf-download:hover {
+        text-decoration: none;
     }
 
 

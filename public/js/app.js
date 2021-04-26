@@ -8820,6 +8820,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -14707,7 +14709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/background-day-one.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/background-initial.jpg\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.4%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 46%;\n  left: 10.5%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 46.5%;\n  left: 20.5%;\n  height: 9%;\n  width: 7.6%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 47.3%;\n  left: 31.2%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 47.8%;\n  left: 40.6%;\n  height: 7.6%;\n  width: 6.5%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 100%;\n  margin: 20% 0 5% 0;\n  cursor: pointer;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/background-day-one.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/background-initial.jpg\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.4%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 46%;\n  left: 10.5%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 46.5%;\n  left: 20.5%;\n  height: 9%;\n  width: 7.6%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 47.3%;\n  left: 31.2%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 47.8%;\n  left: 40.6%;\n  height: 7.6%;\n  width: 6.5%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 100%;\n  margin: 20% 0 5% 0;\n  cursor: pointer;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\na#pdf-download[data-v-d1af4670] {\n  color: #212529;\n}\na#pdf-download[data-v-d1af4670]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47753,125 +47755,165 @@ var render = function() {
                     },
                     [
                       _c(
-                        "div",
+                        "a",
                         {
-                          staticClass: "con-content",
-                          attrs: { id: "content-dialog-book" }
+                          attrs: {
+                            id: "pdf-download",
+                            href: "/book/Lo que leo.pdf",
+                            download: "download"
+                          }
                         },
                         [
                           _c(
-                            "h3",
+                            "div",
                             {
-                              staticClass:
-                                "text-center color-white font-weight-bold"
+                              staticClass: "con-content",
+                              attrs: { id: "content-dialog-book" }
                             },
-                            [_vm._v("Programa")]
-                          ),
-                          _vm._v(" "),
-                          _c("p", { staticClass: "text-center" }, [
-                            _c("img", {
-                              attrs: {
-                                src: "/image/img-dialog.png",
-                                alt: "img dialog"
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row" }, [
-                            _c(
-                              "div",
-                              { staticClass: "col-4 text-center color-white" },
-                              [
-                                _c("h4", [_vm._v("3:30")]),
-                                _vm._v(" "),
-                                _c("span", [_vm._v("Bienvenida")])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-4 text-center" }, [
-                              _c("h4", [_vm._v("4:30")]),
+                            [
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "text-center color-white font-weight-bold"
+                                },
+                                [_vm._v("Programa")]
+                              ),
                               _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Conferencia magistral "),
-                                _c("br"),
-                                _vm._v("Julieta Pinasco")
+                              _c("p", { staticClass: "text-center" }, [
+                                _c("img", {
+                                  attrs: {
+                                    src: "/image/img-dialog.png",
+                                    alt: "img dialog"
+                                  }
+                                })
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("3:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Bienvenida")])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("4:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Conferencia magistral "),
+                                      _c("br"),
+                                      _vm._v("Julieta Pinasco")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("6:45")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Taller "),
+                                      _c("br"),
+                                      _vm._v("Raquel Cuperman")
+                                    ])
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row mt-2" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("3:35")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cata de libros")])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("5:15")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Taller "),
+                                      _c("br"),
+                                      _vm._v("Alejandra Jaramillo")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("7:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cierre")])
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row mt-2" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("4:15")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("¿Qué pasó en la cata? "),
+                                      _c("br"),
+                                      _vm._v("Los profesores lo cuentan")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("6:00")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Conferencia magistral "),
+                                      _c("br"),
+                                      _vm._v("Eduardo Escallón")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("7:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cierre")])
+                                  ]
+                                )
                               ])
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "col-4 text-center color-white" },
-                              [
-                                _c("h4", [_vm._v("6:45")]),
-                                _vm._v(" "),
-                                _c("span", [
-                                  _vm._v("Taller "),
-                                  _c("br"),
-                                  _vm._v("Raquel Cuperman")
-                                ])
-                              ]
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row mt-2" }, [
-                            _c("div", { staticClass: "col-4 text-center" }, [
-                              _c("h4", [_vm._v("3:35")]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Cata de libros")])
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "col-4 text-center color-white" },
-                              [
-                                _c("h4", [_vm._v("5:15")]),
-                                _vm._v(" "),
-                                _c("span", [
-                                  _vm._v("Taller "),
-                                  _c("br"),
-                                  _vm._v("Alejandra Jaramillo")
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-4 text-center" }, [
-                              _c("h4", [_vm._v("7:30")]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Cierre")])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "row mt-2" }, [
-                            _c(
-                              "div",
-                              { staticClass: "col-4 text-center color-white" },
-                              [
-                                _c("h4", [_vm._v("4:15")]),
-                                _vm._v(" "),
-                                _c("span", [
-                                  _vm._v("¿Qué pasó en la cata? "),
-                                  _c("br"),
-                                  _vm._v("Los profesores lo cuentan")
-                                ])
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-4 text-center" }, [
-                              _c("h4", [_vm._v("6:00")]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Conferencia magistral "),
-                                _c("br"),
-                                _vm._v("Eduardo Escallón")
-                              ])
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticClass: "col-4 text-center" }, [
-                              _c("h4", [_vm._v("7:30")]),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Cierre")])
-                            ])
-                          ])
+                            ]
+                          )
                         ]
                       )
                     ]
