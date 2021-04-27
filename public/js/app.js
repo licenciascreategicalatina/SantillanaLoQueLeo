@@ -8939,115 +8939,113 @@ __webpack_require__.r(__webpack_exports__);
     this.listBooks = [{
       id: 1,
       title: 'Jacobo y el platena de los miedos',
-      description: 'A Jacobo le gusta estar en familia. No importa que cada cual haga lo suyo. Para él, lo mejor es jugar con Susi, porque sabe que la hace reír con sus travesuras.',
+      description: 'Todos le tenemos miedo a algo, así Jacobo diga que no le tiene miedo a nada.',
       alt: 'Jacobo',
-      url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+      url: '/book/diauno/jacobo-y-el-planeta-de-los-miedos.pdf',
       imgCaratula: "/image/imgbooks/diauno/jacobo-y-el-planeta-de-los-miedos.jpg",
       eventHover: false
     }, {
       id: 2,
       title: 'Uno está bien, pero dos mejor',
-      description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
+      description: 'Uno puede jugar, correr, leer o balancearse, pero con dos todo es mejor. Louis Slobodkin nos muestra que con amigos la vida es más divertida.',
       alt: 'Uno está bien',
-      url: '/book/diauno/UNO interior_ESP.pdf',
+      url: '/book/diauno/uno-esta-bien.pdf',
       imgCaratula: "/image/imgbooks/diauno/uno-esta-bien.jpg",
       eventHover: false
     }, {
       id: 3,
       title: 'Nomi y sus queridos animales',
-      description: 'Nomi quería un tigre, Nomi quería un oso, Nomi quería un león con aspecto cariñoso.',
+      description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar.',
       alt: 'Nomi y sus queridos animales',
-      url: '/book/diauno/Nomi interior.pdf',
-      src: "/image/imgbooks/diauno/nomi-y-sus-queridos.png",
+      url: '/book/diauno/nomi-y-sus-queridos-animales.pdf',
       imgCaratula: "/image/imgbooks/diauno/nomi-y-sus-queridos-animales.jpg",
       eventHover: false
     }, {
       id: 4,
       title: 'Los matices de matisse',
-      description: 'Si fueras un niño llamado Henri Matisse y vivieras en un pueblo triste en el norte de Francia, donde los cielos estuvieran grises.',
+      description: 'Si fueras un niño llamado Henri Matisse y vivieras en una sombría ciudad en el norte de Francia, ¿cómo sería tu vida? ¿Estaría llena de colores y objetos hermosos? ¿Plena de líneas y figuras que danzan? Esta delicada exploración de la infancia del pintor Henri Matisse, muestra sutilmente que la creatividad se puede alimentar y que la genialidad puede dispararse a partir de los detalles más inesperados, como la imagen de un frutero o la rica textura de una tela.',
       alt: 'Los matices de matisse',
-      url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
-      src: "/image/imgbooks/diauno/los-matices.png",
+      url: '/book/diauno/los-matices-de-matisse.pdf',
       imgCaratula: "/image/imgbooks/diauno/los-matisse.jpg",
       eventHover: false
     }, {
       id: 5,
       title: 'Tobi y los ancianos',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Tobi piensa que los ancianos son personas muy aburridas. Un día, durante el verano, cuando todos sus amigos se marchan de vacaciones y él está jugando solo, su pelota cae justo donde está sentado el señor Cabra. Este encuentro le permite a Tobi conocer emocionantes e increíbles historias que vivieron algunos ancianos de su vecindario cuando eran jóvenes. Desde ese momento, su opinión acerca de las personas mayores cambia para siempre.',
       alt: 'Tobi y los ancianos',
-      url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+      url: '/book/diauno/tobi-y-los-ancianos.pdf',
       imgCaratula: "/image/imgbooks/diauno/tobi-y-los-ancianos.jpg",
       eventHover: false
     }, {
       id: 6,
       title: 'Benjamino',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Había una vez una madre que tenía un hijo tan pequeño que podía vivir dentro de una cáscara de nuez. Lo llamaban Benjamino. Un día se encontró con el lobo y demostró cuán astuto es.',
       alt: 'Benjamino',
-      url: '/book/diauno/UNO interior_ESP.pdf',
+      url: '/book/diauno/benjamino.pdf',
       imgCaratula: "/image/imgbooks/diauno/benjamino.jpg",
       eventHover: false
     }, {
       id: 7,
       title: 'El libro que canta',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Desde antes de nacer, la poesía hace parte de la vida. En los primeros arrullos y en todos los juegos, rimas y rondas que escribimos en el cuerpo de un bebé, está presente una herencia de palabras, ritmo y afecto que será su primer texto de lectura y que quedará escrito en su memoria poética. El libro que canta acompaña a toda la familia durante ese tiempo maravilloso de la primera infancia. Sus capítulos trazan una ruta que comienza en el vientre materno y que va creciendo con el bebé.',
       alt: 'El libro que canta',
-      url: '/book/diauno/Nomi interior.pdf',
+      url: '/book/diauno/el-libro-que-canta.pdf',
       imgCaratula: "/image/imgbooks/diauno/el-libro-que-canta.jpg",
       eventHover: false
     }, {
       id: 8,
       title: 'Escondidas',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Un libro de imágenes para crear una historia diferente en cada lectura. El libro cero del bebé para leer, acariciar y morder.',
       alt: 'Escondidas',
-      url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
+      url: '/book/diauno/escondidas.pdf',
       imgCaratula: "/image/imgbooks/diauno/escondidas.jpg",
       eventHover: false
     }, {
       id: 9,
       title: 'El abuelo armadillo',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'El abuelo armadillo sale de excursión con sus nietos. En el camino son sorprendidos por el cazador y sus perros. ¿Podrán escapar de su furia y sus balas? Será una misión del abuelo enseñarles a sus nietos sobre sus talentos naturales para protegerse y escapar a salvo para llegar a casa.',
       alt: 'El abuelo armadillo',
-      url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+      url: '/book/diauno/el-abuelo-armadillo.pdf',
       imgCaratula: "/image/imgbooks/diauno/el-abuelo-armadillo.jpg",
       eventHover: false
     }, {
       id: 10,
       title: 'El cuento de hadas de Harold',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Una noche en vela, el pequeño Harold usa su crayola morada de nuevo para desatar su imaginación. Esta vez, Harold creará su propio cuento de hadas y vivirá muchas peripecias hasta regresar, en su alfombra mágica, a la silla de su mamá, para pedirle que le cuente un cuento antes de volver a la cama.',
       alt: 'El cuento de hadas de Harold',
-      url: '/book/diauno/UNO interior_ESP.pdf',
+      url: '/book/diauno/cuento-de-hadas-de-harold.pdf',
       imgCaratula: "/image/imgbooks/diauno/cuento-de-hadas-de-harold.jpg",
       eventHover: false
     }, {
       id: 11,
       title: 'Boris y las manzanas',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Boris es un cerdito que adora las manzanas, tiene amigos, le gusta explorar e ir al colegio, pero tiene un problema: no sabe contar. Tras varias decepciones, lo logra con la ayuda de su amiga Gladis, quien le sugiere intentar con manzanas. Así, Boris se acerca a sus debilidades desde sus gustos.',
       alt: 'Boris y las manzanas',
-      url: '/book/diauno/Nomi interior.pdf',
+      url: '/book/diauno/boris-y-las-manzanas.pdf',
       imgCaratula: "/image/imgbooks/diauno/boris-y-las-manzanas.jpg",
       eventHover: false
     }, {
       id: 12,
       title: 'Un dinosaurio es',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Los dinosaurios son seres fascinantes. Se caracterizan por tener enormes dientes, colas poderosas, apetito voraz… a veces se parecen incluso a, ¡un niño!',
       alt: 'Un dinosaurio es',
-      url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
+      url: '/book/diauno/un-dinosaurio-es.pdf',
       imgCaratula: "/image/imgbooks/diauno/un-dinosaurio-es.jpg",
       eventHover: false
     }, {
       id: 13,
       title: 'Los tres bandidos',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Una historia singular. Tres bandidos salen en busca de tesoros, pero ¡oh, sorpresa! Sin pensarlo, capturan un tesoro que les cambia la vida.',
       alt: 'Los tres bandidos',
-      url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+      url: '/book/diauno/los-tres-bandidos.pdf',
       imgCaratula: "/image/imgbooks/diauno/los-tres-bandidos.jpg",
       eventHover: false
     }, {
       id: 14,
       title: 'Cuentos al revés',
-      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      description: 'Érase una vez un pobre lobillo que llevaba la comida de su abuela en un paquetillo. Tropezó con la temible Caperucita Roja, imaginen ustedes todo lo que pasó después. Junto a Gianni Rodari, viajemos a un mundo de fantasía, en donde los cuentos suceden al revés.',
       alt: 'Cuentos al revés',
-      url: '/book/diauno/UNO interior_ESP.pdf',
+      url: '/book/diauno/cuentos-al-reves.pdf',
       imgCaratula: "/image/imgbooks/diauno/cuentos-al-reves.jpg",
       eventHover: false
     }];
