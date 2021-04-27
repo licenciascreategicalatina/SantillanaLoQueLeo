@@ -421,7 +421,7 @@
                 {
                     id: 11,
                     title: 'Allá y Aquí',
-                    description: '"Érase una vez una casa. Mi casa..." \n La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa.',
+                    description: '"Érase una vez una casa. Mi casa..." La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa.',
                     alt: 'Allá y Aquí',
                     url: '/book/diados/alla-y-aqui.pdf',
                     imgCaratula: "/image/imgbooks/diados/alla-y-aqui.jpg",
