@@ -1,5 +1,17 @@
 
 /* Estilos login */
+/* #img-background-login {
+    background: url('/image/Lo-que-leo-imagen-inicio.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+#img-background {
+    width: 100%;
+    height: 100%;
+    margin: 0 -8rem 0 -1rem;
+    padding: 0.2rem;
+}
+
 .border-login-book {
     border: 3px solid #9e7441 !important;
     margin-bottom: 0 !important;

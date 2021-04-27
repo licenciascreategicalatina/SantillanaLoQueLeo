@@ -46,15 +46,17 @@
                 <div class="auth-wrapper auth-v2">
                     <div class="auth-inner row m-0">
                         <!-- Left Text-->
-                        <div class="d-none d-lg-flex col-lg-8 align-items-center p-5">
-                            <div class="w-100 d-lg-flex align-items-center justify-content-center px-5">
+                        {{-- <div class="d-none d-lg-flex col-lg-8 align-items-center"> --}}
+                        <div class="col-lg-8" style="padding-right: 0; margin-right: -1rem;">
+                            <img id="img-background" src="/image/Lo-que-leo-imagen-inicio.jpg" alt="img">
+                            {{--id="img-background-login" <div class="w-100 d-lg-flex align-items-center justify-content-center">
                                 <img class="img-fluid" src="/image/img-login.png" alt="Img login" />
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- /Left Text-->
 
                         <!-- Login-->
-                        <div class="d-flex col-lg-4 align-items-center auth-bg px-2">
+                        <div class="d-flex col-lg-4 align-items-center auth-bg" style="padding: 0">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <div class="text-center mb-3">
                                     <img width="180" height="60" src="/image/logo.png" alt="Logo santillana" style="border-radius: 1rem">
@@ -65,7 +67,11 @@
                                         <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
                                             @csrf
 
-                                            <h2 class="text-center mb-3">Ingresa tu correo</h2>
+                                            <h1 class="text-center mb-1">Ingresa tu correo</h1>
+
+                                            <div class="text-center mb-2">
+                                                <span id="text-login-span" >Con el que te inscribiste a la cata</span>
+                                            </div>
 
                                             <div class="form-group">
                                                 {{-- <label for="login-email" class="form-label">Correo electrónico</label> --}}
@@ -112,7 +118,7 @@
                                             </div>
 
                                             <div id="content-login-book" class="text-center">
-                                                <button id="btn-login-book" class="btn btn-primary">Iniciar sesión</button>
+                                                <button id="btn-login-book" class="btn btn-primary">Inicia tu experiencia</button>
                                             </div>
                                         </form>
                                     </div>

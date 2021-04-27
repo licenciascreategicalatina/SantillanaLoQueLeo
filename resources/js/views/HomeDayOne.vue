@@ -9,83 +9,123 @@
                         <!-- STAR: posición de los libros -->
                         <div>
                         <div class="class-position" id="book-1"
-                            @click="clickShowViewInfoBook( slides[0] )"
-                            @mouseover="slides[0].eventHover = true"
-                            @mouseleave="slides[0].eventHover = false">
-                            <div v-if="slides[0].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[0].src" alt="slides[0].alt">
+                            @click="clickShowViewInfoBook( listBooks[0] )"
+                            @mouseover="listBooks[0].eventHover = true"
+                            @mouseleave="listBooks[0].eventHover = false">
+                            <div v-if="listBooks[0].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[0].imgCaratula" :alt="listBooks[0].alt">
                             </div>
                         </div>
                         <div class="class-position" id="book-2"
-                            @click="clickShowViewInfoBook( slides[1] )"
-                            @mouseover="slides[1].eventHover = true"
-                            @mouseleave="slides[1].eventHover = false">
-                            <div v-if="slides[1].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[1].src" alt="slides[1].alt">
+                            @click="clickShowViewInfoBook( listBooks[1] )"
+                            @mouseover="listBooks[1].eventHover = true"
+                            @mouseleave="listBooks[1].eventHover = false">
+                            <div v-if="listBooks[1].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[1].imgCaratula" :alt="listBooks[1].alt">
                             </div>
                         </div>
                         <div class="class-position" id="book-3"
-                            @click="clickShowViewInfoBook( slides[2] )"
-                            @mouseover="slides[2].eventHover = true"
-                            @mouseleave="slides[2].eventHover = false">
-                            <div v-if="slides[2].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[2].src" alt="slides[2].alt">
+                            @click="clickShowViewInfoBook( listBooks[2] )"
+                            @mouseover="listBooks[2].eventHover = true"
+                            @mouseleave="listBooks[2].eventHover = false">
+                            <div v-if="listBooks[2].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[2].imgCaratula" :alt="listBooks[2].alt">
                             </div>
                         </div>
                         <div class="class-position" id="book-4"
-                            @click="clickShowViewInfoBook( slides[3] )"
-                            @mouseover="slides[3].eventHover = true"
-                            @mouseleave="slides[3].eventHover = false">
-                            <div v-if="slides[3].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[3].src" alt="slides[3].alt">
+                            @click="clickShowViewInfoBook( listBooks[3] )"
+                            @mouseover="listBooks[3].eventHover = true"
+                            @mouseleave="listBooks[3].eventHover = false">
+                            <div v-if="listBooks[3].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[3].imgCaratula" :alt="listBooks[3].alt">
                             </div>
                         </div>
-                        <div class="class-position" id="book-5">
-                            <!-- @click="clickShowViewInfoBook( slides[4] )"
-                            @mouseover="slides[4].eventHover = true"
-                            @mouseleave="slides[4].eventHover = false">
-                            <div v-if="slides[4].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[4].src" alt="slides[4].alt">
-                            </div> -->
+                        <div class="class-position" id="book-5"
+                            @click="clickShowViewInfoBook( listBooks[4] )"
+                            @mouseover="listBooks[4].eventHover = true"
+                            @mouseleave="listBooks[4].eventHover = false">
+                            <div v-if="listBooks[4].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[4].imgCaratula" :alt="listBooks[4].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-6">
-
+                        <div class="class-position" id="book-6"
+                            @click="clickShowViewInfoBook( listBooks[5] )"
+                            @mouseover="listBooks[5].eventHover = true"
+                            @mouseleave="listBooks[5].eventHover = false">
+                            <div v-if="listBooks[5].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[5].imgCaratula" :alt="listBooks[5].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-7">
-
+                        <div class="class-position" id="book-7"
+                            @click="clickShowViewInfoBook( listBooks[6] )"
+                            @mouseover="listBooks[6].eventHover = true"
+                            @mouseleave="listBooks[6].eventHover = false">
+                            <div v-if="listBooks[6].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[6].imgCaratula" :alt="listBooks[6].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-8">
-
+                        <div class="class-position" id="book-8"
+                            @click="clickShowViewInfoBook( listBooks[7] )"
+                            @mouseover="listBooks[7].eventHover = true"
+                            @mouseleave="listBooks[7].eventHover = false">
+                            <div v-if="listBooks[7].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[7].imgCaratula" :alt="listBooks[7].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-9">
-
+                        <div class="class-position" id="book-9"
+                            @click="clickShowViewInfoBook( listBooks[8] )"
+                            @mouseover="listBooks[8].eventHover = true"
+                            @mouseleave="listBooks[8].eventHover = false">
+                            <div v-if="listBooks[8].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[8].imgCaratula" :alt="listBooks[8].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-10">
-
+                        <div class="class-position" id="book-10"
+                            @click="clickShowViewInfoBook( listBooks[9] )"
+                            @mouseover="listBooks[9].eventHover = true"
+                            @mouseleave="listBooks[9].eventHover = false">
+                            <div v-if="listBooks[9].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[9].imgCaratula" :alt="listBooks[9].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-11">
-
+                        <div class="class-position" id="book-11"
+                            @click="clickShowViewInfoBook( listBooks[10] )"
+                            @mouseover="listBooks[10].eventHover = true"
+                            @mouseleave="listBooks[10].eventHover = false">
+                            <div v-if="listBooks[10].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[10].imgCaratula" :alt="listBooks[10].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-12">
-
+                        <div class="class-position" id="book-12"
+                            @click="clickShowViewInfoBook( listBooks[11] )"
+                            @mouseover="listBooks[11].eventHover = true"
+                            @mouseleave="listBooks[11].eventHover = false">
+                            <div v-if="listBooks[11].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[11].imgCaratula" :alt="listBooks[11].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-13">
-                            <!-- @click="clickShowViewInfoBook(slides[0])"
-                            @mouseover="slides[0].eventHover = true"
-                            @mouseleave="slides[0].eventHover = false">
-                            <div v-if="slides[0].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="slides[0].src" alt="slides[0].alt">
-                            </div> -->
+                        <div class="class-position" id="book-13"
+                            @click="clickShowViewInfoBook( listBooks[12] )"
+                            @mouseover="listBooks[12].eventHover = true"
+                            @mouseleave="listBooks[12].eventHover = false">
+                            <div v-if="listBooks[12].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[12].imgCaratula" :alt="listBooks[12].alt">
+                            </div>
                         </div>
-                        <div class="class-position" id="book-14">
-
+                        <div class="class-position" id="book-14"
+                            @click="clickShowViewInfoBook( listBooks[13] )"
+                            @mouseover="listBooks[13].eventHover = true"
+                            @mouseleave="listBooks[13].eventHover = false">
+                            <div v-if="listBooks[13].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
+                            </div>
                         </div>
                         </div>
                         <!-- END: posición de los libros -->
 
                         <div class="vertical-center" :class="{'height-iframe-book' : heightIframeBook}">
-                            <!-- STAR: modal información del libro -->
-                            <div v-if="active" id="content-info-book">
+                            <!-- BEGIN: modal información del libro -->
+                            <div v-if="activeModal" id="content-info-book">
                                 <div @click="closeViewInfoBook"  class="header-info-book">
                                     <svg id="icon-info-book" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
                                         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
@@ -94,15 +134,14 @@
                                 </div>
 
                                 <div id="body-info-book" class="row">
-                                    <div class="col-5 text-center">
+                                    <div class="col-12 text-center">
                                         <img id="img-info-book"
                                             @click="eventShowIframeBook( bookSelect )"
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
                                     </div>
-                                    <div class="col-7">
-                                        <h3>{{ bookSelect.title }}</h3>
-                                        <p>Año xx/xx/xxxx</p>
-                                        <p>{{ bookSelect.description }}</p>
+                                    <div class="col-12 mt-4 mb-2">
+                                        <h3 class="text-center">{{ bookSelect.title }}</h3>
+                                        <p class="text-justify">{{ bookSelect.description }}</p>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -267,34 +306,24 @@
                 urlBook: "",
                 openPDF: false,
                 imgGif: false,
-                hover: false,
-                active: false,
+                activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
                 changeBackground: false,
-                options: {
-                    rewind      : true,
-                    perPage     : 3,
-                    perMove     : 1,
-                    gap         : '1rem',
-                    //autoplay    : true,
-                    //pauseOnHover: true,
-                    arrows      : 'slider',
-                },
-                slides: [],
+                listBooks: [],
                 bookSelect: null,
             }
         },
         methods: {
             clickShowViewInfoBook( book ) {
-                this.active = true
+                this.activeModal = true
                 this.bookSelect = book;
             },
             closeViewInfoBook() {
-                this.active = false
+                this.activeModal = false
             },
             eventShowIframeBook( book ) {
-                this.active = false
+                this.activeModal = false
                 this.heightIframeBook = true
                 this.imgGif = true;
                 this.urlBook = book.url;
@@ -311,49 +340,140 @@
 
         },
         created() {
-            setTimeout( () => {
+            /* setTimeout( () => {
                 console.log('hola bebe');
-            }, 3000);
+            }, 3000); */
 
             /* Lista de libros */
-            this.slides = [
+            this.listBooks = [
                 {
+                    id: 1,
                     title: 'Jacobo y el platena de los miedos',
                     description: 'A Jacobo le gusta estar en familia. No importa que cada cual haga lo suyo. Para él, lo mejor es jugar con Susi, porque sabe que la hace reír con sus travesuras.',
                     alt: 'Jacobo',
                     url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
-                    src:"/image/imgbooks/diauno/cub-juego-de-la-nieve.png",
-                    imgCaratula:"/image/imgbooks/diauno/caratulas/Jacobo-y-el-planeta-de-los-miedos.jpg",
+                    imgCaratula:"/image/imgbooks/diauno/jacobo-y-el-planeta-de-los-miedos.jpg",
                     eventHover: false,
                 },
                 {
+                    id: 2,
                     title: 'Uno está bien, pero dos mejor',
                     description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
                     alt: 'Uno está bien',
                     url: '/book/diauno/UNO interior_ESP.pdf',
-                    src:"/image/imgbooks/diauno/uno-esta-bein.png",
-                    imgCaratula: "/image/imgbooks/diauno/caratulas/uno-esta-bien.jpg",
+                    imgCaratula: "/image/imgbooks/diauno/uno-esta-bien.jpg",
                     eventHover: false,
                 },
                 {
+                    id: 3,
                     title: 'Nomi y sus queridos animales',
                     description: 'Nomi quería un tigre, Nomi quería un oso, Nomi quería un león con aspecto cariñoso.',
                     alt: 'Nomi y sus queridos animales',
                     url: '/book/diauno/Nomi interior.pdf',
                     src:"/image/imgbooks/diauno/nomi-y-sus-queridos.png",
-                    imgCaratula: "/image/imgbooks/diauno/caratulas/nomi.jpg",
+                    imgCaratula: "/image/imgbooks/diauno/nomi-y-sus-queridos-animales.jpg",
                     eventHover: false,
                 },
                 {
+                    id: 4,
                     title: 'Los matices de matisse',
                     description: 'Si fueras un niño llamado Henri Matisse y vivieras en un pueblo triste en el norte de Francia, donde los cielos estuvieran grises.',
                     alt: 'Los matices de matisse',
                     url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
                     src:"/image/imgbooks/diauno/los-matices.png",
-                    imgCaratula: "/image/imgbooks/diauno/caratulas/matisse.jpg",
+                    imgCaratula: "/image/imgbooks/diauno/los-matisse.jpg",
                     eventHover: false,
                 },
-
+                {
+                    id: 5,
+                    title: 'Tobi y los ancianos',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Tobi y los ancianos',
+                    url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/tobi-y-los-ancianos.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 6,
+                    title: 'Benjamino',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Benjamino',
+                    url: '/book/diauno/UNO interior_ESP.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/benjamino.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 7,
+                    title: 'El libro que canta',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'El libro que canta',
+                    url: '/book/diauno/Nomi interior.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/el-libro-que-canta.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 8,
+                    title: 'Escondidas',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Escondidas',
+                    url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/escondidas.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 9,
+                    title: 'El abuelo armadillo',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'El abuelo armadillo',
+                    url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/el-abuelo-armadillo.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 10,
+                    title: 'El cuento de hadas de Harold',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'El cuento de hadas de Harold',
+                    url: '/book/diauno/UNO interior_ESP.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/cuento-de-hadas-de-harold.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 11,
+                    title: 'Boris y las manzanas',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Boris y las manzanas',
+                    url: '/book/diauno/Nomi interior.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/boris-y-las-manzanas.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 12,
+                    title: 'Un dinosaurio es',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Un dinosaurio es',
+                    url: '/book/diauno/PAGES Los matices de Matisse_OK.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/un-dinosaurio-es.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 13,
+                    title: 'Los tres bandidos',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Los tres bandidos',
+                    url: '/book/diauno/Jacobo y el planeta de los miedos.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/los-tres-bandidos.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 14,
+                    title: 'Cuentos al revés',
+                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+                    alt: 'Cuentos al revés',
+                    url: '/book/diauno/UNO interior_ESP.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/cuentos-al-reves.jpg",
+                    eventHover: false,
+                }
             ]
         }
     }
@@ -503,8 +623,8 @@
         padding: 1rem;
     }
     img#img-info-book {
-        width: 100%;
-        margin: 20% 0 5% 0;
+        width: 60%;
+        /* margin: 20% 0 5% 0; */
         cursor: pointer;
     }
     #btn-info-book {

@@ -40,16 +40,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link nav-link-book" href="#">Programa <span class="sr-only">(current)</span></a>
+                            <a class="nav-link nav-link-book" href="#">Programa de formación a profesores<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Dia 1</a>
+                            <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Dia 2</a>
+                            <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-link-book" href="{{ route('day-three') }}">Dia 3</a>
+                            <a class="nav-link nav-link-book" href="{{ route('day-three') }}">Secundaria</a>
                         </li>
                     </ul>
 
