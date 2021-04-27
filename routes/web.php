@@ -20,15 +20,15 @@ Route::middleware(['auth'])->group( function() {
         [ LandingController::class, 'index' ]
     )->name('landing'); */
     Route::get(
-        '/dia-uno',
+        '/preescolar',
         [ LandingController::class, 'indexOne' ]
     )->name('day-one');
     Route::get(
-        '/dia-dos',
+        '/primaria',
         [ LandingController::class, 'indexTwo' ]
     )->name('day-two');
     Route::get(
-        '/dia-tres',
+        '/secundaria',
         [ LandingController::class, 'indexThree' ]
     )->name('day-three');
 });
