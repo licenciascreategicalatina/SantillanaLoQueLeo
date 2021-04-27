@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-one">
-                        <!-- STAR: posición de los libros -->
+                        <!-- BEGIN: posición de los libros -->
                         <div>
                         <div class="class-position" id="book-1"
                             @click="clickShowViewInfoBook( listBooks[0] )"
@@ -214,7 +214,7 @@
                             </div>
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
-                                <a id="pdf-download" href="/book/Lo que leo.pdf" download="download">
+                                <a id="pdf-download" href="/book/Lo que leo.pdf" download="programa">
                                     <div id="content-dialog-book" class="con-content" >
                                         <h3 class="text-center color-white font-weight-bold">
                                             Programa

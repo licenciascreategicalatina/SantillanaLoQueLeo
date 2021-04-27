@@ -9840,6 +9840,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -9854,35 +9862,26 @@ __webpack_require__.r(__webpack_exports__);
       urlBook: "",
       openPDF: false,
       imgGif: false,
-      hover: false,
-      active: false,
+      activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
-      options: {
-        rewind: true,
-        perPage: 3,
-        perMove: 1,
-        gap: '1rem',
-        //autoplay    : true,
-        //pauseOnHover: true,
-        arrows: 'slider'
-      },
-      slides: [],
+      changeBackground: false,
+      listBooks: [],
       bookSelect: null
     };
   },
   methods: {
     clickShowViewInfoBook: function clickShowViewInfoBook(book) {
-      this.active = true;
+      this.activeModal = true;
       this.bookSelect = book;
     },
     closeViewInfoBook: function closeViewInfoBook() {
-      this.active = false;
+      this.activeModal = false;
     },
     eventShowIframeBook: function eventShowIframeBook(book) {
       var _this = this;
 
-      this.active = false;
+      this.activeModal = false;
       this.heightIframeBook = true;
       this.imgGif = true;
       this.urlBook = book.url;
@@ -9898,139 +9897,124 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     /* Lista de libros */
-    this.slides = [{
+    this.listBooks = [{
       id: 1,
       title: 'Perro callejero',
       description: 'Vivía en la calle, a base de zarpazos y dentelladas. La gente decía: “Es un perro malo”.',
       alt: 'Perro callejero',
       url: '/book/diados/INT PERRO CALLEJERO_iniciales.pdf',
-      src: "/image/imgbooks/diados/perro-callejero.jpg",
       imgCaratula: "/image/imgbooks/diados/perro-callejero.jpg",
       eventHover: false
     }, {
       id: 2,
-      title: 'Uno está bien, pero dos mejor',
-      description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
-      alt: 'Uno está bien',
+      title: 'Una idea toda azul',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Una idea toda azul',
       url: '/book/UNO interior_ESP.pdf',
-      src: "/image/imgbooks/diauno/uno-esta-bein.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/uno-esta-bien.jpg",
+      imgCaratula: "/image/imgbooks/diados/idea-toda-azul.jpg",
       eventHover: false
     }, {
       id: 3,
-      title: 'Nomi y sus queridos animales',
-      description: 'Nomi quería un tigre, Nomi quería un oso, Nomi quería un león con aspecto cariñoso.',
-      alt: 'Nomi y sus queridos animales',
+      title: 'Los gatos (y gatitos) del señor Petersand',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Los gatos (y gatitos) del señor Petersand',
       url: '/book/Nomi interior.pdf',
-      src: "public/image/imgbooks/diados/cuentos-de-tomas.jpg",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/nomi.jpg",
+      imgCaratula: "/image/imgbooks/diados/petersand.jpg",
       eventHover: false
     }, {
       id: 4,
-      title: 'Los matices de matisse',
-      description: 'Si fueras un niño llamado Henri Matisse y vivieras en un pueblo triste en el norte de Francia, donde los cielos estuvieran grises.',
-      alt: 'Los matices de matisse',
+      title: 'Flor de Luna',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Flor de Luna',
       url: '/book/PAGES Los matices de Matisse_OK.pdf',
-      src: "/image/imgbooks/diauno/los-matices.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/matisse.jpg",
+      imgCaratula: "/image/imgbooks/diados/flor-de-luna.jpg",
       eventHover: false
     }, {
       id: 5,
-      title: 'Perro callejero',
-      description: 'Vivía en la calle, a base de zarpazos y dentelladas. La gente decía: “Es un perro malo”.',
-      alt: 'Perro callejero',
+      title: 'El búho que no podía dormir',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'El búho que no podía dormir',
       url: '/book/diados/INT PERRO CALLEJERO_iniciales.pdf',
-      src: "/image/imgbooks/diados/perro-callejero.jpg",
-      imgCaratula: "/image/imgbooks/diados/perro-callejero.jpg",
+      imgCaratula: "/image/imgbooks/diados/buho-dormir.jpg",
       eventHover: false
     }, {
       id: 6,
-      title: 'Uno está bien, pero dos mejor',
-      description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
-      alt: 'Uno está bien',
+      title: 'Los fantasmas huelen a vainilla',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Los fantasmas huelen a vainilla',
       url: '/book/UNO interior_ESP.pdf',
-      src: "/image/imgbooks/diauno/uno-esta-bein.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/uno-esta-bien.jpg",
+      imgCaratula: "/image/imgbooks/diados/los-fantasmas-huelen-a-vainilla.jpg",
       eventHover: false
     }, {
       id: 7,
-      title: 'Nomi y sus queridos animales',
-      description: 'Nomi quería un tigre, Nomi quería un oso, Nomi quería un león con aspecto cariñoso.',
-      alt: 'Nomi y sus queridos animales',
+      title: 'Diario de un suplente',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Diario de un suplente',
       url: '/book/Nomi interior.pdf',
-      src: "/image/imgbooks/diauno/nomi-y-sus-queridos.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/nomi.jpg",
+      imgCaratula: "/image/imgbooks/diados/diario-de-un-suplente.jpg",
       eventHover: false
     }, {
       id: 8,
-      title: 'Los matices de matisse',
-      description: 'Si fueras un niño llamado Henri Matisse y vivieras en un pueblo triste en el norte de Francia, donde los cielos estuvieran grises.',
-      alt: 'Los matices de matisse',
+      title: 'El perfume del viento',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'El perfume del viento',
       url: '/book/PAGES Los matices de Matisse_OK.pdf',
-      src: "/image/imgbooks/diauno/los-matices.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/matisse.jpg",
+      imgCaratula: "/image/imgbooks/diados/viento-triunfo.jpg",
       eventHover: false
     }, {
       id: 9,
-      title: 'Perro callejero',
-      description: 'Vivía en la calle, a base de zarpazos y dentelladas. La gente decía: “Es un perro malo”.',
-      alt: 'Perro callejero',
+      title: 'Sobre un rayo de luz',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Sobre un rayo de luz',
       url: '/book/diados/INT PERRO CALLEJERO_iniciales.pdf',
-      src: "/image/imgbooks/diados/perro-callejero.jpg",
-      imgCaratula: "/image/imgbooks/diados/perro-callejero.jpg",
+      imgCaratula: "/image/imgbooks/diados/un-rayo-de-luz.jpg",
       eventHover: false
     }, {
       id: 10,
-      title: 'Uno está bien, pero dos mejor',
-      description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
-      alt: 'Uno está bien',
+      title: 'Querido bill',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Querido bill',
       url: '/book/UNO interior_ESP.pdf',
-      src: "/image/imgbooks/diauno/uno-esta-bein.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/uno-esta-bien.jpg",
+      imgCaratula: "/image/imgbooks/diados/querido-bill.jpg",
       eventHover: false
     }, {
       id: 11,
-      title: 'Nomi y sus queridos animales',
-      description: 'Nomi quería un tigre, Nomi quería un oso, Nomi quería un león con aspecto cariñoso.',
-      alt: 'Nomi y sus queridos animales',
+      title: 'Allá y Aquí',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'Allá y Aquí',
       url: '/book/Nomi interior.pdf',
-      src: "/image/imgbooks/diauno/nomi-y-sus-queridos.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/nomi.jpg",
+      imgCaratula: "/image/imgbooks/diados/alla-y-aqui.jpg",
       eventHover: false
     }, {
       id: 12,
       title: 'marcial y la venganza de los lagartillos',
-      description: 'Todo comenzó por un error de Marcial. Lo cometió por travieso, porque se aburría mucho en casa, donde lo cuidaba su abuela Pancracia.',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
       alt: 'marcial y la venganza de los lagartillos',
       url: '/book/diados/Marcial y la venganza de los lagartijos-Iniciales.pdf',
-      src: "/image/imgbooks/diados/marcial-y-la-venganza-de-los-lagartijos.jpg",
       imgCaratula: "/image/imgbooks/diados/marcial-y-la-venganza-de-los-lagartijos.jpg",
       eventHover: false
     }, {
       id: 13,
       title: 'El corazón del árbol',
-      description: '¿qué sucede cuando una poeta y un artista plástico se encuentran en las páginas de un libro? ¿Sucederá algo parecido a lo que ocurre en nuestra mente cuando leemos un poema y empezamos a darle forma y color a las palabras?',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
       alt: 'El corazón del árbol',
-      url: 'public/book/diados/Corazón del arbol_PAGES.pdf',
-      src: "/image/imgbooks/diados/corazon-del-arbol.jpg",
+      url: '/book/diados/Corazón del arbol_PAGES.pdf',
       imgCaratula: "/image/imgbooks/diados/corazon-del-arbol.jpg",
       eventHover: false
     }, {
       id: 14,
-      title: 'Uno está bien, pero dos mejor',
-      description: 'Uno está bien, pero dos mejor. LouismSlobodkin',
-      alt: 'Uno está bien',
+      title: 'La gata sola',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
+      alt: 'La gata sola',
       url: '/book/UNO interior_ESP.pdf',
-      src: "/image/imgbooks/diauno/uno-esta-bein.png",
-      imgCaratula: "/image/imgbooks/diauno/caratulas/uno-esta-bien.jpg",
+      imgCaratula: "/image/imgbooks/diados/la-gata.jpg",
       eventHover: false
     }, {
       id: 15,
       title: 'Cuentos de Tomás',
-      description: 'El niño estaba frente a un cuarto pequeño. No había visto bien y se acercó a la ventana. Daba sobre un patio interior.',
+      description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
       alt: 'Cuentos de Tomás',
       url: '/book/diados/Cuentos de Tomas-Iniciales.pdf',
-      src: "/image/imgbooks/diados/cuentos-de-tomas.jpg",
       imgCaratula: "/image/imgbooks/diados/cuentos-de-tomas.jpg",
       eventHover: false
     }];
@@ -14890,7 +14874,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/background-day-two.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 45%;\n  left: 9.3%;\n  height: 11%;\n  width: 7.9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 45.3%;\n  left: 20.2%;\n  height: 10.2%;\n  width: 7.8%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 31.2%;\n  height: 8.4%;\n  width: 7%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 47.5%;\n  left: 40.6%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.4%;\n  width: 6.5%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: 100%;\n  margin: 20% 0 5% 0;\n  cursor: pointer;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-a0dfe4a4] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-a0dfe4a4] {\n    padding: 0.8rem;\n}\n.text-title[data-v-a0dfe4a4] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-a0dfe4a4] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n    top: 0px;\n}\n.close-pdf[data-v-a0dfe4a4] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-a0dfe4a4] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/background-day-two.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 45%;\n  left: 9.3%;\n  height: 11%;\n  width: 7.9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 45.3%;\n  left: 20.2%;\n  height: 10.2%;\n  width: 7.8%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 31.2%;\n  height: 8.4%;\n  width: 7%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 47.5%;\n  left: 40.6%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.4%;\n  width: 6.5%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: 60%;\n  cursor: pointer;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\na#pdf-download[data-v-a0dfe4a4] {\n  color: #212529;\n}\na#pdf-download[data-v-a0dfe4a4]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-a0dfe4a4] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-a0dfe4a4] {\n    padding: 0.8rem;\n}\n.text-title[data-v-a0dfe4a4] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-a0dfe4a4] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n    top: 0px;\n}\n.close-pdf[data-v-a0dfe4a4] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-a0dfe4a4] {\n    max-height: 350px !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48196,7 +48180,7 @@ var render = function() {
                           attrs: {
                             id: "pdf-download",
                             href: "/book/Lo que leo.pdf",
-                            download: "download"
+                            download: "programa"
                           }
                         },
                         [
@@ -49373,880 +49357,962 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", { staticClass: "container-fluid main-view" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
-          _c("div", { staticClass: "view-iframe-one" }, [
-            _c("div", [
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-1" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[0])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[0].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[0].eventHover = false
+    _c(
+      "div",
+      {
+        staticClass: "container-fluid main-view",
+        class: { "main-background-book": _vm.changeBackground }
+      },
+      [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+            _c("div", { staticClass: "view-iframe-one" }, [
+              _c("div", [
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-1" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[0])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[0].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[0].eventHover = false
+                      }
                     }
-                  }
-                },
-                [
-                  _vm.slides[0].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[0].src,
-                                alt: _vm.slides[0].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-2" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[1])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[1].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[1].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[1].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[1].src,
-                                alt: _vm.slides[1].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-3" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[2])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[2].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[2].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[2].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[2].src,
-                                alt: _vm.slides[2].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-4" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[3])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[3].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[3].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[3].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[3].src,
-                                alt: _vm.slides[3].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-5" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[4])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[4].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[4].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[4].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[4].src,
-                                alt: _vm.slides[4].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-6" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[5])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[5].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[5].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[5].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[5].src,
-                                alt: _vm.slides[5].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-7" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[6])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[6].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[6].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[6].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[6].src,
-                                alt: _vm.slides[6].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-8" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[7])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[7].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[7].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[7].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[7].src,
-                                alt: _vm.slides[7].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-9" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[8])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[8].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[8].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[8].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[8].src,
-                                alt: _vm.slides[8].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-10" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[9])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[9].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[9].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[9].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[9].src,
-                                alt: _vm.slides[9].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-11" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[10])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[10].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[10].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[10].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[10].src,
-                                alt: _vm.slides[10].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-12" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[11])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[11].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[11].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[11].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[11].src,
-                                alt: _vm.slides[11].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-13" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[12])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[12].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[12].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[12].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[12].src,
-                                alt: _vm.slides[12].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-14" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[13])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[13].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[13].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[13].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[13].src,
-                                alt: _vm.slides[13].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "class-position",
-                  attrs: { id: "book-15" },
-                  on: {
-                    click: function($event) {
-                      return _vm.clickShowViewInfoBook(_vm.slides[14])
-                    },
-                    mouseover: function($event) {
-                      _vm.slides[14].eventHover = true
-                    },
-                    mouseleave: function($event) {
-                      _vm.slides[14].eventHover = false
-                    }
-                  }
-                },
-                [
-                  _vm.slides[14].eventHover
-                    ? _c("div", { staticClass: "content-img-hover-book" }, [
-                         true
-                          ? _c("img", {
-                              staticClass: "img-hover-book",
-                              attrs: {
-                                src: _vm.slides[14].src,
-                                alt: _vm.slides[14].alt
-                              }
-                            })
-                          : 0
-                      ])
-                    : _vm._e()
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "vertical-center",
-                class: { "height-iframe-book": _vm.heightIframeBook }
-              },
-              [
-                _vm.active
-                  ? _c("div", { attrs: { id: "content-info-book" } }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "header-info-book",
-                          on: { click: _vm.closeViewInfoBook }
-                        },
-                        [
-                          _c(
-                            "svg",
-                            {
-                              staticClass: "bi bi-x-circle",
-                              attrs: {
-                                id: "icon-info-book",
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "19",
-                                height: "19",
-                                fill: "currentColor",
-                                viewBox: "0 0 16 16"
-                              }
-                            },
-                            [
-                              _c("path", {
+                  },
+                  [
+                    _vm.listBooks[0].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
                                 attrs: {
-                                  d:
-                                    "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c("path", {
-                                attrs: {
-                                  d:
-                                    "M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                  src: _vm.listBooks[0].imgCaratula,
+                                  alt: _vm.listBooks[0].alt
                                 }
                               })
-                            ]
-                          )
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "row", attrs: { id: "body-info-book" } },
-                        [
-                          _c("div", { staticClass: "col-5 text-center" }, [
-                            _c("img", {
-                              attrs: {
-                                id: "img-info-book",
-                                src: _vm.bookSelect.imgCaratula,
-                                alt: _vm.bookSelect.alt
-                              },
-                              on: {
-                                click: function($event) {
-                                  return _vm.eventShowIframeBook(_vm.bookSelect)
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-2" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[1])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[1].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[1].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[1].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[1].imgCaratula,
+                                  alt: _vm.listBooks[1].alt
                                 }
-                              }
-                            })
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-7" }, [
-                            _c("h3", [_vm._v(_vm._s(_vm.bookSelect.title))]),
-                            _vm._v(" "),
-                            _c("p", [_vm._v("Año xx/xx/xxxx")]),
-                            _vm._v(" "),
-                            _c("p", [
-                              _vm._v(_vm._s(_vm.bookSelect.description))
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-3" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[2])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[2].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[2].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[2].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[2].imgCaratula,
+                                  alt: _vm.listBooks[2].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-4" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[3])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[3].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[3].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[3].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[3].imgCaratula,
+                                  alt: _vm.listBooks[3].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-5" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[4])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[4].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[4].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[4].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[4].imgCaratula,
+                                  alt: _vm.listBooks[4].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-6" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[5])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[5].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[5].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[5].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[5].imgCaratula,
+                                  alt: _vm.listBooks[5].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-7" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[6])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[6].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[6].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[6].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[6].imgCaratula,
+                                  alt: _vm.listBooks[6].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-8" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[7])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[7].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[7].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[7].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[7].imgCaratula,
+                                  alt: _vm.listBooks[7].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-9" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[8])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[8].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[8].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[8].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[8].imgCaratula,
+                                  alt: _vm.listBooks[8].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-10" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[9])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[9].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[9].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[9].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[9].imgCaratula,
+                                  alt: _vm.listBooks[9].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-11" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[10])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[10].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[10].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[10].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[10].imgCaratula,
+                                  alt: _vm.listBooks[10].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-12" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[11])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[11].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[11].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[11].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[11].imgCaratula,
+                                  alt: _vm.listBooks[11].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-13" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[12])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[12].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[12].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[12].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[12].imgCaratula,
+                                  alt: _vm.listBooks[12].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-14" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[13])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[13].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[13].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[13].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[13].imgCaratula,
+                                  alt: _vm.listBooks[13].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-15" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[14])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[14].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[14].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[14].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[14].imgCaratula,
+                                  alt: _vm.listBooks[14].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "vertical-center",
+                  class: { "height-iframe-book": _vm.heightIframeBook }
+                },
+                [
+                  _vm.activeModal
+                    ? _c("div", { attrs: { id: "content-info-book" } }, [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "header-info-book",
+                            on: { click: _vm.closeViewInfoBook }
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-x-circle",
+                                attrs: {
+                                  id: "icon-info-book",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "19",
+                                  height: "19",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "row",
+                            attrs: { id: "body-info-book" }
+                          },
+                          [
+                            _c("div", { staticClass: "col-12 text-center" }, [
+                              _c("img", {
+                                attrs: {
+                                  id: "img-info-book",
+                                  src: _vm.bookSelect.imgCaratula,
+                                  alt: _vm.bookSelect.alt
+                                },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.eventShowIframeBook(
+                                      _vm.bookSelect
+                                    )
+                                  }
+                                }
+                              })
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "text-right" }, [
-                              _c(
-                                "button",
-                                {
-                                  staticClass: "btn btn-primary btn-sm",
-                                  attrs: {
-                                    id: "btn-info-book",
-                                    type: "button"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.eventShowIframeBook(
-                                        _vm.bookSelect
-                                      )
+                            _c("div", { staticClass: "col-12 mt-4 mb-2" }, [
+                              _c("h3", { staticClass: "text-center" }, [
+                                _vm._v(_vm._s(_vm.bookSelect.title))
+                              ]),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "text-justify" }, [
+                                _vm._v(_vm._s(_vm.bookSelect.description))
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "text-right" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-primary btn-sm",
+                                    attrs: {
+                                      id: "btn-info-book",
+                                      type: "button"
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.eventShowIframeBook(
+                                          _vm.bookSelect
+                                        )
+                                      }
                                     }
-                                  }
-                                },
-                                [
-                                  _vm._v(
-                                    "\n                                            PDF\n                                        "
-                                  )
-                                ]
-                              )
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                            PDF\n                                        "
+                                    )
+                                  ]
+                                )
+                              ])
                             ])
+                          ]
+                        )
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.imgGif
+                    ? _c(
+                        "div",
+                        {
+                          staticClass:
+                            "animate__animated animate__zoomIn animate__slower",
+                          attrs: { id: "image-gif" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: {
+                              src: "/image/book-image.gif",
+                              alt: "image gif"
+                            }
+                          })
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.openPDF
+                    ? _c(
+                        "div",
+                        {
+                          attrs: { id: "close-pdf-read" },
+                          on: { click: _vm.closeIframeBook }
+                        },
+                        [
+                          _c("span", { staticClass: "close-pdf" }, [
+                            _vm._v("X")
                           ])
                         ]
                       )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.imgGif
-                  ? _c(
-                      "div",
-                      {
-                        staticClass:
-                          "animate__animated animate__zoomIn animate__slower",
-                        attrs: { id: "image-gif" }
-                      },
-                      [
-                        _c("img", {
-                          attrs: {
-                            src: "/image/book-image.gif",
-                            alt: "image gif"
-                          }
-                        })
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.openPDF
-                  ? _c(
-                      "div",
-                      {
-                        attrs: { id: "close-pdf-read" },
-                        on: { click: _vm.closeIframeBook }
-                      },
-                      [_c("span", { staticClass: "close-pdf" }, [_vm._v("X")])]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.openPDF
-                  ? _c(
-                      "div",
-                      {
-                        attrs: { id: "pdf-read" },
-                        on: { click: _vm.closeIframeBook }
-                      },
-                      [
-                        _c("embed", {
-                          attrs: {
-                            src: _vm.urlBook,
-                            type: "application/pdf",
-                            width: "100%",
-                            height: "100%"
-                          }
-                        })
-                      ]
-                    )
-                  : _vm._e()
-              ]
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
-          _c("div", { staticClass: "view-iframe-two" }, [
-            _c(
-              "div",
-              { staticClass: "vertical-center" },
-              [
-                _c(
-                  "div",
-                  { attrs: { id: "content-agenda-book" } },
-                  [
-                    _c(
-                      "vs-button",
-                      {
-                        on: {
-                          click: function($event) {
-                            _vm.agendaBook = !_vm.agendaBook
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                                Agenda del dia\n                            "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "vs-dialog",
-                  {
-                    attrs: { width: "550px", "not-center": "" },
-                    model: {
-                      value: _vm.agendaBook,
-                      callback: function($$v) {
-                        _vm.agendaBook = $$v
-                      },
-                      expression: "agendaBook"
-                    }
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "con-content",
-                        attrs: { id: "content-dialog-book" }
-                      },
-                      [
-                        _c(
-                          "h3",
-                          {
-                            staticClass:
-                              "text-center color-white font-weight-bold"
-                          },
-                          [_vm._v("Programa")]
-                        ),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "text-center" }, [
-                          _c("img", {
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.openPDF
+                    ? _c(
+                        "div",
+                        {
+                          attrs: { id: "pdf-read" },
+                          on: { click: _vm.closeIframeBook }
+                        },
+                        [
+                          _c("embed", {
                             attrs: {
-                              src: "/image/img-dialog.png",
-                              alt: "img dialog"
+                              src: _vm.urlBook,
+                              type: "application/pdf",
+                              width: "100%",
+                              height: "100%"
                             }
                           })
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row" }, [
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+            _c("div", { staticClass: "view-iframe-two" }, [
+              _c(
+                "div",
+                { staticClass: "vertical-center" },
+                [
+                  _c(
+                    "div",
+                    { attrs: { id: "content-agenda-book" } },
+                    [
+                      _c(
+                        "vs-button",
+                        {
+                          on: {
+                            click: function($event) {
+                              _vm.agendaBook = !_vm.agendaBook
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                                Agenda del dia\n                            "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "vs-dialog",
+                    {
+                      attrs: { width: "550px", "not-center": "" },
+                      model: {
+                        value: _vm.agendaBook,
+                        callback: function($$v) {
+                          _vm.agendaBook = $$v
+                        },
+                        expression: "agendaBook"
+                      }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            id: "pdf-download",
+                            href: "/book/Lo que leo.pdf",
+                            download: "Programa"
+                          }
+                        },
+                        [
                           _c(
                             "div",
-                            { staticClass: "col-4 text-center color-white" },
+                            {
+                              staticClass: "con-content",
+                              attrs: { id: "content-dialog-book" }
+                            },
                             [
-                              _c("h4", [_vm._v("3:30")]),
+                              _c(
+                                "h3",
+                                {
+                                  staticClass:
+                                    "text-center color-white font-weight-bold"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                                        Programa\n                                        "
+                                  ),
+                                  _c(
+                                    "svg",
+                                    {
+                                      staticClass:
+                                        "bi bi-cloud-arrow-down-fill",
+                                      attrs: {
+                                        xmlns: "http://www.w3.org/2000/svg",
+                                        width: "20",
+                                        height: "20",
+                                        fill: "currentColor",
+                                        viewBox: "0 0 16 16"
+                                      }
+                                    },
+                                    [
+                                      _c("path", {
+                                        attrs: {
+                                          d:
+                                            "M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              ),
                               _vm._v(" "),
-                              _c("span", [_vm._v("Bienvenida")])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-4 text-center" }, [
-                            _c("h4", [_vm._v("4:30")]),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v("Conferencia magistral "),
-                              _c("br"),
-                              _vm._v("Julieta Pinasco")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-4 text-center color-white" },
-                            [
-                              _c("h4", [_vm._v("6:45")]),
+                              _c("p", { staticClass: "text-center" }, [
+                                _c("img", {
+                                  attrs: {
+                                    src: "/image/img-dialog.png",
+                                    alt: "img dialog"
+                                  }
+                                })
+                              ]),
                               _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Taller "),
-                                _c("br"),
-                                _vm._v("Raquel Cuperman")
+                              _c("div", { staticClass: "row" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("3:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Bienvenida")])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("4:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Conferencia magistral "),
+                                      _c("br"),
+                                      _vm._v("Julieta Pinasco")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("6:45")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Taller "),
+                                      _c("br"),
+                                      _vm._v("Raquel Cuperman")
+                                    ])
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row mt-2" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("3:35")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cata de libros")])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("5:15")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Taller "),
+                                      _c("br"),
+                                      _vm._v("Alejandra Jaramillo")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("7:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cierre")])
+                                  ]
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "row mt-2" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "col-4 text-center color-white"
+                                  },
+                                  [
+                                    _c("h4", [_vm._v("4:15")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("¿Qué pasó en la cata? "),
+                                      _c("br"),
+                                      _vm._v("Los profesores lo cuentan")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("6:00")]),
+                                    _vm._v(" "),
+                                    _c("span", [
+                                      _vm._v("Conferencia magistral "),
+                                      _c("br"),
+                                      _vm._v("Eduardo Escallón")
+                                    ])
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "col-4 text-center" },
+                                  [
+                                    _c("h4", [_vm._v("7:30")]),
+                                    _vm._v(" "),
+                                    _c("span", [_vm._v("Cierre")])
+                                  ]
+                                )
                               ])
                             ]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row mt-2" }, [
-                          _c("div", { staticClass: "col-4 text-center" }, [
-                            _c("h4", [_vm._v("3:35")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Cata de libros")])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "col-4 text-center color-white" },
-                            [
-                              _c("h4", [_vm._v("5:15")]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Taller "),
-                                _c("br"),
-                                _vm._v("Alejandra Jaramillo")
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-4 text-center" }, [
-                            _c("h4", [_vm._v("7:30")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Cierre")])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "row mt-2" }, [
-                          _c(
-                            "div",
-                            { staticClass: "col-4 text-center color-white" },
-                            [
-                              _c("h4", [_vm._v("4:15")]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v("¿Qué pasó en la cata? "),
-                                _c("br"),
-                                _vm._v("Los profesores lo cuentan")
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-4 text-center" }, [
-                            _c("h4", [_vm._v("6:00")]),
-                            _vm._v(" "),
-                            _c("span", [
-                              _vm._v("Conferencia magistral "),
-                              _c("br"),
-                              _vm._v("Eduardo Escallón")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "col-4 text-center" }, [
-                            _c("h4", [_vm._v("7:30")]),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("Cierre")])
-                          ])
-                        ])
-                      ]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "card animate__animated animate__slideInRight animate__slower"
-                  },
-                  [
-                    _c("div", { staticClass: "view-body" }, [
-                      _c("iframe", {
-                        attrs: {
-                          id: "iframe-video",
-                          width: "",
-                          height: "",
-                          src: _vm.urlTransmision,
-                          title: "YouTube video player",
-                          frameborder: "0",
-                          allow:
-                            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                          allowfullscreen: ""
-                        }
-                      })
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
+                        ]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "card animate__animated animate__slideInRight animate__slower"
+                    },
+                    [
+                      _c("div", { staticClass: "view-body" }, [
+                        _c("iframe", {
+                          attrs: {
+                            id: "iframe-video",
+                            width: "",
+                            height: "",
+                            src: _vm.urlTransmision,
+                            title: "YouTube video player",
+                            frameborder: "0",
+                            allow:
+                              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                            allowfullscreen: ""
+                          }
+                        })
+                      ])
+                    ]
+                  )
+                ],
+                1
+              )
+            ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = []
