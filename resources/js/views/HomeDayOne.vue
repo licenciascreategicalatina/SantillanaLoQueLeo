@@ -291,9 +291,9 @@
                                 </div>
                             </div>
 
-                            <div id="chat">
+                            <!-- <div id="chat">
                                 <iframe src="https://www6.cbox.ws/box/?boxid=861776&boxtag=9fCpoB" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
