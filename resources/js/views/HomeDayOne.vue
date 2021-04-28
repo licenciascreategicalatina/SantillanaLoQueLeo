@@ -147,7 +147,7 @@
                                             @click="eventShowIframeBook( bookSelect )"
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
                                     </div>
-                                    <div class="col-12 mt-4 mb-2">
+                                    <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
                                         <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
                                         <div class="text-right">
@@ -301,14 +301,7 @@
 </template>
 
 <script>
-    import { Splide, SplideSlide } from '@splidejs/vue-splide';
-    import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-
     export default {
-        components: {
-            Splide,
-            SplideSlide,
-        },
         data() {
             return {
                 //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
@@ -528,7 +521,7 @@
     /* STAR: estilos para libros */
     .class-position {
         position: absolute;
-        border: 1px solid red;
+        //border: 1px solid red;
         cursor: pointer;
     }
 

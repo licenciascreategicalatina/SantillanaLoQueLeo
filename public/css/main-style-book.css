@@ -43,3 +43,7 @@ button#btn-login-book {
     font-size: 1rem;
     font-weight: 500;
 }
+
+.pace .pace-progress {
+    background: #E54029;
+}

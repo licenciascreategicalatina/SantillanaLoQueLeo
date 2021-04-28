@@ -8,7 +8,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Books') }}</title>
-    {{-- <link rel="shortcut icon" type="image/x-icon" href="/image/favi.png"> --}}
     <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/app-assets/css/vendors.min.css">

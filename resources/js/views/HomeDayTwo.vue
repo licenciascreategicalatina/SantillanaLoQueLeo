@@ -148,9 +148,9 @@
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
                                     </div>
 
-                                    <div class="col-12 mt-4 mb-2">
+                                    <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ bookSelect.description }}</p>
+                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -169,12 +169,14 @@
                                 <img src="/image/book-image.gif" alt="image gif">
                             </div>
 
-                            <div v-if="openPDF" @click="closeIframeBook" id="close-pdf-read"
-                                class="">
-                                <span class="close-pdf">X</span>
-                            </div>
-                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read"
-                                class="">
+                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read">
+                                <div id="close-view-pdf">
+                                    <svg id="icon-view-book" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+
                                 <!-- <iframe :src="urlBook + '#toolbar=0'" sin opciones -->
                                 <embed :src="urlBook"
                                     type="application/pdf"
@@ -191,7 +193,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-two">
-                        <div class="vertical-center">
+                        <div class="vertical-center-video">
 
                             <div id="content-agenda-book">
                                 <vs-button @click="agendaBook=!agendaBook">
@@ -249,8 +251,6 @@
                                                 <span>Conferencia magistral <br>Eduardo Escallón</span>
                                             </div>
                                             <div class="col-4 text-center">
-                                                <h4>7:30</h4>
-                                                <span>Cierre</span>
                                             </div>
                                         </div>
                                     </div>
@@ -277,14 +277,7 @@
 </template>
 
 <script>
-    import { Splide, SplideSlide } from '@splidejs/vue-splide';
-    import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-
     export default {
-        components: {
-            Splide,
-            SplideSlide,
-        },
         data() {
             return {
                 //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
@@ -323,7 +316,9 @@
                 this.openPDF = !this.openPDF;
                 this.heightIframeBook = false
             },
-
+            truncate( text ) {
+                return text.length > 350 ? text.slice(0, 350) + '...' : text;
+            }
         },
         created() {
             /* Lista de libros */
@@ -471,13 +466,17 @@
 <style scoped lang="scss">
 
     .main-view {
-        background-image: url("/image/background-day-two.jpg");
+        //background-image: url("/image/background-day-two.jpg");
+        background-image: url("/image/imgbackground/primaria.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
     }
 
+    .main-background-book {
+        background-image: url("/image/imgbackground/main-background.png");
+    }
 
     /* Style content first iframe */
     .view-iframe-one {
@@ -494,13 +493,14 @@
     .class-position {
         position: absolute;
         //border: 1px solid red;
+        cursor: pointer;
     }
 
     div#book-1 {
-        top: 19.5%;
-        left: 4.6%;
-        height: 8.5%;
-        width: 8.5%;
+        top: 18%;
+        left: 4%;
+        height: 10%;
+        width: 9%;
     }
     div#book-2 {
         top: 28.6%;
@@ -512,49 +512,49 @@
         top: 17%;
         left: 46%;
         height: 8.5%;
-        width: 6.6%;
+        width: 7%;
     }
     div#book-4 {
         top: 25.7%;
         left: 46%;
         height: 8%;
-        width: 6.6%;
+        width: 7%;
     }
     div#book-5 {
         top: 34.5%;
         left: 46%;
         height: 8.5%;
-        width: 6.6%;
-    }
-    div#book-6 {
-        top: 45%;
-        left: 9.3%;
-        height: 11%;
-        width: 7.9%;
-    }
-    div#book-7 {
-        top: 45.3%;
-        left: 20.2%;
-        height: 10.2%;
-        width: 7.8%;
-    }
-    div#book-8 {
-        top: 47%;
-        left: 31.2%;
-        height: 8.4%;
         width: 7%;
     }
+    div#book-6 {
+        top: 44%;
+        left: 9%;
+        height: 12%;
+        width: 9%;
+    }
+    div#book-7 {
+        top: 44%;
+        left: 20%;
+        height: 12%;
+        width: 9%;
+    }
+    div#book-8 {
+        top: 46%;
+        left: 31%;
+        height: 10%;
+        width: 8%;
+    }
     div#book-9 {
-        top: 47.5%;
-        left: 40.6%;
-        height: 8%;
-        width: 6.6%;
+        top: 46%;
+        left: 40%;
+        height: 10%;
+        width: 8%;
     }
     div#book-10 {
-        top: 47%;
-        left: 49.4%;
-        height: 8.4%;
-        width: 6.5%;
+        top: 46%;
+        left: 49%;
+        height: 10%;
+        width: 7%;
     }
     div#book-11 {
         top: 59.4%;
@@ -597,7 +597,7 @@
 
     div#content-info-book {
         background: #EBEBEB;
-        margin: 0 6%;
+        margin: 0 6% 0 0;
     }
     .header-info-book {
         background: #7B592F;
@@ -616,6 +616,7 @@
     img#img-info-book {
         width: 60%;
         cursor: pointer;
+        max-height: 350px;
     }
     #btn-info-book {
         padding: 0.25rem 1rem;
@@ -635,6 +636,15 @@
     }
 
     /* Read PDF */
+    div#close-view-pdf {
+        background: #9f793d;
+        padding: 0.4rem;
+        text-align: right;
+        cursor: pointer;
+    }
+    svg#icon-view-book {
+        color: #fff;
+    }
     #close-pdf-read {
         position: absolute;
         background: rgb(0 0 0 / 46%);
@@ -649,7 +659,7 @@
     }
     #pdf-read {
         position: absolute;
-        width: 100%;
+        width: 92%;
         height: 100%;
         top: 15px;
     }
@@ -668,9 +678,19 @@
     .vertical-center {
         margin: 0;
         padding: 1rem;
-        width: 100%;
+        width: 90%;
         position: absolute;
         top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .vertical-center-video {
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        position: absolute;
+        top: 35%;
+        left: -20%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }

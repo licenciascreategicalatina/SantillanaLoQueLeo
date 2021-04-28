@@ -8588,9 +8588,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/vue-splide */ "./node_modules/@splidejs/vue-splide/src/js/index.js");
-/* harmony import */ var _splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @splidejs/splide/dist/css/themes/splide-default.min.css */ "./node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css");
-/* harmony import */ var _splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -8893,13 +8890,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Splide: _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__.Splide,
-    SplideSlide: _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__.SplideSlide
-  },
   data: function data() {
     return {
       //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
@@ -9568,9 +9559,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @splidejs/vue-splide */ "./node_modules/@splidejs/vue-splide/src/js/index.js");
-/* harmony import */ var _splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @splidejs/splide/dist/css/themes/splide-default.min.css */ "./node_modules/@splidejs/splide/dist/css/themes/splide-default.min.css");
-/* harmony import */ var _splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_splidejs_splide_dist_css_themes_splide_default_min_css__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -9849,13 +9837,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  components: {
-    Splide: _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__.Splide,
-    SplideSlide: _splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_0__.SplideSlide
-  },
   data: function data() {
     return {
       //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
@@ -9894,6 +9876,9 @@ __webpack_require__.r(__webpack_exports__);
     closeIframeBook: function closeIframeBook() {
       this.openPDF = !this.openPDF;
       this.heightIframeBook = false;
+    },
+    truncate: function truncate(text) {
+      return text.length > 350 ? text.slice(0, 350) + '...' : text;
     }
   },
   created: function created() {
@@ -10325,18 +10310,6 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.use((vuesax__WEBPACK_IMPORTED_MODULE_0_
 
 
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(_splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_3__.default);
-/* filter */
-
-var filter = function filter(text, length, clamp) {
-  /* clamp = clamp || '...';
-  var node = document.createElement('div');
-  node.innerHTML = text;
-  var content = node.textContent;
-  return content.length > length ? content.slice(0, length) + clamp : content; */
-  return text.slice(0, length) + (length < text.length ? clamp || '...' : '');
-};
-
-vue__WEBPACK_IMPORTED_MODULE_2__.default.filter('truncate', filter);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -14917,7 +14890,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/preescolar.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n  border: 1px solid red;\n  cursor: pointer;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 9%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 18%;\n  left: 46%;\n  height: 7%;\n  width: 6.5%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 9%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 45%;\n  left: 9%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 45%;\n  left: 20%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 40%;\n  height: 9%;\n  width: 8%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-d1af4670] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-d1af4670] {\n  color: #fff;\n}\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\n.color-button-book[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\na#pdf-download[data-v-d1af4670] {\n  color: #212529;\n}\na#pdf-download[data-v-d1af4670]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/preescolar.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 9%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 18%;\n  left: 46%;\n  height: 7%;\n  width: 6.5%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 9%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 45%;\n  left: 9%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 45%;\n  left: 20%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 40%;\n  height: 9%;\n  width: 8%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-d1af4670] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-d1af4670] {\n  color: #fff;\n}\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\n.color-button-book[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\na#pdf-download[data-v-d1af4670] {\n  color: #212529;\n}\na#pdf-download[data-v-d1af4670]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14965,7 +14938,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/background-day-two.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.6%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 45%;\n  left: 9.3%;\n  height: 11%;\n  width: 7.9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 45.3%;\n  left: 20.2%;\n  height: 10.2%;\n  width: 7.8%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 31.2%;\n  height: 8.4%;\n  width: 7%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 47.5%;\n  left: 40.6%;\n  height: 8%;\n  width: 6.6%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.4%;\n  width: 6.5%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: 60%;\n  cursor: pointer;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\na#pdf-download[data-v-a0dfe4a4] {\n  color: #212529;\n}\na#pdf-download[data-v-a0dfe4a4]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-a0dfe4a4] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-a0dfe4a4] {\n    padding: 0.8rem;\n}\n.text-title[data-v-a0dfe4a4] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-a0dfe4a4] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n    top: 0px;\n}\n.close-pdf[data-v-a0dfe4a4] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-a0dfe4a4] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/primaria.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 18%;\n  left: 4%;\n  height: 10%;\n  width: 9%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 9%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 20%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 40%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-a0dfe4a4] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-a0dfe4a4] {\n  color: #fff;\n}\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\na#pdf-download[data-v-a0dfe4a4] {\n  color: #212529;\n}\na#pdf-download[data-v-a0dfe4a4]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-a0dfe4a4] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-a0dfe4a4] {\n    padding: 0.8rem;\n}\n.text-title[data-v-a0dfe4a4] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-a0dfe4a4] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n    top: 0px;\n}\n.close-pdf[data-v-a0dfe4a4] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-a0dfe4a4] {\n    max-height: 350px !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48239,7 +48212,7 @@ var render = function() {
                               })
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-12 mt-4 mb-2" }, [
+                            _c("div", { staticClass: "col-12 mt-4" }, [
                               _c("h3", { staticClass: "text-center" }, [
                                 _vm._v(_vm._s(_vm.bookSelect.title))
                               ]),
@@ -50294,13 +50267,17 @@ var render = function() {
                               })
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticClass: "col-12 mt-4 mb-2" }, [
+                            _c("div", { staticClass: "col-12 mt-4" }, [
                               _c("h3", { staticClass: "text-center" }, [
                                 _vm._v(_vm._s(_vm.bookSelect.title))
                               ]),
                               _vm._v(" "),
                               _c("p", { staticClass: "text-justify" }, [
-                                _vm._v(_vm._s(_vm.bookSelect.description))
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.truncate(_vm.bookSelect.description)
+                                  )
+                                )
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "text-right" }, [
@@ -50356,25 +50333,42 @@ var render = function() {
                     ? _c(
                         "div",
                         {
-                          attrs: { id: "close-pdf-read" },
-                          on: { click: _vm.closeIframeBook }
-                        },
-                        [
-                          _c("span", { staticClass: "close-pdf" }, [
-                            _vm._v("X")
-                          ])
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.openPDF
-                    ? _c(
-                        "div",
-                        {
                           attrs: { id: "pdf-read" },
                           on: { click: _vm.closeIframeBook }
                         },
                         [
+                          _c("div", { attrs: { id: "close-view-pdf" } }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-x-circle",
+                                attrs: {
+                                  id: "icon-view-book",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "30",
+                                  height: "30",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
                           _c("embed", {
                             attrs: {
                               src: _vm.urlBook,
@@ -50395,7 +50389,7 @@ var render = function() {
             _c("div", { staticClass: "view-iframe-two" }, [
               _c(
                 "div",
-                { staticClass: "vertical-center" },
+                { staticClass: "vertical-center-video" },
                 [
                   _c(
                     "div",
@@ -50607,15 +50601,7 @@ var render = function() {
                                   ]
                                 ),
                                 _vm._v(" "),
-                                _c(
-                                  "div",
-                                  { staticClass: "col-4 text-center" },
-                                  [
-                                    _c("h4", [_vm._v("7:30")]),
-                                    _vm._v(" "),
-                                    _c("span", [_vm._v("Cierre")])
-                                  ]
-                                )
+                                _c("div", { staticClass: "col-4 text-center" })
                               ])
                             ]
                           )
