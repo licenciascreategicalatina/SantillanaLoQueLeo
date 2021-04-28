@@ -61,6 +61,7 @@
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <div class="text-center mb-3">
                                     <img width="180" height="60" src="/image/logo.png" alt="Logo santillana" style="border-radius: 1rem">
+                                    {{-- <img src="/image/loqueleo-logo.png" alt="Logo santillana"> --}}
                                 </div>
 
                                 <div class="card border-login-book">

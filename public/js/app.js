@@ -8888,6 +8888,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -48653,7 +48657,9 @@ var render = function() {
                         })
                       ])
                     ]
-                  )
+                  ),
+                  _vm._v(" "),
+                  _vm._m(0)
                 ],
                 1
               )
@@ -48664,7 +48670,28 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "chat" } }, [
+      _c("iframe", {
+        attrs: {
+          src: "https://www6.cbox.ws/box/?boxid=861776&boxtag=9fCpoB",
+          width: "100%",
+          height: "450",
+          allowtransparency: "yes",
+          allow: "autoplay",
+          frameborder: "0",
+          marginheight: "0",
+          marginwidth: "0",
+          scrolling: "auto"
+        }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
