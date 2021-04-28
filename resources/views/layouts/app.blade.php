@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Books') }}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/image/favi.png">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="/image/favi.png"> --}}
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/app-assets/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -24,7 +25,7 @@
 
     @stack('styles')
 </head>
-<body>
+<body style="font-family: 'pluto';">
     <div id="app">
         <nav id="main-nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -40,7 +41,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link nav-link-book" href="#">Programa de formación a profesores<span class="sr-only">(current)</span></a>
+                            <a class="nav-link nav-link-book" href="{{ route('programa') }}">Programa de formación a profesores</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>

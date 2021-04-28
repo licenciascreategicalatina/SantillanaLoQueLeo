@@ -13,6 +13,11 @@ class LandingController extends Controller
         return view('home-day-one');
     }
 
+    public function indexPrograma()
+    {
+        return view('programa');
+    }
+
     public function indexOne()
     {
         return view('home-day-one');

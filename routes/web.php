@@ -20,6 +20,10 @@ Route::middleware(['auth'])->group( function() {
         [ LandingController::class, 'index' ]
     )->name('landing'); */
     Route::get(
+        '/programa',
+        [ LandingController::class, 'indexPrograma' ]
+    )->name('programa');
+    Route::get(
         '/preescolar',
         [ LandingController::class, 'indexOne' ]
     )->name('day-one');

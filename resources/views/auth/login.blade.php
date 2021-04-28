@@ -10,7 +10,8 @@
     <meta name="keywords" content="books">
     <meta name="author" content="aicode">
     <title>{{ config('app.name', 'login') }}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="/image/favi.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/image/favicon.png">
+    {{-- <link rel="shortcut icon" type="image/x-icon" href="/image/favi.png"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
@@ -36,7 +37,7 @@
 
 <body class="vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="blank-page">
 
-    <div class="app-content content ">
+    <div class="app-content content " style="font-family: 'pluto';">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
