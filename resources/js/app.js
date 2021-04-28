@@ -23,6 +23,17 @@ import VueSplide from '@splidejs/vue-splide';
 
 Vue.use( VueSplide );
 
+/* filter */
+var filter = function(text, length, clamp){
+    /* clamp = clamp || '...';
+    var node = document.createElement('div');
+    node.innerHTML = text;
+    var content = node.textContent;
+    return content.length > length ? content.slice(0, length) + clamp : content; */
+    return text.slice(0, length) + (length < text.length ? clamp || '...' : '');
+};
+Vue.filter('truncate', filter);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

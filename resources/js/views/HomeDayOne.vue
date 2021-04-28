@@ -120,6 +120,14 @@
                                 <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
                             </div>
                         </div>
+                        <div class="class-position" id="book-15"
+                            @click="clickShowViewInfoBook( listBooks[14] )"
+                            @mouseover="listBooks[14].eventHover = true"
+                            @mouseleave="listBooks[14].eventHover = false">
+                            <div v-if="listBooks[14].eventHover" class="content-img-hover-book">
+                                <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
+                            </div>
+                        </div>
                         </div>
                         <!-- END: posición de los libros -->
 
@@ -141,7 +149,7 @@
                                     </div>
                                     <div class="col-12 mt-4 mb-2">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ bookSelect.description }}</p>
+                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -160,12 +168,14 @@
                                 <img src="/image/book-image.gif" alt="image gif">
                             </div>
 
-                            <div v-if="openPDF" @click="closeIframeBook" id="close-pdf-read"
-                                class="">
-                                <span class="close-pdf">X</span>
-                            </div>
-                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read"
-                                class="">
+                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read">
+                                <div id="close-view-pdf">
+                                    <svg id="icon-view-book" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+
                                 <!-- <iframe :src="urlBook + '#toolbar=0'" sin opciones -->
                                 <embed :src="urlBook"
                                     type="application/pdf"
@@ -337,7 +347,9 @@
                 this.openPDF = !this.openPDF;
                 this.heightIframeBook = false
             },
-
+            truncate( text ) {
+                return text.length > 350 ? text.slice(0, 350) + '...' : text;
+            }
         },
         created() {
             /* setTimeout( () => {
@@ -366,6 +378,15 @@
                 },
                 {
                     id: 3,
+                    title: 'Ahora no, Bernardo',
+                    description: 'Se retoma la típica frase que todos los padres dicen a los niños, para construir una historia en la que el humor y el absurdo conducen a un inesperado desenlace. Hará sonrojar a los adultos y dibujará una sonrisa en los pequeños.',
+                    alt: 'Ahora no, Bernardo',
+                    url: '/book/diauno/ahora-no-bernardo.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/ahora-no-bernardo.jpg",
+                    eventHover: false,
+                },
+                {
+                    id: 4,
                     title: 'Nomi y sus queridos animales',
                     description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar.',
                     alt: 'Nomi y sus queridos animales',
@@ -374,7 +395,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 4,
+                    id: 5,
                     title: 'Los matices de matisse',
                     description: 'Si fueras un niño llamado Henri Matisse y vivieras en una sombría ciudad en el norte de Francia, ¿cómo sería tu vida? ¿Estaría llena de colores y objetos hermosos? ¿Plena de líneas y figuras que danzan? Esta delicada exploración de la infancia del pintor Henri Matisse, muestra sutilmente que la creatividad se puede alimentar y que la genialidad puede dispararse a partir de los detalles más inesperados, como la imagen de un frutero o la rica textura de una tela.',
                     alt: 'Los matices de matisse',
@@ -383,7 +404,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 5,
+                    id: 6,
                     title: 'Tobi y los ancianos',
                     description: 'Tobi piensa que los ancianos son personas muy aburridas. Un día, durante el verano, cuando todos sus amigos se marchan de vacaciones y él está jugando solo, su pelota cae justo donde está sentado el señor Cabra. Este encuentro le permite a Tobi conocer emocionantes e increíbles historias que vivieron algunos ancianos de su vecindario cuando eran jóvenes. Desde ese momento, su opinión acerca de las personas mayores cambia para siempre.',
                     alt: 'Tobi y los ancianos',
@@ -392,7 +413,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 6,
+                    id: 7,
                     title: 'Benjamino',
                     description: 'Había una vez una madre que tenía un hijo tan pequeño que podía vivir dentro de una cáscara de nuez. Lo llamaban Benjamino. Un día se encontró con el lobo y demostró cuán astuto es.',
                     alt: 'Benjamino',
@@ -401,7 +422,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 7,
+                    id: 8,
                     title: 'El libro que canta',
                     description: 'Desde antes de nacer, la poesía hace parte de la vida. En los primeros arrullos y en todos los juegos, rimas y rondas que escribimos en el cuerpo de un bebé, está presente una herencia de palabras, ritmo y afecto que será su primer texto de lectura y que quedará escrito en su memoria poética. El libro que canta acompaña a toda la familia durante ese tiempo maravilloso de la primera infancia. Sus capítulos trazan una ruta que comienza en el vientre materno y que va creciendo con el bebé.',
                     alt: 'El libro que canta',
@@ -410,7 +431,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 8,
+                    id: 9,
                     title: 'Escondidas',
                     description: 'Un libro de imágenes para crear una historia diferente en cada lectura. El libro cero del bebé para leer, acariciar y morder.',
                     alt: 'Escondidas',
@@ -419,7 +440,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 9,
+                    id: 10,
                     title: 'El abuelo armadillo',
                     description: 'El abuelo armadillo sale de excursión con sus nietos. En el camino son sorprendidos por el cazador y sus perros. ¿Podrán escapar de su furia y sus balas? Será una misión del abuelo enseñarles a sus nietos sobre sus talentos naturales para protegerse y escapar a salvo para llegar a casa.',
                     alt: 'El abuelo armadillo',
@@ -428,7 +449,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 10,
+                    id: 11,
                     title: 'El cuento de hadas de Harold',
                     description: 'Una noche en vela, el pequeño Harold usa su crayola morada de nuevo para desatar su imaginación. Esta vez, Harold creará su propio cuento de hadas y vivirá muchas peripecias hasta regresar, en su alfombra mágica, a la silla de su mamá, para pedirle que le cuente un cuento antes de volver a la cama.',
                     alt: 'El cuento de hadas de Harold',
@@ -437,7 +458,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 11,
+                    id: 12,
                     title: 'Boris y las manzanas',
                     description: 'Boris es un cerdito que adora las manzanas, tiene amigos, le gusta explorar e ir al colegio, pero tiene un problema: no sabe contar. Tras varias decepciones, lo logra con la ayuda de su amiga Gladis, quien le sugiere intentar con manzanas. Así, Boris se acerca a sus debilidades desde sus gustos.',
                     alt: 'Boris y las manzanas',
@@ -446,7 +467,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 12,
+                    id: 13,
                     title: 'Un dinosaurio es',
                     description: 'Los dinosaurios son seres fascinantes. Se caracterizan por tener enormes dientes, colas poderosas, apetito voraz… a veces se parecen incluso a, ¡un niño!',
                     alt: 'Un dinosaurio es',
@@ -455,7 +476,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 13,
+                    id: 14,
                     title: 'Los tres bandidos',
                     description: 'Una historia singular. Tres bandidos salen en busca de tesoros, pero ¡oh, sorpresa! Sin pensarlo, capturan un tesoro que les cambia la vida.',
                     alt: 'Los tres bandidos',
@@ -464,7 +485,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 14,
+                    id: 15,
                     title: 'Cuentos al revés',
                     description: 'Érase una vez un pobre lobillo que llevaba la comida de su abuela en un paquetillo. Tropezó con la temible Caperucita Roja, imaginen ustedes todo lo que pasó después. Junto a Gianni Rodari, viajemos a un mundo de fantasía, en donde los cuentos suceden al revés.',
                     alt: 'Cuentos al revés',
@@ -480,7 +501,8 @@
 <style scoped lang="scss">
 
     .main-view {
-        background-image: url("/image/background-day-one.jpg");
+        background-image: url("/image/imgbackground/preescolar.jpg");
+        //background-image: url("/image/background-day-one.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -488,7 +510,8 @@
     }
 
     .main-background-book {
-        background-image: url("/image/background-initial.jpg");
+        //background-image: url("/image/background-initial.jpg");
+        background-image: url("/image/imgbackground/main-background.png");
     }
 
     /* Style content first iframe */
@@ -505,15 +528,15 @@
     /* STAR: estilos para libros */
     .class-position {
         position: absolute;
-        //border: 1px solid red;
+        border: 1px solid red;
         cursor: pointer;
     }
 
     div#book-1 {
-        top: 19.5%;
+        top: 19%;
         left: 4.6%;
         height: 8.5%;
-        width: 8.5%;
+        width: 9%;
     }
     div#book-2 {
         top: 28.6%;
@@ -522,77 +545,84 @@
         width: 9%;
     }
     div#book-3 {
+        top: 18%;
+        left: 46%;
+        height: 7%;
+        width: 6.5%;
+    }
+    div#book-4 {
         top: 25.3%;
         left: 46%;
         height: 8.5%;
-        width: 6.3%;
-    }
-    div#book-4 {
-        top: 34.7%;
-        left: 46%;
-        height: 8%;
-        width: 6.4%;
+        width: 7%;
     }
     div#book-5 {
-        top: 46%;
-        left: 10.5%;
-        height: 10%;
+        top: 34.7%;
+        left: 46%;
+        height: 9%;
         width: 7%;
     }
     div#book-6 {
-        top: 46.5%;
-        left: 20.5%;
-        height: 9%;
-        width: 7.6%;
+        top: 45%;
+        left: 9%;
+        height: 11%;
+        width: 9%;
     }
     div#book-7 {
-        top: 47.3%;
-        left: 31.2%;
-        height: 8%;
-        width: 7%;
+        top: 45%;
+        left: 20%;
+        height: 11%;
+        width: 9%;
     }
     div#book-8 {
-        top: 47.8%;
-        left: 40.6%;
-        height: 7.6%;
-        width: 6.5%;
+        top: 46%;
+        left: 31%;
+        height: 10%;
+        width: 8%;
     }
     div#book-9 {
         top: 47%;
-        left: 49.4%;
-        height: 8.5%;
-        width: 6.3%;
+        left: 40%;
+        height: 9%;
+        width: 8%;
     }
     div#book-10 {
+        top: 46%;
+        left: 49%;
+        height: 10%;
+        width: 7%;
+    }
+    div#book-11 {
         top: 60%;
         left: 41.4%;
         height: 11.2%;
         width: 8.5%;
     }
-    div#book-11 {
+    div#book-12 {
         top: 60.2%;
         left: 54.77%;
         height: 10.7%;
         width: 8.5%;
     }
-    div#book-12 {
+    div#book-13 {
         top: 60.2%;
         left: 69.77%;
         height: 10.3%;
         width: 8.5%;
     }
-    div#book-13 {
+    div#book-14 {
         top: 63.5%;
         left: 47.6%;
         height: 11.7%;
         width: 8.5%;
     }
-    div#book-14 {
+    div#book-15 {
         top: 63%;
         left: 62.3%;
         height: 11.2%;
         width: 8.5%;
     }
+
     /* END: estilos para libros */
 
     .content-img-hover-book {
@@ -604,7 +634,7 @@
 
     div#content-info-book {
         background: #EBEBEB;
-        margin: 0 6%;
+        margin: 0 6% 0 0;
     }
     .header-info-book {
         background: #7B592F;
@@ -622,8 +652,8 @@
     }
     img#img-info-book {
         width: 60%;
-        /* margin: 20% 0 5% 0; */
         cursor: pointer;
+        max-height: 350px;
     }
     #btn-info-book {
         padding: 0.25rem 1rem;
@@ -643,6 +673,15 @@
     }
 
     /* Read PDF */
+    div#close-view-pdf {
+        background: #9f793d;
+        padding: 0.4rem;
+        text-align: right;
+        cursor: pointer;
+    }
+    svg#icon-view-book {
+        color: #fff;
+    }
     #close-pdf-read {
         position: absolute;
         background: rgb(0 0 0 / 46%);
@@ -657,7 +696,7 @@
     }
     #pdf-read {
         position: absolute;
-        width: 100%;
+        width: 92%;
         height: 100%;
         top: 15px;
     }
@@ -676,7 +715,7 @@
     .vertical-center {
         margin: 0;
         padding: 1rem;
-        width: 100%;
+        width: 90%;
         position: absolute;
         top: 50%;
         -ms-transform: translateY(-50%);
@@ -688,6 +727,7 @@
         width: 100%;
         position: absolute;
         top: 35%;
+        left: -20%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }

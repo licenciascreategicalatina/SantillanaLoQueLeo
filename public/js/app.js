@@ -8883,6 +8883,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -8928,6 +8938,9 @@ __webpack_require__.r(__webpack_exports__);
     closeIframeBook: function closeIframeBook() {
       this.openPDF = !this.openPDF;
       this.heightIframeBook = false;
+    },
+    truncate: function truncate(text) {
+      return text.length > 350 ? text.slice(0, 350) + '...' : text;
     }
   },
   created: function created() {
@@ -8954,6 +8967,14 @@ __webpack_require__.r(__webpack_exports__);
       eventHover: false
     }, {
       id: 3,
+      title: 'Ahora no, Bernardo',
+      description: 'Se retoma la típica frase que todos los padres dicen a los niños, para construir una historia en la que el humor y el absurdo conducen a un inesperado desenlace. Hará sonrojar a los adultos y dibujará una sonrisa en los pequeños.',
+      alt: 'Ahora no, Bernardo',
+      url: '/book/diauno/ahora-no-bernardo.pdf',
+      imgCaratula: "/image/imgbooks/diauno/ahora-no-bernardo.jpg",
+      eventHover: false
+    }, {
+      id: 4,
       title: 'Nomi y sus queridos animales',
       description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar.',
       alt: 'Nomi y sus queridos animales',
@@ -8961,7 +8982,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/nomi-y-sus-queridos-animales.jpg",
       eventHover: false
     }, {
-      id: 4,
+      id: 5,
       title: 'Los matices de matisse',
       description: 'Si fueras un niño llamado Henri Matisse y vivieras en una sombría ciudad en el norte de Francia, ¿cómo sería tu vida? ¿Estaría llena de colores y objetos hermosos? ¿Plena de líneas y figuras que danzan? Esta delicada exploración de la infancia del pintor Henri Matisse, muestra sutilmente que la creatividad se puede alimentar y que la genialidad puede dispararse a partir de los detalles más inesperados, como la imagen de un frutero o la rica textura de una tela.',
       alt: 'Los matices de matisse',
@@ -8969,7 +8990,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/los-matisse.jpg",
       eventHover: false
     }, {
-      id: 5,
+      id: 6,
       title: 'Tobi y los ancianos',
       description: 'Tobi piensa que los ancianos son personas muy aburridas. Un día, durante el verano, cuando todos sus amigos se marchan de vacaciones y él está jugando solo, su pelota cae justo donde está sentado el señor Cabra. Este encuentro le permite a Tobi conocer emocionantes e increíbles historias que vivieron algunos ancianos de su vecindario cuando eran jóvenes. Desde ese momento, su opinión acerca de las personas mayores cambia para siempre.',
       alt: 'Tobi y los ancianos',
@@ -8977,7 +8998,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/tobi-y-los-ancianos.jpg",
       eventHover: false
     }, {
-      id: 6,
+      id: 7,
       title: 'Benjamino',
       description: 'Había una vez una madre que tenía un hijo tan pequeño que podía vivir dentro de una cáscara de nuez. Lo llamaban Benjamino. Un día se encontró con el lobo y demostró cuán astuto es.',
       alt: 'Benjamino',
@@ -8985,7 +9006,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/benjamino.jpg",
       eventHover: false
     }, {
-      id: 7,
+      id: 8,
       title: 'El libro que canta',
       description: 'Desde antes de nacer, la poesía hace parte de la vida. En los primeros arrullos y en todos los juegos, rimas y rondas que escribimos en el cuerpo de un bebé, está presente una herencia de palabras, ritmo y afecto que será su primer texto de lectura y que quedará escrito en su memoria poética. El libro que canta acompaña a toda la familia durante ese tiempo maravilloso de la primera infancia. Sus capítulos trazan una ruta que comienza en el vientre materno y que va creciendo con el bebé.',
       alt: 'El libro que canta',
@@ -8993,7 +9014,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/el-libro-que-canta.jpg",
       eventHover: false
     }, {
-      id: 8,
+      id: 9,
       title: 'Escondidas',
       description: 'Un libro de imágenes para crear una historia diferente en cada lectura. El libro cero del bebé para leer, acariciar y morder.',
       alt: 'Escondidas',
@@ -9001,7 +9022,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/escondidas.jpg",
       eventHover: false
     }, {
-      id: 9,
+      id: 10,
       title: 'El abuelo armadillo',
       description: 'El abuelo armadillo sale de excursión con sus nietos. En el camino son sorprendidos por el cazador y sus perros. ¿Podrán escapar de su furia y sus balas? Será una misión del abuelo enseñarles a sus nietos sobre sus talentos naturales para protegerse y escapar a salvo para llegar a casa.',
       alt: 'El abuelo armadillo',
@@ -9009,7 +9030,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/el-abuelo-armadillo.jpg",
       eventHover: false
     }, {
-      id: 10,
+      id: 11,
       title: 'El cuento de hadas de Harold',
       description: 'Una noche en vela, el pequeño Harold usa su crayola morada de nuevo para desatar su imaginación. Esta vez, Harold creará su propio cuento de hadas y vivirá muchas peripecias hasta regresar, en su alfombra mágica, a la silla de su mamá, para pedirle que le cuente un cuento antes de volver a la cama.',
       alt: 'El cuento de hadas de Harold',
@@ -9017,7 +9038,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/cuento-de-hadas-de-harold.jpg",
       eventHover: false
     }, {
-      id: 11,
+      id: 12,
       title: 'Boris y las manzanas',
       description: 'Boris es un cerdito que adora las manzanas, tiene amigos, le gusta explorar e ir al colegio, pero tiene un problema: no sabe contar. Tras varias decepciones, lo logra con la ayuda de su amiga Gladis, quien le sugiere intentar con manzanas. Así, Boris se acerca a sus debilidades desde sus gustos.',
       alt: 'Boris y las manzanas',
@@ -9025,7 +9046,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/boris-y-las-manzanas.jpg",
       eventHover: false
     }, {
-      id: 12,
+      id: 13,
       title: 'Un dinosaurio es',
       description: 'Los dinosaurios son seres fascinantes. Se caracterizan por tener enormes dientes, colas poderosas, apetito voraz… a veces se parecen incluso a, ¡un niño!',
       alt: 'Un dinosaurio es',
@@ -9033,7 +9054,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/un-dinosaurio-es.jpg",
       eventHover: false
     }, {
-      id: 13,
+      id: 14,
       title: 'Los tres bandidos',
       description: 'Una historia singular. Tres bandidos salen en busca de tesoros, pero ¡oh, sorpresa! Sin pensarlo, capturan un tesoro que les cambia la vida.',
       alt: 'Los tres bandidos',
@@ -9041,7 +9062,7 @@ __webpack_require__.r(__webpack_exports__);
       imgCaratula: "/image/imgbooks/diauno/los-tres-bandidos.jpg",
       eventHover: false
     }, {
-      id: 14,
+      id: 15,
       title: 'Cuentos al revés',
       description: 'Érase una vez un pobre lobillo que llevaba la comida de su abuela en un paquetillo. Tropezó con la temible Caperucita Roja, imaginen ustedes todo lo que pasó después. Junto a Gianni Rodari, viajemos a un mundo de fantasía, en donde los cuentos suceden al revés.',
       alt: 'Cuentos al revés',
@@ -10304,6 +10325,18 @@ vue__WEBPACK_IMPORTED_MODULE_2__.default.use((vuesax__WEBPACK_IMPORTED_MODULE_0_
 
 
 vue__WEBPACK_IMPORTED_MODULE_2__.default.use(_splidejs_vue_splide__WEBPACK_IMPORTED_MODULE_3__.default);
+/* filter */
+
+var filter = function filter(text, length, clamp) {
+  /* clamp = clamp || '...';
+  var node = document.createElement('div');
+  node.innerHTML = text;
+  var content = node.textContent;
+  return content.length > length ? content.slice(0, length) + clamp : content; */
+  return text.slice(0, length) + (length < text.length ? clamp || '...' : '');
+};
+
+vue__WEBPACK_IMPORTED_MODULE_2__.default.filter('truncate', filter);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -14884,7 +14917,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/background-day-one.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/background-initial.jpg\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19.5%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 8.5%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 8%;\n  width: 6.4%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 46%;\n  left: 10.5%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 46.5%;\n  left: 20.5%;\n  height: 9%;\n  width: 7.6%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 47.3%;\n  left: 31.2%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 47.8%;\n  left: 40.6%;\n  height: 7.6%;\n  width: 6.5%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 49.4%;\n  height: 8.5%;\n  width: 6.3%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6%;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 60%;\n  /* margin: 20% 0 5% 0; */\n  cursor: pointer;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\n.color-button-book[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\na#pdf-download[data-v-d1af4670] {\n  color: #212529;\n}\na#pdf-download[data-v-d1af4670]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".main-view[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/preescolar.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-d1af4670] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-d1af4670] {\n  height: 70%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-d1af4670] {\n  position: absolute;\n  border: 1px solid red;\n  cursor: pointer;\n}\ndiv#book-1[data-v-d1af4670] {\n  top: 19%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 9%;\n}\ndiv#book-2[data-v-d1af4670] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-d1af4670] {\n  top: 18%;\n  left: 46%;\n  height: 7%;\n  width: 6.5%;\n}\ndiv#book-4[data-v-d1af4670] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-5[data-v-d1af4670] {\n  top: 34.7%;\n  left: 46%;\n  height: 9%;\n  width: 7%;\n}\ndiv#book-6[data-v-d1af4670] {\n  top: 45%;\n  left: 9%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-7[data-v-d1af4670] {\n  top: 45%;\n  left: 20%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-8[data-v-d1af4670] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-d1af4670] {\n  top: 47%;\n  left: 40%;\n  height: 9%;\n  width: 8%;\n}\ndiv#book-10[data-v-d1af4670] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-d1af4670] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-d1af4670] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-d1af4670] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-d1af4670] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-d1af4670] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-d1af4670] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-d1af4670] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-d1af4670] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-d1af4670] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-d1af4670] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-d1af4670] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-d1af4670] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-d1af4670] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-d1af4670]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-d1af4670] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-d1af4670] {\n  color: #fff;\n}\n#close-pdf-read[data-v-d1af4670] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-d1af4670] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-d1af4670] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: 15px;\n}\ndiv#close-pdf-read[data-v-d1af4670]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-d1af4670] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-d1af4670] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-d1af4670] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-d1af4670] {\n  width: 100%;\n  height: 22rem;\n}\ndiv#content-background-img[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-d1af4670] {\n  margin: 0 0 0 75%;\n}\n.color-button-book[data-v-d1af4670] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-d1af4670] {\n  background: #9f793d;\n}\n#content-dialog-book[data-v-d1af4670] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-d1af4670] {\n  color: #fff;\n}\na#pdf-download[data-v-d1af4670] {\n  color: #212529;\n}\na#pdf-download[data-v-d1af4670]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-d1af4670] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-d1af4670] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-d1af4670] {\n    padding: 0.8rem;\n}\n.text-title[data-v-d1af4670] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-d1af4670] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-d1af4670] {\n    top: 0px;\n}\n.close-pdf[data-v-d1af4670] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-d1af4670] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-d1af4670] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-d1af4670] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-d1af4670] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-d1af4670] {\n    max-height: 350px !important;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48097,6 +48130,40 @@ var render = function() {
                         ])
                       : _vm._e()
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "class-position",
+                    attrs: { id: "book-15" },
+                    on: {
+                      click: function($event) {
+                        return _vm.clickShowViewInfoBook(_vm.listBooks[14])
+                      },
+                      mouseover: function($event) {
+                        _vm.listBooks[14].eventHover = true
+                      },
+                      mouseleave: function($event) {
+                        _vm.listBooks[14].eventHover = false
+                      }
+                    }
+                  },
+                  [
+                    _vm.listBooks[14].eventHover
+                      ? _c("div", { staticClass: "content-img-hover-book" }, [
+                           true
+                            ? _c("img", {
+                                staticClass: "img-hover-book",
+                                attrs: {
+                                  src: _vm.listBooks[14].imgCaratula,
+                                  alt: _vm.listBooks[14].alt
+                                }
+                              })
+                            : 0
+                        ])
+                      : _vm._e()
+                  ]
                 )
               ]),
               _vm._v(" "),
@@ -48178,7 +48245,11 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("p", { staticClass: "text-justify" }, [
-                                _vm._v(_vm._s(_vm.bookSelect.description))
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.truncate(_vm.bookSelect.description)
+                                  )
+                                )
                               ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "text-right" }, [
@@ -48234,25 +48305,42 @@ var render = function() {
                     ? _c(
                         "div",
                         {
-                          attrs: { id: "close-pdf-read" },
-                          on: { click: _vm.closeIframeBook }
-                        },
-                        [
-                          _c("span", { staticClass: "close-pdf" }, [
-                            _vm._v("X")
-                          ])
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.openPDF
-                    ? _c(
-                        "div",
-                        {
                           attrs: { id: "pdf-read" },
                           on: { click: _vm.closeIframeBook }
                         },
                         [
+                          _c("div", { attrs: { id: "close-view-pdf" } }, [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "bi bi-x-circle",
+                                attrs: {
+                                  id: "icon-view-book",
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  width: "30",
+                                  height: "30",
+                                  fill: "currentColor",
+                                  viewBox: "0 0 16 16"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
                           _c("embed", {
                             attrs: {
                               src: _vm.urlBook,
