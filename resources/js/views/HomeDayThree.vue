@@ -128,14 +128,6 @@
                                 <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
                             </div>
                         </div>
-                        <div class="class-position" id="book-16"
-                            @click="clickShowViewInfoBook( listBooks[15] )"
-                            @mouseover="listBooks[15].eventHover = true"
-                            @mouseleave="listBooks[15].eventHover = false">
-                            <div v-if="listBooks[15].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[15].imgCaratula" :alt="listBooks[15].alt">
-                            </div>
-                        </div>
                         </div>
                         <!-- END: posición de los libros -->
 
@@ -155,9 +147,9 @@
                                             @click="eventShowIframeBook( bookSelect )"
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
                                     </div>
-                                    <div class="col-12 mt-4 mb-2">
+                                    <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ bookSelect.description }}</p>
+                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -176,12 +168,14 @@
                                 <img src="/image/book-image.gif" alt="image gif">
                             </div>
 
-                            <div v-if="openPDF" @click="closeIframeBook" id="close-pdf-read"
-                                class="">
-                                <span class="close-pdf">X</span>
-                            </div>
-                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read"
-                                class="">
+                            <div v-if="openPDF" @click="closeIframeBook" id="pdf-read">
+                                <div id="close-view-pdf">
+                                    <svg id="icon-view-book" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+
                                 <!-- <iframe :src="urlBook + '#toolbar=0'" sin opciones -->
                                 <embed :src="urlBook"
                                     type="application/pdf"
@@ -198,7 +192,7 @@
 
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-two">
-                        <div class="vertical-center">
+                        <div class="vertical-center-video">
 
                             <div id="content-agenda-book">
                                 <vs-button @click="agendaBook=!agendaBook">
@@ -256,8 +250,6 @@
                                                 <span>Conferencia magistral <br>Eduardo Escallón</span>
                                             </div>
                                             <div class="col-4 text-center">
-                                                <h4>7:30</h4>
-                                                <span>Cierre</span>
                                             </div>
                                         </div>
                                     </div>
@@ -284,14 +276,7 @@
 </template>
 
 <script>
-    import { Splide, SplideSlide } from '@splidejs/vue-splide';
-    import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-
     export default {
-        components: {
-            Splide,
-            SplideSlide,
-        },
         data() {
             return {
                 //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
@@ -330,22 +315,15 @@
                 this.openPDF = !this.openPDF;
                 this.heightIframeBook = false
             },
-
+            truncate( text ) {
+                return text.length > 350 ? text.slice(0, 350) + '...' : text;
+            }
         },
         created() {
             /* Lista de libros */
             this.listBooks = [
                 {
                     id: 1,
-                    title: 'Temple Teyuna, el infierno verde',
-                    description: 'Desde pequeña, Temple ha tenido dos sueños: conocer a su padre y tener una gran aventura. Ahora, con 15 años, está a punto de cumplir ambos. Un viaje inesperado la llevará a reencontrarse con su padre y a internarse en la sierra colombiana para descubrir la ciudad Teyuna. Sin embargo, Temple comprenderá que cumplir sus deseos no es gratuito y que, en este caso, vivir una aventura implica arriesgar lo que ella más ama.',
-                    alt: 'Temple Teyuna, el infierno verde',
-                    url: '/book/diatres/temple.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/tapa-temple.jpg",
-                    eventHover: false,
-                },
-                {
-                    id: 2,
                     title: 'El juego de la nieve',
                     description: 'Está a punto de inaugurarse la Feria de Juegos de Zyl. Iván Dragó parece dispuesto a olvidar los enigmas de su pasado para concentrarse en su oficio de inventor de juegos. Pero se cruza en su camino lo inesperado: una filmación de pocos segundos en la que cree reconocer a su madre, en medio de un paisaje nevado. Para saber qué pasó realmente con sus padres, tendrá que enfrentarse con juguetes peligrosos, deberá pasar las exigentes pruebas de Spativo y seguir las huellas de Morodian. Ante Iván se abre la región del frío y el olvido: el juego de la nieve.',
                     alt: 'El juego de la nieve',
@@ -354,7 +332,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 3,
+                    id: 2,
                     title: 'Antología poética de la generación del 27',
                     description: 'Federico García Lorca, Carmen Conde, Luis Cernuda, Concha Méndez, Rafael Alberti, Elisabeth Mulder, Pedro Salinas… Los nombres que componen la llamada generación del 27 son esenciales para entender la historia de la poesía contemporánea. Hombres y mujeres que hicieron de la creación una forma de vida y que, en esta antología, hemos intentado acompañar desde sus primeros versos hasta sus últimas obras. Una selección que ofrece todas las claves para entender y disfrutar de su evolución literaria y que, además, devuelve al primer plano a las autoras del 27, otorgándoles el lugar y espacio que su indudable calidad merece.',
                     alt: 'Antología poética de la generación del 27',
@@ -363,7 +341,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 4,
+                    id: 3,
                     title: 'El canto del manatí',
                     description: 'Tanana y Tanene son dos gemelos hijos de la armonía, junto a Buinaria han crecido entre los ríos y han aprendido a ser parte del fluir de la naturaleza. Cuando Buinaria vuelve de un largo viaje la armonía del clan se rompe, los hermanos ya no quieren ser parte de un todo y deciden llevar la lucha por el amor de su amiga hasta las últimas consecuencias.',
                     alt: 'El canto del manatí',
@@ -372,7 +350,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 5,
+                    id: 4,
                     title: 'Puente a Terabitia',
                     description: 'Jess Aarons ha entrenado todo el verano para ser el corredor más rápido de quinto grado. Y casi lo logra, de no ser por la niña nueva, Leslie Burke, que lo rebasa. Pronto, los dos se hacen mejores amigos y pasan los días en el bosque detrás de la casa de Leslie, donde ambos inventan un reino encantado llamado Terabitia. Una mañana, Leslie decide ir sola a Terabitia y ocurre una tragedia. Sólo el amor de su familia y la fuerza que Leslie le ha dado permitirá que Jess pueda superar su pérdida.',
                     alt: 'Puente a Terabitia',
@@ -381,7 +359,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 6,
+                    id: 5,
                     title: 'La duenda',
                     description: '"La primera vez que la vimos éramos niños, aún". A partir de esa primera mirada de la Duenda, un ser de fuerza envolvente e inasible, se conjura el hechizo que será la perdición y el remedio del protagonista de esta historia. Evelio Rosero, con una prosa poética que no cesa de ofrecer poesía, consigue crear una obra cautivante.',
                     alt: 'La duenda',
@@ -390,7 +368,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 7,
+                    id: 6,
                     title: 'Las siete vidas de Agustín Codazzi',
                     description: 'Agustín Codazzi recorrió el mundo y fue tantos seres en una persona que vivió siete vidas. Cada una de estas corresponde a una edad, a un lugar, a una faceta suya. Hay que conocerlas todas para comprender por qué ese anónimo soldado italiano, aventurero y mercenario, se volvió libertador, geógrafo y cartógrafo de Venezuela y de la Nueva Granada, y para concluir que fue él quien verdaderamente descubrió el continente. En un tono desenfadado y familiar, Beatriz Caballero narra las peripecias de Codazzi y consigue transmitirle al lector la apasionante aventura que fue su vida. Este libro relata la vida del italiano a mediados del siglo XIX, desde su infancia en Lugo, para pasar a ser soldado de Napoleón en su adolescencia, a aventurarse como pirata y luego desembarcar en América para participar en la independencia de la Nueva Granada y emprender la Comisión Corográfica. ',
                     alt: 'Las siete vidas de Agustín Codazzi',
@@ -399,7 +377,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 8,
+                    id: 7,
                     title: 'La guerra que salvó mi vida',
                     description: 'Ada tiene nueve años y su madre nunca le ha permitido salir de su habitación, ya que nació con un pie zambo que le impide caminar. Su única conexión con el mundo es su hermano, Jamie, y la pequeña ventana de un tercer piso por la que ve el mundo. Irónicamente, gracias a la Segunda Guerra Mundial, la vida de Ada cambiará para siempre: escapa de su mamá, de las bombas de Hitler y de la prisión de su habitación. Pero, ¿qué pasará cuando la guerra termine y deba regresar a casa con su madre? Una narración histórica y, al mismo tiempo, un relato dolorosamente encantador sobre cómo se puede encontrar una familia en lugares inesperados.',
                     alt: 'La guerra que salvó mi vida',
@@ -408,7 +386,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 9,
+                    id: 8,
                     title: 'La muda',
                     description: 'En un barrio pobre, dos hermanos sobrellevan una infancia difícil. Desatendidos por su madre, viven con su abuela, cuya sombra autoritaria los sigue a todas partes. Solo la fantasía y el amor fraterno les ayudan a soportar el abandono y el miedo. Pero un día, dentro de un carro destartalado encuentran una gallina. Desde ese momento, diario visitan al ave a escondidas para cuidarla y alimentarla, y eso le da un sentido diferente a sus vidas.',
                     alt: 'La muda',
@@ -417,7 +395,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 10,
+                    id: 9,
                     title: 'La gran Gilly Hopkins',
                     description: 'Gilly Hopkins tiene once años. Desde muy pequeña ha vivido con diferentes familias, ya que su madre nunca se ha ocupado de ella. Debido a su carácter rebelde, todos los intentos de adopción han fracasado. Cuando llega a casa de la señora Trotter, mujer sencilla y cordial, la niña la rechaza, pero poco a poco, a fuerza de cariño y comprensión, Gilly comienza a querer a su nueva familia.',
                     alt: 'La gran Gilly Hopkins',
@@ -426,7 +404,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 11,
+                    id: 10,
                     title: 'Fortunato',
                     description: 'El sueño de Fortunato es llegar a España. En las laderas del Cocuy, la Vuelta a Colombia se atraviesa en su camino. El muchacho de ruana y sombrero avanza como una bala, al ritmo de los ciclistas profesionales.',
                     alt: 'Fortunato',
@@ -435,7 +413,7 @@
                     eventHover: false,
                 },
                 {
-                    id: 12,
+                    id: 11,
                     title: 'martina y la carta del monje Yukio',
                     description: 'Cuando Martina llega Nueva York a casa de su papá tras mucho tiempo sin verlo, no solo lo encuentra a él muy diferente, sino que todo le resulta nuevo y sorpresivo: los paisajes, la gente, el idioma. Martina comprenderá que las circunstancias pueden moldear el carácter y los sentimientos. Afortunadamente conoce a alguien que le ayudará a sobrellevar la nueva situación: su vecino, el monje Yukio.',
                     alt: 'martina y la carta del monje Yukio',
@@ -444,25 +422,25 @@
                     eventHover: false,
                 },
                 {
+                    id: 12,
+                    title: 'Temple Teyuna, el infierno verde',
+                    description: 'Desde pequeña, Temple ha tenido dos sueños: conocer a su padre y tener una gran aventura. Ahora, con 15 años, está a punto de cumplir ambos. Un viaje inesperado la llevará a reencontrarse con su padre y a internarse en la sierra colombiana para descubrir la ciudad Teyuna. Sin embargo, Temple comprenderá que cumplir sus deseos no es gratuito y que, en este caso, vivir una aventura implica arriesgar lo que ella más ama.',
+                    alt: 'Temple Teyuna, el infierno verde',
+                    url: '/book/diatres/temple.pdf',
+                    imgCaratula:"/image/imgbooks/diatres/tapa-temple.jpg",
+                    eventHover: false,
+                },
+                {
                     id: 13,
-                    title: 'Frin',
-                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
-                    alt: 'Frin',
-                    url: '/book/diatres/frin.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/frin.jpg",
+                    title: 'Fuera de norma',
+                    description: 'Reúne los más importantes artículos , cartas y ensayos referentes a los derechos de las mujeres y a los movimientos feministas en Hispanoamérica desde el siglo XVII hasta mediados del siglo XX. Sor Juana Inés de la Cruz, Emilia Pardo Bazán, Gabriela Mistral y Victoria Ocampo son algunas de las once mujeres que contribuyeron a la reflexión y a la discusión de género en diferentes países de habla hispana.',
+                    alt: 'Fuera de norma',
+                    url: '/book/diatres/fuera-de-norma.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/fuera-de-norma.jpg",
                     eventHover: false,
                 },
                 {
                     id: 14,
-                    title: 'Mi amigo luki-live',
-                    description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.',
-                    alt: 'Mi amigo luki-live',
-                    url: '/book/diatres/MI AMIGO LUKI-AZUL.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/mi-amigo-luk-azul.jpg",
-                    eventHover: false,
-                },
-                {
-                    id: 15,
                     title: 'Rompecabezas',
                     description: 'Mora es una chica de once años que vive con su abuela y su gata. Tiene un grupo de amigas llamadas “Las Chicas de Siberia” con las que comparte horas de clase, juegos y charlas. También están Juan, su primo inseparable, y Dani, el chico de sus sueños, con quienes ella descubre la aventura y el rock. Pero su historia se ve atravesada por secretos y ausencias. Algunas piezas no encajan en el rompecabezas de su vida.',
                     alt: 'Rompecabezas',
@@ -471,14 +449,14 @@
                     eventHover: false,
                 },
                 {
-                    id: 16,
+                    id: 15,
                     title: 'Cuando Hitler robó el conejo rosa',
                     description: 'La llegada de Hitler al poder va a cambiar radicalmente la vida de Anna y su familia. En su huida del horror nazi deberán abandonar su país y dejar atrás muchas cosas queridas, como su conejo de peluche. Con él también quedará su infancia.',
                     alt: 'Cuando Hitler robó el conejo rosa',
                     url: '/book/diatres/cuando-hitler-robo-el-conejo-rosa.pdf',
                     imgCaratula: "/image/imgbooks/diatres/cuando-hitler.jpg",
                     eventHover: false,
-                }
+                },
             ]
         }
     }
@@ -487,13 +465,16 @@
 <style scoped lang="scss">
 
     .main-view {
-        background-image: url("/image/background-day-three.jpg");
+        //background-image: url("/image/background-day-three.jpg");
+        background-image: url("/image/imgbackground/secundaria.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
     }
-
+    .main-background-book {
+        background-image: url("/image/imgbackground/main-background.png");
+    }
 
     /* Style content first iframe */
     .view-iframe-one {
@@ -510,99 +491,95 @@
     .class-position {
         position: absolute;
         //border: 1px solid red;
+        cursor: pointer;
     }
 
+
     div#book-1 {
-        top: 5.4%;
-        left: 4.8%;
-        height: 11.6%;
-        width: 8.5%;
-    }
-    div#book-2 {
-        top: 19.5%;
-        left: 4.6%;
-        height: 8.5%;
-        width: 8.5%;
-    }
-    div#book-3 {
-        top: 28.6%;
-        left: 4.6%;
-        height: 11.3%;
+        top: 17%;
+        left: 4%;
+        height: 11%;
         width: 9%;
     }
-    div#book-4 {
-        top: 16.6%;
+    div#book-2 {
+        top: 28.6%;
+        left: 4%;
+        height: 12%;
+        width: 10%;
+    }
+    div#book-3 {
+        top: 16%;
         left: 45.6%;
         height: 9.5%;
         width: 7.5%;
     }
-    div#book-5 {
-        top: 25.3%;
-        left: 46%;
+    div#book-4 {
+        top: 25.7%;
+        left: 45.5%;
         height: 8.5%;
-        width: 6.3%;
+        width: 7%;
+    }
+    div#book-5 {
+        top: 34.7%;
+        left: 45.5%;
+        height: 9%;
+        width: 7%;
     }
     div#book-6 {
-        top: 34.7%;
-        left: 46%;
-        height: 8%;
-        width: 6.4%;
+        top: 45%;
+        left: 9%;
+        height: 11%;
+        width: 8%;
     }
     div#book-7 {
+        top: 45%;
+        left: 20%;
+        height: 11%;
+        width: 8.5%;
+    }
+    div#book-8 {
+        top: 45.8%;
+        left: 31%;
+        height: 10%;
+        width: 8%;
+    }
+    div#book-9 {
         top: 46%;
-        left: 10.5%;
+        left: 40.4%;
         height: 10%;
         width: 7%;
     }
-    div#book-8 {
-        top: 46.5%;
-        left: 20.5%;
-        height: 9%;
-        width: 7.6%;
-    }
-    div#book-9 {
-        top: 47.3%;
-        left: 31.2%;
-        height: 8%;
+    div#book-10 {
+       top: 46%;
+        left: 49%;
+        height: 10%;
         width: 7%;
     }
-    div#book-10 {
-        top: 47.8%;
-        left: 40.6%;
-        height: 7.6%;
-        width: 6.5%;
-    }
     div#book-11 {
-        top: 47%;
-        left: 49.4%;
-        height: 8.5%;
-        width: 6.3%;
-    }
-    div#book-12 {
         top: 60%;
         left: 41.4%;
         height: 11.2%;
         width: 8.5%;
     }
-    div#book-13 {
+    div#book-12 {
         top: 60.2%;
         left: 54.77%;
         height: 10.7%;
         width: 8.5%;
     }
-    div#book-14 {
+    div#book-13 {
         top: 60.2%;
         left: 69.77%;
         height: 10.3%;
         width: 8.5%;
     }
-    div#book-15 {
+    div#book-14 {
         top: 63.5%;
         left: 47.3%;
         height: 11.2%;
         width: 8.5%;
     }
-    div#book-16 {
+    div#book-15 {
         top: 63%;
         left: 62.3%;
         height: 11.2%;
@@ -619,7 +596,7 @@
 
     div#content-info-book {
         background: #EBEBEB;
-        margin: 0 6%;
+        margin: 0 6% 0 0;
     }
     .header-info-book {
         background: #7B592F;
@@ -638,6 +615,7 @@
     img#img-info-book {
         width: 60%;
         cursor: pointer;
+        max-height: 350px;
     }
     #btn-info-book {
         padding: 0.25rem 1rem;
@@ -657,6 +635,15 @@
     }
 
     /* Read PDF */
+    div#close-view-pdf {
+        background: #9f793d;
+        padding: 0.4rem;
+        text-align: right;
+        cursor: pointer;
+    }
+    svg#icon-view-book {
+        color: #fff;
+    }
     #close-pdf-read {
         position: absolute;
         background: rgb(0 0 0 / 46%);
@@ -671,7 +658,7 @@
     }
     #pdf-read {
         position: absolute;
-        width: 100%;
+        width: 92%;
         height: 100%;
         top: 15px;
     }
@@ -690,9 +677,19 @@
     .vertical-center {
         margin: 0;
         padding: 1rem;
-        width: 100%;
+        width: 90%;
         position: absolute;
         top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .vertical-center-video {
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        position: absolute;
+        top: 35%;
+        left: -20%;
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
     }
