@@ -48780,7 +48780,7 @@ var staticRenderFns = [
       _c("iframe", {
         attrs: {
           id: "iframe-chat",
-          src: "https://vimeo.com/live-chat/543207075/",
+          src: "https://vimeo.com/live-chat/543355124/interaction/",
           width: "",
           height: "",
           frameborder: "0"
