@@ -1,6 +1,6 @@
 
 /* Estilos login */
-/* #img-background-login {
+/* #img-background-login {   https://vimeo.com/live-chat/543207075/interaction/
     background: url('/image/Lo-que-leo-imagen-inicio.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -54,5 +54,11 @@ button#btn-login-book {
 }
 
 .navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
-    color: rgba(0, 0, 0, 0.9) !important;
+    color: #c12d04 !important;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: #c12d04 !important;
+}
+li.nav-item #text-programa {
+    color: #fff !important;
 }

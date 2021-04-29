@@ -40,8 +40,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item {{ request()->is('programa') ? 'active' : '' }}">
-                            <a class="nav-link nav-link-book" href="{{ route('programa') }}">Programa de formación a profesores</a>
+                        <li class="nav-item">
+                            <a id="text-programa" class="nav-link nav-link-book" href="#">Programa de formación a profesores</a>
                         </li>
                         <li class="nav-item ml-3  {{ request()->is('preescolar') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
@@ -129,7 +129,7 @@
         });
     </script>
     <!--Start of Tawk.to Script-->
-    {{-- <script type="text/javascript">
+   {{--  <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
         (function(){
             var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
