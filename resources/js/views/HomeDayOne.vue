@@ -290,12 +290,15 @@
                                         allowfullscreen />
                                 </div>
                             </div>
-
-                            <!-- <div id="chat">
-                                <iframe src="https://www6.cbox.ws/box/?boxid=861776&boxtag=9fCpoB" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-                            </div> -->
                         </div>
                     </div>
+
+                    <!-- <div id="chat">
+                        <iframe src="https://www6.cbox.ws/box/?boxid=861776&boxtag=9fCpoB" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+                    </div> -->
+                    <!-- <iframe src='https://deadsimplechat.com/Ixm0bpQOb' width='100%' height='500px'></iframe> -->
+                    <!-- <iframe src="https://deadsimplechat.com/ETp0098vF" width="400px" height="600px"></iframe> -->
+
                 </div>
             </div>
         </div>

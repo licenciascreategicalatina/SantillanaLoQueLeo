@@ -60,8 +60,10 @@
                         <div class="d-flex col-lg-4 align-items-center auth-bg" style="padding: 0">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <div class="text-center mb-3">
-                                    <img width="180" height="60" src="/image/logo.png" alt="Logo santillana" style="border-radius: 1rem">
-                                    {{-- <img src="/image/loqueleo-logo.png" alt="Logo santillana"> --}}
+                                    {{-- <img width="180" height="60" src="/image/logo.png" alt="Logo santillana" style="border-radius: 1rem"> --}}
+                                    <a id="content-logo" href="#">
+                                        <img src="/image/loqueleo-logo.png" alt="Logo santillana">
+                                    </a>
                                 </div>
 
                                 <div class="card border-login-book">
@@ -69,7 +71,7 @@
                                         <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
                                             @csrf
 
-                                            <h1 class="text-center mb-1">Ingresa tu correo</h1>
+                                            <h1 class="text-center mb-1" style="font-weight: 600 !important;">Ingresa tu correo</h1>
 
                                             <div class="text-center mb-2">
                                                 <span id="text-login-span" >Con el que te inscribiste a la cata</span>

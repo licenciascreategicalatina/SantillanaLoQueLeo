@@ -31,7 +31,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- {{ config('app.name', 'Laravel') }} --}}
                     {{-- <img src="/image/logo-santillana.png" alt="logo"> --}}
-                    <img src="/image/loqueleo-logo.png" width="180" height="80" alt="logo">
+                    <img src="/image/loqueleo-logo.png" width="180" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,16 +40,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item {{ request()->is('programa') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('programa') }}">Programa de formación a profesores</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ml-3  {{ request()->is('preescolar') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ml-3 {{ request()->is('primaria') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ml-3 {{ request()->is('secundaria') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-three') }}">Secundaria</a>
                         </li>
                     </ul>

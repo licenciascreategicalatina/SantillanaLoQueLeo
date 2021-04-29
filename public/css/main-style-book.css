@@ -11,22 +11,27 @@
     margin: 0 -8rem 0 -1rem;
     padding: 0.2rem;
 }
-
+#content-logo {
+    background: #9e7541;
+    padding: 1.8rem;
+    border-radius: 1rem;
+}
 .border-login-book {
-    border: 3px solid #9e7441 !important;
+    border: 3px solid #9e7541 !important;
     margin-bottom: 0 !important;
     border-radius: 1rem;
 }
 input#email {
     height: 3.5rem;
-    border: 1px solid #9f793d;
+    border: 1px solid #9e7541;
     border-radius: 2rem;
 }
 button#btn-login-book {
-    background: #9f793d !important;
-    border-color: #9f793d !important;
+    background: #9e7541 !important;
+    border-color: #9e7541 !important;
     border-radius: 1.5rem;
     font-size: 1.4rem;
+    font-weight: 600 !important;
 }
 
 
@@ -46,4 +51,8 @@ button#btn-login-book {
 
 .pace .pace-progress {
     background: #E54029;
+}
+
+.navbar-light .navbar-nav .show > .nav-link, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .nav-link.active {
+    color: rgba(0, 0, 0, 0.9) !important;
 }
