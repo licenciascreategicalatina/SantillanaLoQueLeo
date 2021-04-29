@@ -259,15 +259,42 @@
 
                             <div class="card animate__animated animate__slideInRight animate__slower">
                                 <div class="view-body">
-                                    <iframe id="iframe-video" width=""
+                                   <!--  <iframe id="iframe-video" width=""
                                         height=""
                                         :src="urlTransmision"
                                         title="YouTube video player"
                                         frameborder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen />
+                                        allowfullscreen /> -->
+
+                                    <iframe id="iframe-video" src="https://player.vimeo.com/video/543242638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                        width=""
+                                        height=""
+                                        frameborder="0"
+                                        allow="autoplay; fullscreen; picture-in-picture"
+                                        allowfullscreen
+                                        title="Morat  No Hay M&amp;aacute;s Que Hablar.mp4">
+                                    </iframe>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <button @click="openViewChat" id="btn-float-chat" type="button" class="btn btn-primary">
+                        <svg v-if="openChatIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </button>
+                    <div v-if="!openChatIcon" id="content-chat">
+                        <div id="body-chat">
+                            <iframe id="iframe-chat" src="https://vimeo.com/live-chat/543364561/interaction/"
+                                width=""
+                                height=""
+                                frameborder="0">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -289,6 +316,7 @@
                 heightIframeBook: false,
                 agendaBook: false,
                 changeBackground: false,
+                openChatIcon: true,
                 listBooks: [],
                 bookSelect: null,
             }
@@ -318,6 +346,9 @@
             },
             truncate( text ) {
                 return text.length > 350 ? text.slice(0, 350) + '...' : text;
+            },
+            openViewChat() {
+                this.openChatIcon = !this.openChatIcon
             }
         },
         created() {
@@ -464,6 +495,35 @@
 </script>
 
 <style scoped lang="scss">
+    /* BEGIN estilos chat */
+    button#btn-float-chat {
+        border-radius: 1.8rem !important;
+        padding: 0.7rem;
+        position: fixed;
+        bottom: 3%;
+        right: 1.2rem;
+        z-index: 99;
+        background: #9f793d;
+        border-color: #9f793d;
+    }
+    div#content-chat {
+        position: fixed;
+        bottom: 12%;
+        right: 1%;
+        width: 25%;
+        height: 70%;
+        z-index: 99;
+        border-radius: 1rem;
+        padding: 0.4rem;
+    }
+    iframe#iframe-chat {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        border-radius: 0.4rem;
+    }
+    /* END estilos chat */
 
     .main-view {
         //background-image: url("/image/background-day-two.jpg");

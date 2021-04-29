@@ -323,7 +323,7 @@
                     </button>
                     <div v-if="!openChatIcon" id="content-chat">
                         <div id="body-chat">
-                            <iframe id="iframe-chat" src="https://vimeo.com/live-chat/543355124/interaction/"
+                            <iframe id="iframe-chat" src="https://vimeo.com/live-chat/543364561/interaction/"
                                 width=""
                                 height=""
                                 frameborder="0">
