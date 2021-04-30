@@ -291,10 +291,11 @@
                                     <!-- <iframe id="iframe-video" src="https://player.vimeo.com/video/543207075"
                                         frameborder="0"
                                         allow="autoplay; fullscreen; picture-in-picture"
-                                        allowfullscreen
+                                        allowfullscreen    https://player.vimeo.com/video/543242638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
                                         style="position:absolute;top:0;left:0;width:100%;height:100%;">
                                     </iframe> -->
-                                    <iframe id="iframe-video" src="https://player.vimeo.com/video/543242638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                    <iframe id="iframe-video"
+                                        :src="urlTransmision"
                                         width=""
                                         height=""
                                         frameborder="0"
@@ -314,21 +315,25 @@
                     <!-- <iframe src="https://deadsimplechat.com/ETp0098vF" width="400px" height="600px"></iframe> -->
 
                     <button @click="openViewChat" id="btn-float-chat" type="button" class="btn btn-primary">
-                        <svg v-if="openChatIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
-                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                        </svg>
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                        <svg v-if="openChatIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                         </svg>
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                        </svg>
                     </button>
-                    <div v-if="!openChatIcon" id="content-chat">
+
+                    <div :class="{'content-chat-opacity' : openChatIcon}"
+                        id="content-chat">
                         <div id="body-chat">
-                            <iframe id="iframe-chat" src="https://vimeo.com/live-chat/543364561/interaction/"
+                            <iframe id="iframe-chat"
+                                :class="{'content-chat-opacity' : openChatIcon}"
+                                :src="urlChat"
                                 width=""
                                 height=""
                                 frameborder="0">
                             </iframe>
-                        </div><!-- https://vimeo.com/live-chat/543355124/interaction/   https://vimeo.com/live-chat/543207075/ -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,8 +345,8 @@
     export default {
         data() {
             return {
-                //urlTransmision: "https://www.youtube.com/embed/oCJQD93dTC4",
-                urlTransmision: "https://www.youtube.com/embed/nRxMQTjl8Uc",
+                urlTransmision: "https://vimeo.com/event/947811/embed/1ea5cea1f6",
+                urlChat: "https://vimeo.com/event/947811/chat/1ea5cea1f6",
                 urlBook: "",
                 openPDF: false,
                 imgGif: false,
@@ -350,7 +355,7 @@
                 agendaBook: false,
                 changeBackground: false,
                 viewHoverBooks: true,
-                openChatIcon: true,
+                openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
             }
@@ -387,7 +392,6 @@
             },
             openViewChat() {
                 this.openChatIcon = !this.openChatIcon
-                console.log('bottom float')
             }
         },
         created() {
@@ -559,6 +563,7 @@
         z-index: 99;
         border-radius: 1rem;
         padding: 0.4rem;
+        opacity: 0;
     }
     iframe#iframe-chat {
         position: absolute;
@@ -566,6 +571,11 @@
         height: 100%;
         bottom: 0;
         border-radius: 0.4rem;
+        opacity: 0;
+    }
+    .content-chat-opacity {
+        opacity: 1 !important;
+        z-index: 70;
     }
     /* END estilos chat */
 
