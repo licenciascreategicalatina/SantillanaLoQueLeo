@@ -44,14 +44,14 @@
                             <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Programa de formación a profesores</span>
                             {{-- <a id="text-programa" class="nav-link nav-link-book" href="#">Programa de formación a profesores</a> --}}
                         </li>
-                        <li class="nav-item ml-3  {{ request()->is('preescolar') ? 'active' : '' }}">
+                        <li class="nav-item ml-3 {{ request()->is('preescolar') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
                         </li>
-                        <li class="nav-item ml-3 {{ request()->is('primaria') ? 'active' : '' }}">
-                            <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
+                        <li class="nav-item ml-3 disabled {{ request()->is('primaria') ? 'active' : '' }}">
+                            <a class="nav-link nav-link-book disabled" href="{{ route('day-two') }}">Primaria</a>
                         </li>
-                        <li class="nav-item ml-3 {{ request()->is('secundaria') ? 'active' : '' }}">
-                            <a class="nav-link nav-link-book" href="{{ route('day-three') }}">Secundaria</a>
+                        <li class="nav-item ml-3 disabled {{ request()->is('secundaria') ? 'active' : '' }}">
+                            <a class="nav-link nav-link-book disabled" href="{{ route('day-three') }}">Secundaria</a>
                         </li>
                         <li class="nav-item ml-3" style="opacity: 0;">
                             <a class="nav-link nav-link-book" href="{{ route('import-view') }}">Import</a>
