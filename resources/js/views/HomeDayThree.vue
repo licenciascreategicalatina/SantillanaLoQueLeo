@@ -236,7 +236,7 @@
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
                                 <vs-tooltip color="#b1935e" border-thick>
-                                    <a id="pdf-download" href="/book/Lo que leo.pdf" download="programa">
+                                    <a id="pdf-download" href="/book/pdf-programa.pdf" download="programa">
                                         <div id="content-dialog-book" class="con-content" >
                                             <h3 class="text-center color-white font-weight-bold">
                                                 Programa
