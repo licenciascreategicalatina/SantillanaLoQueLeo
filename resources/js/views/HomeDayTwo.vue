@@ -7,127 +7,127 @@
                 <div class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-one">
                         <!-- BEGIN: posición de los libros -->
-                        <div>
-                        <div class="class-position" id="book-1"
-                            @click="clickShowViewInfoBook( listBooks[0] )"
-                            @mouseover="listBooks[0].eventHover = true"
-                            @mouseleave="listBooks[0].eventHover = false">
-                            <div v-if="listBooks[0].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[0].imgCaratula" :alt="listBooks[0].alt">
+                        <div v-if="viewHoverBooks">
+                            <div class="class-position" id="book-1"
+                                @click="clickShowViewInfoBook( listBooks[0] )"
+                                @mouseover="listBooks[0].eventHover = true"
+                                @mouseleave="listBooks[0].eventHover = false">
+                                <div v-if="listBooks[0].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[0].imgCaratula" :alt="listBooks[0].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-2"
-                            @click="clickShowViewInfoBook( listBooks[1] )"
-                            @mouseover="listBooks[1].eventHover = true"
-                            @mouseleave="listBooks[1].eventHover = false">
-                            <div v-if="listBooks[1].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[1].imgCaratula" :alt="listBooks[1].alt">
+                            <div class="class-position" id="book-2"
+                                @click="clickShowViewInfoBook( listBooks[1] )"
+                                @mouseover="listBooks[1].eventHover = true"
+                                @mouseleave="listBooks[1].eventHover = false">
+                                <div v-if="listBooks[1].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[1].imgCaratula" :alt="listBooks[1].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-3"
-                            @click="clickShowViewInfoBook( listBooks[2] )"
-                            @mouseover="listBooks[2].eventHover = true"
-                            @mouseleave="listBooks[2].eventHover = false">
-                            <div v-if="listBooks[2].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[2].imgCaratula" :alt="listBooks[2].alt">
+                            <div class="class-position" id="book-3"
+                                @click="clickShowViewInfoBook( listBooks[2] )"
+                                @mouseover="listBooks[2].eventHover = true"
+                                @mouseleave="listBooks[2].eventHover = false">
+                                <div v-if="listBooks[2].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[2].imgCaratula" :alt="listBooks[2].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-4"
-                            @click="clickShowViewInfoBook( listBooks[3] )"
-                            @mouseover="listBooks[3].eventHover = true"
-                            @mouseleave="listBooks[3].eventHover = false">
-                            <div v-if="listBooks[3].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[3].imgCaratula" :alt="listBooks[3].alt">
+                            <div class="class-position" id="book-4"
+                                @click="clickShowViewInfoBook( listBooks[3] )"
+                                @mouseover="listBooks[3].eventHover = true"
+                                @mouseleave="listBooks[3].eventHover = false">
+                                <div v-if="listBooks[3].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[3].imgCaratula" :alt="listBooks[3].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-5"
-                            @click="clickShowViewInfoBook( listBooks[4] )"
-                            @mouseover="listBooks[4].eventHover = true"
-                            @mouseleave="listBooks[4].eventHover = false">
-                            <div v-if="listBooks[4].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[4].imgCaratula" :alt="listBooks[4].alt">
+                            <div class="class-position" id="book-5"
+                                @click="clickShowViewInfoBook( listBooks[4] )"
+                                @mouseover="listBooks[4].eventHover = true"
+                                @mouseleave="listBooks[4].eventHover = false">
+                                <div v-if="listBooks[4].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[4].imgCaratula" :alt="listBooks[4].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-6"
-                            @click="clickShowViewInfoBook( listBooks[5] )"
-                            @mouseover="listBooks[5].eventHover = true"
-                            @mouseleave="listBooks[5].eventHover = false">
-                            <div v-if="listBooks[5].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[5].imgCaratula" :alt="listBooks[5].alt">
+                            <div class="class-position" id="book-6"
+                                @click="clickShowViewInfoBook( listBooks[5] )"
+                                @mouseover="listBooks[5].eventHover = true"
+                                @mouseleave="listBooks[5].eventHover = false">
+                                <div v-if="listBooks[5].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[5].imgCaratula" :alt="listBooks[5].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-7"
-                            @click="clickShowViewInfoBook( listBooks[6] )"
-                            @mouseover="listBooks[6].eventHover = true"
-                            @mouseleave="listBooks[6].eventHover = false">
-                            <div v-if="listBooks[6].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[6].imgCaratula" :alt="listBooks[6].alt">
+                            <div class="class-position" id="book-7"
+                                @click="clickShowViewInfoBook( listBooks[6] )"
+                                @mouseover="listBooks[6].eventHover = true"
+                                @mouseleave="listBooks[6].eventHover = false">
+                                <div v-if="listBooks[6].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[6].imgCaratula" :alt="listBooks[6].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-8"
-                            @click="clickShowViewInfoBook( listBooks[7] )"
-                            @mouseover="listBooks[7].eventHover = true"
-                            @mouseleave="listBooks[7].eventHover = false">
-                            <div v-if="listBooks[7].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[7].imgCaratula" :alt="listBooks[7].alt">
+                            <div class="class-position" id="book-8"
+                                @click="clickShowViewInfoBook( listBooks[7] )"
+                                @mouseover="listBooks[7].eventHover = true"
+                                @mouseleave="listBooks[7].eventHover = false">
+                                <div v-if="listBooks[7].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[7].imgCaratula" :alt="listBooks[7].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-9"
-                            @click="clickShowViewInfoBook( listBooks[8] )"
-                            @mouseover="listBooks[8].eventHover = true"
-                            @mouseleave="listBooks[8].eventHover = false">
-                            <div v-if="listBooks[8].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[8].imgCaratula" :alt="listBooks[8].alt">
+                            <div class="class-position" id="book-9"
+                                @click="clickShowViewInfoBook( listBooks[8] )"
+                                @mouseover="listBooks[8].eventHover = true"
+                                @mouseleave="listBooks[8].eventHover = false">
+                                <div v-if="listBooks[8].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[8].imgCaratula" :alt="listBooks[8].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-10"
-                            @click="clickShowViewInfoBook( listBooks[9] )"
-                            @mouseover="listBooks[9].eventHover = true"
-                            @mouseleave="listBooks[9].eventHover = false">
-                            <div v-if="listBooks[9].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[9].imgCaratula" :alt="listBooks[9].alt">
+                            <div class="class-position" id="book-10"
+                                @click="clickShowViewInfoBook( listBooks[9] )"
+                                @mouseover="listBooks[9].eventHover = true"
+                                @mouseleave="listBooks[9].eventHover = false">
+                                <div v-if="listBooks[9].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[9].imgCaratula" :alt="listBooks[9].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-11"
-                            @click="clickShowViewInfoBook( listBooks[10] )"
-                            @mouseover="listBooks[10].eventHover = true"
-                            @mouseleave="listBooks[10].eventHover = false">
-                            <div v-if="listBooks[10].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[10].imgCaratula" :alt="listBooks[10].alt">
+                            <div class="class-position" id="book-11"
+                                @click="clickShowViewInfoBook( listBooks[10] )"
+                                @mouseover="listBooks[10].eventHover = true"
+                                @mouseleave="listBooks[10].eventHover = false">
+                                <div v-if="listBooks[10].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[10].imgCaratula" :alt="listBooks[10].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-12"
-                            @click="clickShowViewInfoBook( listBooks[11] )"
-                            @mouseover="listBooks[11].eventHover = true"
-                            @mouseleave="listBooks[11].eventHover = false">
-                            <div v-if="listBooks[11].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[11].imgCaratula" :alt="listBooks[11].alt">
+                            <div class="class-position" id="book-12"
+                                @click="clickShowViewInfoBook( listBooks[11] )"
+                                @mouseover="listBooks[11].eventHover = true"
+                                @mouseleave="listBooks[11].eventHover = false">
+                                <div v-if="listBooks[11].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[11].imgCaratula" :alt="listBooks[11].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-13"
-                            @click="clickShowViewInfoBook( listBooks[12] )"
-                            @mouseover="listBooks[12].eventHover = true"
-                            @mouseleave="listBooks[12].eventHover = false">
-                            <div v-if="listBooks[12].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[12].imgCaratula" :alt="listBooks[12].alt">
+                            <div class="class-position" id="book-13"
+                                @click="clickShowViewInfoBook( listBooks[12] )"
+                                @mouseover="listBooks[12].eventHover = true"
+                                @mouseleave="listBooks[12].eventHover = false">
+                                <div v-if="listBooks[12].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[12].imgCaratula" :alt="listBooks[12].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-14"
-                            @click="clickShowViewInfoBook( listBooks[13] )"
-                            @mouseover="listBooks[13].eventHover = true"
-                            @mouseleave="listBooks[13].eventHover = false">
-                            <div v-if="listBooks[13].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
+                            <div class="class-position" id="book-14"
+                                @click="clickShowViewInfoBook( listBooks[13] )"
+                                @mouseover="listBooks[13].eventHover = true"
+                                @mouseleave="listBooks[13].eventHover = false">
+                                <div v-if="listBooks[13].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
+                                </div>
                             </div>
-                        </div>
-                        <div class="class-position" id="book-15"
-                            @click="clickShowViewInfoBook( listBooks[14] )"
-                            @mouseover="listBooks[14].eventHover = true"
-                            @mouseleave="listBooks[14].eventHover = false">
-                            <div v-if="listBooks[14].eventHover" class="content-img-hover-book">
-                                <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
+                            <div class="class-position" id="book-15"
+                                @click="clickShowViewInfoBook( listBooks[14] )"
+                                @mouseover="listBooks[14].eventHover = true"
+                                @mouseleave="listBooks[14].eventHover = false">
+                                <div v-if="listBooks[14].eventHover" class="content-img-hover-book">
+                                    <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
+                                </div>
                             </div>
-                        </div>
                         </div>
                         <!-- END: posición de los libros -->
 
@@ -192,6 +192,10 @@
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div id="content-clock">
+                        <span id="clock-timer">{{ clockTimer }}</span>
+                    </div>
+
                     <div class="view-iframe-two">
                         <div class="vertical-center-video">
 
@@ -319,10 +323,13 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: false,
+                changeBackground: true,
+                viewHoverBooks: false,
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
+                clockTimer: "",
+                intervalClock: "",
             }
         },
         methods: {
@@ -348,11 +355,32 @@
                 this.openPDF = !this.openPDF;
                 this.heightIframeBook = false
             },
+            changeBackgroundMain() {
+                this.changeBackground = !this.changeBackground;
+                this.viewHoverBooks = !this.viewHoverBooks;
+            },
             truncate( text ) {
                 return text.length > 350 ? text.slice(0, 350) + '...' : text;
             },
             openViewChat() {
                 this.openChatIcon = !this.openChatIcon
+            },
+            initClock() {
+                let day = new Date();
+                this.clockTimer = day.toLocaleTimeString();
+
+                if (this.clockTimer.includes("3:25:00")) {
+                    this.changeBackgroundMain()
+                }
+                if (this.clockTimer.includes("4:15:00")) {
+                    this.changeBackgroundMain()
+                }
+                /* if (this.clockTimer.includes("3:51:00")) {
+                    this.changeBackgroundMain()
+                }
+                if (this.clockTimer.includes("3:52:00")) {
+                    this.changeBackgroundMain()
+                } */
             }
         },
         created() {
@@ -494,6 +522,11 @@
                     eventHover: false,
                 }
             ]
+        },
+        mounted() {
+            this.intervalClock = setInterval( () => {
+                this.initClock();
+            }, 1000);
         }
     }
 </script>
@@ -534,6 +567,13 @@
         z-index: 70;
     }
     /* END estilos chat */
+
+    div#content-clock {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        color: #9f793d;
+    }
 
     .main-view {
         //background-image: url("/image/background-day-two.jpg");

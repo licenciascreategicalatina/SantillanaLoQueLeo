@@ -191,36 +191,16 @@
                 </div>
 
                 <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div id="content-clock">
+                        <span id="clock-timer">{{ clockTimer }}</span>
+                    </div>
+
                     <div class="view-iframe-two">
                         <div class="vertical-center-video">
-
-                           <!--  <div id="content-background-img">
-                                <vs-button @click="changeBackground=!changeBackground">
-                                    Fondo
-                                </vs-button>
-                            </div> -->
-
-                            <!-- <div id="content-agenda-book">
-                                <vs-button @click="changeBackground=!changeBackground">
-                                    Fondo
-                                </vs-button>
-
+                            <div id="content-agenda-book">
                                 <vs-button @click="agendaBook=!agendaBook">
                                     Agenda del dia
                                 </vs-button>
-                            </div> -->
-                            <div class="row" style="padding: 0; margin: 0;">
-                                <div class="col-4">
-                                    <vs-button @click="changeBackgroundMain" class="color-button-book">
-                                        Fondo
-                                    </vs-button>
-                                </div>
-                                <div class="col-4"></div>
-                                <div class="col-4">
-                                    <vs-button @click="agendaBook=!agendaBook" class="color-button-book">
-                                        Agenda del dia
-                                    </vs-button>
-                                </div>
                             </div>
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
@@ -353,11 +333,13 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: false,
-                viewHoverBooks: true,
+                changeBackground: true,
+                viewHoverBooks: false,
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
+                clockTimer: "",
+                intervalClock: "",
             }
         },
         methods: {
@@ -392,13 +374,26 @@
             },
             openViewChat() {
                 this.openChatIcon = !this.openChatIcon
+            },
+            initClock() {
+                let day = new Date();
+                this.clockTimer = day.toLocaleTimeString();
+
+                if (this.clockTimer.includes("3:25:00")) {
+                    this.changeBackgroundMain()
+                }
+                if (this.clockTimer.includes("4:15:00")) {
+                    this.changeBackgroundMain()
+                }
+                /* if (this.clockTimer.includes("3:51:00")) {
+                    this.changeBackgroundMain()
+                }
+                if (this.clockTimer.includes("3:52:00")) {
+                    this.changeBackgroundMain()
+                } */
             }
         },
         created() {
-            /* setTimeout( () => {
-                console.log('hola bebe');
-            }, 3000); */
-
             /* Lista de libros */
             this.listBooks = [
                 {
@@ -537,6 +532,11 @@
                     eventHover: false,
                 }
             ]
+        },
+        mounted() {
+            this.intervalClock = setInterval( () => {
+                this.initClock();
+            }, 1000);
         }
     }
 </script>
@@ -578,6 +578,13 @@
         z-index: 70;
     }
     /* END estilos chat */
+
+    div#content-clock {
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        color: #9f793d;
+    }
 
     .main-view {
         background-image: url("/image/imgbackground/preescolar.jpg");

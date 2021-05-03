@@ -35,6 +35,15 @@ Route::middleware(['auth'])->group( function() {
         '/secundaria',
         [ LandingController::class, 'indexThree' ]
     )->name('day-three');
+
+    Route::get(
+        '/import-view',
+        [ LandingController::class, 'importView' ]
+    )->name('import-view');
+    Route::post(
+        '/import-data',
+        [ LandingController::class, 'importData' ]
+    )->name('import-data');
 });
 
 
