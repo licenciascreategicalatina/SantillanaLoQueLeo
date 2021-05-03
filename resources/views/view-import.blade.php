@@ -3,6 +3,10 @@
 @section('content')
 
     <div class="container p-4">
+        @if(Session::has('message'))
+            <p>{{ Session::get('message') }}</p>
+        @endif
+
         <div class="row mt-5">
             <form action="{{ route('import-data') }}" method="POST" enctype="multipart/form-data">
                 @csrf

@@ -42,12 +42,11 @@ class LandingController extends Controller
     }
 
     public function importData(Request $request) {
-        dd('llego');
         $data = $request->file('data');
 
         $user = (new FastExcel())->import( $data, function($line) {
             return User::create([
-                'name' => $line['name'],
+                'name' => $line['name'] . ' ' . $line['lastname'],
                 'email' => $line['email'],
                 'email_verified_at' => now(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
@@ -55,7 +54,22 @@ class LandingController extends Controller
             ]);
         });
 
-        return response()->json('ok');
+        return back()->with('message', 'Se importo correctamente.');
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
