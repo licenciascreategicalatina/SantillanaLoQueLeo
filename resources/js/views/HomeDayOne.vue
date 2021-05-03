@@ -568,11 +568,10 @@
         right: 1%;
         width: 25%;
         height: 70%;
-        z-index: 99;
         border-radius: 1rem;
         padding: 0.4rem;
         opacity: 0;
-    }
+    } /* z-index: 99; */
     iframe#iframe-chat {
         position: absolute;
         width: 100%;
@@ -583,7 +582,7 @@
     }
     .content-chat-opacity {
         opacity: 1 !important;
-        z-index: 70;
+        z-index: 110;
     }
     /* END estilos chat */
 
@@ -849,7 +848,7 @@
         background: #9f793d;
     }
     div#content-agenda-book {
-        margin: 0 0 0 75%;
+        margin: 0 0 0 78%;
     }
     .color-button-book {
         background: #9f793d;

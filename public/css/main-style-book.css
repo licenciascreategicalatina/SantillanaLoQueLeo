@@ -5,6 +5,9 @@
     background-size: cover;
     background-repeat: no-repeat;
 } */
+html .pace .pace-progress {
+    background: #f84c22;
+}
 #img-background {
     width: 100%;
     height: 100%;
@@ -32,6 +35,9 @@ button#btn-login-book {
     border-radius: 1.5rem;
     font-size: 1.4rem;
     font-weight: 600 !important;
+}
+.btn-primary:hover:not(.disabled):not(:disabled) {
+    box-shadow: 0 8px 25px -8px #f84c22;
 }
 
 
@@ -61,4 +67,8 @@ button#btn-login-book {
 }
 li.nav-item #text-programa {
     color: #fff !important;
+}
+
+svg#logout-icon {
+    margin-top: -5px;
 }
