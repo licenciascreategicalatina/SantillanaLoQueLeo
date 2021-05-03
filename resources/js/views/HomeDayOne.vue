@@ -13,7 +13,9 @@
                                 @mouseover="listBooks[0].eventHover = true"
                                 @mouseleave="listBooks[0].eventHover = false">
                                 <div v-if="listBooks[0].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[0].imgCaratula" :alt="listBooks[0].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[0].imgCaratula"
+                                        :alt="listBooks[0].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-2"
@@ -21,7 +23,9 @@
                                 @mouseover="listBooks[1].eventHover = true"
                                 @mouseleave="listBooks[1].eventHover = false">
                                 <div v-if="listBooks[1].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[1].imgCaratula" :alt="listBooks[1].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[1].imgCaratula"
+                                        :alt="listBooks[1].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-3"
@@ -29,7 +33,9 @@
                                 @mouseover="listBooks[2].eventHover = true"
                                 @mouseleave="listBooks[2].eventHover = false">
                                 <div v-if="listBooks[2].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[2].imgCaratula" :alt="listBooks[2].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[2].imgCaratula"
+                                        :alt="listBooks[2].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-4"
@@ -37,7 +43,9 @@
                                 @mouseover="listBooks[3].eventHover = true"
                                 @mouseleave="listBooks[3].eventHover = false">
                                 <div v-if="listBooks[3].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[3].imgCaratula" :alt="listBooks[3].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[3].imgCaratula"
+                                        :alt="listBooks[3].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-5"
@@ -45,7 +53,9 @@
                                 @mouseover="listBooks[4].eventHover = true"
                                 @mouseleave="listBooks[4].eventHover = false">
                                 <div v-if="listBooks[4].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[4].imgCaratula" :alt="listBooks[4].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[4].imgCaratula"
+                                        :alt="listBooks[4].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-6"
@@ -53,7 +63,9 @@
                                 @mouseover="listBooks[5].eventHover = true"
                                 @mouseleave="listBooks[5].eventHover = false">
                                 <div v-if="listBooks[5].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[5].imgCaratula" :alt="listBooks[5].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[5].imgCaratula"
+                                        :alt="listBooks[5].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-7"
@@ -61,7 +73,9 @@
                                 @mouseover="listBooks[6].eventHover = true"
                                 @mouseleave="listBooks[6].eventHover = false">
                                 <div v-if="listBooks[6].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[6].imgCaratula" :alt="listBooks[6].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[6].imgCaratula"
+                                        :alt="listBooks[6].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-8"
@@ -69,7 +83,9 @@
                                 @mouseover="listBooks[7].eventHover = true"
                                 @mouseleave="listBooks[7].eventHover = false">
                                 <div v-if="listBooks[7].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[7].imgCaratula" :alt="listBooks[7].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[7].imgCaratula"
+                                        :alt="listBooks[7].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-9"
@@ -77,7 +93,9 @@
                                 @mouseover="listBooks[8].eventHover = true"
                                 @mouseleave="listBooks[8].eventHover = false">
                                 <div v-if="listBooks[8].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[8].imgCaratula" :alt="listBooks[8].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[8].imgCaratula"
+                                        :alt="listBooks[8].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-10"
@@ -85,7 +103,9 @@
                                 @mouseover="listBooks[9].eventHover = true"
                                 @mouseleave="listBooks[9].eventHover = false">
                                 <div v-if="listBooks[9].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[9].imgCaratula" :alt="listBooks[9].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[9].imgCaratula"
+                                        :alt="listBooks[9].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-11"
@@ -93,7 +113,9 @@
                                 @mouseover="listBooks[10].eventHover = true"
                                 @mouseleave="listBooks[10].eventHover = false">
                                 <div v-if="listBooks[10].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[10].imgCaratula" :alt="listBooks[10].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[10].imgCaratula"
+                                        :alt="listBooks[10].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-12"
@@ -101,7 +123,9 @@
                                 @mouseover="listBooks[11].eventHover = true"
                                 @mouseleave="listBooks[11].eventHover = false">
                                 <div v-if="listBooks[11].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[11].imgCaratula" :alt="listBooks[11].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[11].imgCaratula"
+                                        :alt="listBooks[11].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-13"
@@ -109,7 +133,9 @@
                                 @mouseover="listBooks[12].eventHover = true"
                                 @mouseleave="listBooks[12].eventHover = false">
                                 <div v-if="listBooks[12].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[12].imgCaratula" :alt="listBooks[12].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[12].imgCaratula"
+                                        :alt="listBooks[12].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-14"
@@ -117,7 +143,9 @@
                                 @mouseover="listBooks[13].eventHover = true"
                                 @mouseleave="listBooks[13].eventHover = false">
                                 <div v-if="listBooks[13].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[13].imgCaratula"
+                                        :alt="listBooks[13].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-15"
@@ -125,7 +153,9 @@
                                 @mouseover="listBooks[14].eventHover = true"
                                 @mouseleave="listBooks[14].eventHover = false">
                                 <div v-if="listBooks[14].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[14].imgCaratula"
+                                        :alt="listBooks[14].alt">
                                 </div>
                             </div>
                         </div>
@@ -153,8 +183,7 @@
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
-                                                type="button"
-                                                class="btn btn-primary btn-sm">
+                                                type="button" class="btn btn-primary btn-sm">
                                                 PDF
                                             </button>
                                         </div>
@@ -177,14 +206,14 @@
                                 </div>
 
                                 <!-- <iframe :src="urlBook + '#toolbar=0'" sin opciones -->
-                                <embed :src="urlBook"
-                                    type="application/pdf"
-                                    width="100%"
-                                    height="100%" />
-                                <!-- <iframe :src="urlBook"
+                                <!-- <embed :src="urlBook"
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" /> -->
+                                <iframe :src="urlBook + '#toolbar=0'"
+                                    type="application/pdf"
+                                    width="100%"
+                                    height="100%" />
                             </div>
                         </div>
                     </div>
@@ -260,7 +289,7 @@
                                     </a>
 
                                     <template #tooltip>
-                                        descargar programa
+                                        Descargar programa
                                     </template>
                                 </vs-tooltip>
                             </vs-dialog>
@@ -286,8 +315,7 @@
                                         height=""
                                         frameborder="0"
                                         allow="autoplay; fullscreen; picture-in-picture"
-                                        allowfullscreen
-                                        title="Morat  No Hay M&amp;aacute;s Que Hablar.mp4">
+                                        allowfullscreen>
                                     </iframe>
                                 </div>
                             </div>
@@ -340,9 +368,9 @@
                 heightIframeBook: false,
                 agendaBook: false,
                 //changeBackground: true,
-                changeBackground: false,
+                changeBackground: false, // comentar
                 //viewHoverBooks: false,
-                viewHoverBooks: true,
+                viewHoverBooks: true,  // comentar
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
@@ -402,7 +430,6 @@
             }
         },
         created() {
-            /* Lista de libros */
             this.listBooks = [
                 {
                     id: 1,
@@ -615,7 +642,7 @@
     }
 
     .height-iframe-book {
-        height: 70%;
+        height: 80%;
     }
 
     /* STAR: estilos para libros */
@@ -791,7 +818,7 @@
         position: absolute;
         width: 92%;
         height: 100%;
-        top: 15px;
+        top: -8%;
     }
     div#close-pdf-read:hover {
         background: #90080861;

@@ -13,7 +13,9 @@
                                 @mouseover="listBooks[0].eventHover = true"
                                 @mouseleave="listBooks[0].eventHover = false">
                                 <div v-if="listBooks[0].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[0].imgCaratula" :alt="listBooks[0].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[0].imgCaratula"
+                                        :alt="listBooks[0].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-2"
@@ -21,7 +23,9 @@
                                 @mouseover="listBooks[1].eventHover = true"
                                 @mouseleave="listBooks[1].eventHover = false">
                                 <div v-if="listBooks[1].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[1].imgCaratula" :alt="listBooks[1].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[1].imgCaratula"
+                                        :alt="listBooks[1].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-3"
@@ -29,7 +33,9 @@
                                 @mouseover="listBooks[2].eventHover = true"
                                 @mouseleave="listBooks[2].eventHover = false">
                                 <div v-if="listBooks[2].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[2].imgCaratula" :alt="listBooks[2].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[2].imgCaratula"
+                                        :alt="listBooks[2].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-4"
@@ -37,7 +43,9 @@
                                 @mouseover="listBooks[3].eventHover = true"
                                 @mouseleave="listBooks[3].eventHover = false">
                                 <div v-if="listBooks[3].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[3].imgCaratula" :alt="listBooks[3].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[3].imgCaratula"
+                                        :alt="listBooks[3].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-5"
@@ -45,7 +53,9 @@
                                 @mouseover="listBooks[4].eventHover = true"
                                 @mouseleave="listBooks[4].eventHover = false">
                                 <div v-if="listBooks[4].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[4].imgCaratula" :alt="listBooks[4].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[4].imgCaratula"
+                                        :alt="listBooks[4].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-6"
@@ -53,7 +63,9 @@
                                 @mouseover="listBooks[5].eventHover = true"
                                 @mouseleave="listBooks[5].eventHover = false">
                                 <div v-if="listBooks[5].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[5].imgCaratula" :alt="listBooks[5].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[5].imgCaratula"
+                                        :alt="listBooks[5].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-7"
@@ -61,7 +73,9 @@
                                 @mouseover="listBooks[6].eventHover = true"
                                 @mouseleave="listBooks[6].eventHover = false">
                                 <div v-if="listBooks[6].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[6].imgCaratula" :alt="listBooks[6].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[6].imgCaratula"
+                                        :alt="listBooks[6].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-8"
@@ -69,7 +83,9 @@
                                 @mouseover="listBooks[7].eventHover = true"
                                 @mouseleave="listBooks[7].eventHover = false">
                                 <div v-if="listBooks[7].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[7].imgCaratula" :alt="listBooks[7].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[7].imgCaratula"
+                                        :alt="listBooks[7].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-9"
@@ -77,7 +93,9 @@
                                 @mouseover="listBooks[8].eventHover = true"
                                 @mouseleave="listBooks[8].eventHover = false">
                                 <div v-if="listBooks[8].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[8].imgCaratula" :alt="listBooks[8].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[8].imgCaratula"
+                                        :alt="listBooks[8].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-10"
@@ -85,7 +103,9 @@
                                 @mouseover="listBooks[9].eventHover = true"
                                 @mouseleave="listBooks[9].eventHover = false">
                                 <div v-if="listBooks[9].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[9].imgCaratula" :alt="listBooks[9].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[9].imgCaratula"
+                                        :alt="listBooks[9].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-11"
@@ -93,7 +113,9 @@
                                 @mouseover="listBooks[10].eventHover = true"
                                 @mouseleave="listBooks[10].eventHover = false">
                                 <div v-if="listBooks[10].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[10].imgCaratula" :alt="listBooks[10].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[10].imgCaratula"
+                                        :alt="listBooks[10].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-12"
@@ -101,7 +123,9 @@
                                 @mouseover="listBooks[11].eventHover = true"
                                 @mouseleave="listBooks[11].eventHover = false">
                                 <div v-if="listBooks[11].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[11].imgCaratula" :alt="listBooks[11].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[11].imgCaratula"
+                                        :alt="listBooks[11].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-13"
@@ -109,7 +133,9 @@
                                 @mouseover="listBooks[12].eventHover = true"
                                 @mouseleave="listBooks[12].eventHover = false">
                                 <div v-if="listBooks[12].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[12].imgCaratula" :alt="listBooks[12].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[12].imgCaratula"
+                                        :alt="listBooks[12].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-14"
@@ -117,7 +143,9 @@
                                 @mouseover="listBooks[13].eventHover = true"
                                 @mouseleave="listBooks[13].eventHover = false">
                                 <div v-if="listBooks[13].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[13].imgCaratula" :alt="listBooks[13].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[13].imgCaratula"
+                                        :alt="listBooks[13].alt">
                                 </div>
                             </div>
                             <div class="class-position" id="book-15"
@@ -125,7 +153,9 @@
                                 @mouseover="listBooks[14].eventHover = true"
                                 @mouseleave="listBooks[14].eventHover = false">
                                 <div v-if="listBooks[14].eventHover" class="content-img-hover-book">
-                                    <img class="img-hover-book" v-if="true" :src="listBooks[14].imgCaratula" :alt="listBooks[14].alt">
+                                    <img class="img-hover-book"
+                                        :src="listBooks[14].imgCaratula"
+                                        :alt="listBooks[14].alt">
                                 </div>
                             </div>
                         </div>
@@ -177,14 +207,14 @@
                                 </div>
 
                                 <!-- <iframe :src="urlBook + '#toolbar=0'" sin opciones -->
-                                <embed :src="urlBook"
-                                    type="application/pdf"
-                                    width="100%"
-                                    height="100%" />
-                                <!-- <iframe :src="urlBook"
+                                <!-- <embed :src="urlBook"
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" /> -->
+                                <iframe :src="urlBook + '#toolbar=0'"
+                                    type="application/pdf"
+                                    width="100%"
+                                    height="100%" />
                             </div>
                         </div>
                     </div>
@@ -205,59 +235,65 @@
                             </div>
 
                             <vs-dialog width="550px" not-center v-model="agendaBook">
-                                <a id="pdf-download" href="/book/Lo que leo.pdf" download="programa">
-                                    <div id="content-dialog-book" class="con-content" >
-                                        <h3 class="text-center color-white font-weight-bold">
-                                            Programa
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
-                                                <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
-                                            </svg>
-                                        </h3>
-                                        <p class="text-center">
-                                            <img src="/image/img-dialog.png" alt="img dialog">
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-4 text-center color-white">
-                                                <h4>3:30</h4>
-                                                <span>Bienvenida</span>
+                                <vs-tooltip color="#b1935e" border-thick>
+                                    <a id="pdf-download" href="/book/Lo que leo.pdf" download="programa">
+                                        <div id="content-dialog-book" class="con-content" >
+                                            <h3 class="text-center color-white font-weight-bold">
+                                                Programa
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
+                                                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2zm2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708z"/>
+                                                </svg>
+                                            </h3>
+                                            <p class="text-center">
+                                                <img src="/image/img-dialog.png" alt="img dialog">
+                                            </p>
+                                            <div class="row">
+                                                <div class="col-4 text-center color-white">
+                                                    <h4>3:30</h4>
+                                                    <span>Bienvenida</span>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <h4>4:30</h4>
+                                                    <span>Conferencia magistral <br>Julieta Pinasco</span>
+                                                </div>
+                                                <div class="col-4 text-center color-white">
+                                                    <h4>6:45</h4>
+                                                    <span>Taller <br>Raquel Cuperman</span>
+                                                </div>
                                             </div>
-                                            <div class="col-4 text-center">
-                                                <h4>4:30</h4>
-                                                <span>Conferencia magistral <br>Julieta Pinasco</span>
+                                            <div class="row mt-2">
+                                                <div class="col-4 text-center">
+                                                    <h4>3:35</h4>
+                                                    <span>Cata de libros</span>
+                                                </div>
+                                                <div class="col-4 text-center color-white">
+                                                    <h4>5:15</h4>
+                                                    <span>Taller <br>Alejandra Jaramillo</span>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <h4>7:30</h4>
+                                                    <span>Cierre</span>
+                                                </div>
                                             </div>
-                                            <div class="col-4 text-center color-white">
-                                                <h4>6:45</h4>
-                                                <span>Taller <br>Raquel Cuperman</span>
+                                            <div class="row mt-2">
+                                                <div class="col-4 text-center color-white">
+                                                    <h4>4:15</h4>
+                                                    <span>¿Qué pasó en la cata? <br>Los profesores lo cuentan</span>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                    <h4>6:00</h4>
+                                                    <span>Conferencia magistral <br>Eduardo Escallón</span>
+                                                </div>
+                                                <div class="col-4 text-center">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="row mt-2">
-                                            <div class="col-4 text-center">
-                                                <h4>3:35</h4>
-                                                <span>Cata de libros</span>
-                                            </div>
-                                            <div class="col-4 text-center color-white">
-                                                <h4>5:15</h4>
-                                                <span>Taller <br>Alejandra Jaramillo</span>
-                                            </div>
-                                            <div class="col-4 text-center">
-                                                <h4>7:30</h4>
-                                                <span>Cierre</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-2">
-                                            <div class="col-4 text-center color-white">
-                                                <h4>4:15</h4>
-                                                <span>¿Qué pasó en la cata? <br>Los profesores lo cuentan</span>
-                                            </div>
-                                            <div class="col-4 text-center">
-                                                <h4>6:00</h4>
-                                                <span>Conferencia magistral <br>Eduardo Escallón</span>
-                                            </div>
-                                            <div class="col-4 text-center">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
+                                    </a>
+
+                                    <template #tooltip>
+                                        Descargar programa
+                                    </template>
+                                </vs-tooltip>
                             </vs-dialog>
 
                             <div class="card animate__animated animate__slideInRight animate__slower">
@@ -319,8 +355,10 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: true,
-                viewHoverBooks: false,
+                //changeBackground: true,
+                //viewHoverBooks: false,
+                changeBackground: false, // comentar
+                viewHoverBooks: true, // comentar
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
@@ -380,7 +418,6 @@
             }
         },
         created() {
-            /* Lista de libros */
             this.listBooks = [
                 {
                     id: 1,
@@ -474,7 +511,7 @@
                 },
                 {
                     id: 11,
-                    title: 'martina y la carta del monje Yukio',
+                    title: 'Martina y la carta del monje Yukio',
                     description: 'Cuando Martina llega Nueva York a casa de su papá tras mucho tiempo sin verlo, no solo lo encuentra a él muy diferente, sino que todo le resulta nuevo y sorpresivo: los paisajes, la gente, el idioma. Martina comprenderá que las circunstancias pueden moldear el carácter y los sentimientos. Afortunadamente conoce a alguien que le ayudará a sobrellevar la nueva situación: su vecino, el monje Yukio.',
                     alt: 'martina y la carta del monje Yukio',
                     url: '/book/diatres/martina-y-la-carta-del-monje-yukio.pdf',
@@ -545,7 +582,6 @@
         right: 1%;
         width: 25%;
         height: 70%;
-        z-index: 99;
         border-radius: 1rem;
         padding: 0.4rem;
         opacity: 0;
@@ -560,7 +596,7 @@
     }
     .content-chat-opacity {
         opacity: 1 !important;
-        z-index: 70;
+        z-index: 110;
     }
     /* END estilos chat */
 
@@ -591,7 +627,7 @@
     }
 
     .height-iframe-book {
-        height: 70%;
+        height: 80%;
     }
 
     /* STAR: estilos para libros */
@@ -767,7 +803,7 @@
         position: absolute;
         width: 92%;
         height: 100%;
-        top: 15px;
+        top: -8%;
     }
     div#close-pdf-read:hover {
         background: #90080861;
@@ -817,11 +853,23 @@
         width: 100%;
         height: 22rem;
     }
-    div#content-agenda-book {
+    div#content-background-img {
         margin: 0 0 0 75%;
+    }
+    div#content-background-img button {
+        background: #9f793d;
+    }
+    div#content-agenda-book {
+        margin: 0 0 0 78%;
+    }
+    .color-button-book {
+        background: #9f793d;
     }
     div#content-agenda-book button {
         background: #9f793d;
+    }
+    div#content-agenda-book button:hover {
+        box-shadow: 0px 10px 20px -10px rgb(193 59 43);
     }
     #content-dialog-book {
         background: #b1935e;
