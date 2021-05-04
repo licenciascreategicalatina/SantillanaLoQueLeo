@@ -372,10 +372,10 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: true,
-                //changeBackground: false, // comentar
-                viewHoverBooks: false,
-                //viewHoverBooks: true,  // comentar
+                //changeBackground: true,
+                changeBackground: false, // comentar
+                //viewHoverBooks: false,
+                viewHoverBooks: true,  // comentar
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
@@ -424,12 +424,12 @@
                 let day = new Date();
                 this.clockTimer = day.toLocaleTimeString();
 
-                if (this.clockTimer.includes("3:25:00")) {
+                /* if (this.clockTimer.includes("3:25:00")) {
                     this.changeBackgroundMain()
                 }
                 if (this.clockTimer.includes("4:15:00")) {
                     this.changeBackgroundMain()
-                }
+                } */
                 /* if (this.clockTimer.includes("3:51:00")) {
                     this.changeBackgroundMain()
                 }

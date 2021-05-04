@@ -4,7 +4,8 @@
             :class="{'main-background-book' : changeBackground}">
 
             <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-background-books" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-1' : changeBackground}">
                     <div class="view-iframe-one">
                         <!-- BEGIN: posición de los libros -->
                         <div v-if="viewHoverBooks">
@@ -180,7 +181,9 @@
 
                                     <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
+                                        <div class="overflow-auto">
+                                            <p class="text-justify">{{ bookSelect.description }}</p>
+                                        </div>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -610,6 +613,12 @@
         color: #9f793d;
     }
 
+    .overflow-auto {
+        height: 110px;
+        overflow: auto !important;
+        margin-bottom: 0.5rem;
+    }
+
     .main-view {
         //background-image: url("/image/background-day-two.jpg");
         background-image: url("/image/imgbackground/primaria.jpg");
@@ -854,7 +863,7 @@
     }
     #iframe-video {
         width: 100%;
-        height: 22rem;
+        height: 55vh;
     }
     div#content-background-img {
         margin: 0 0 0 75%;
