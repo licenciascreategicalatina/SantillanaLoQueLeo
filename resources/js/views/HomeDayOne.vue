@@ -427,7 +427,7 @@
                 /* if (this.clockTimer.includes("3:25:00")) {
                     this.changeBackgroundMain()
                 } */
-                if (this.clockTimer.includes("4:33:10")) {
+                if (this.clockTimer.includes("4:35:10")) {
                     //this.changeBackgroundMain()
                     this.changeBackground = true,
                     //this.changeBackground = false, // comentar
