@@ -22,6 +22,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="/css/main-style-book.css" rel="stylesheet">
 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7QQLS4V9W8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7QQLS4V9W8');
+    </script>
+
     @stack('styles')
 </head>
 <body style="font-family: 'pluto';">
@@ -150,7 +160,7 @@
     </script>
 
     <script>
-        var myVar = setInterval(myTimer, 1000);
+        /* var myVar = setInterval(myTimer, 1000);
 
         function myTimer() {
             var d = new Date();
@@ -160,12 +170,7 @@
                 console.log('object')
                 location.reload()
             }
-        }
-
-        /* setTimeout(() => {
-            console.log('sale....', primer)
-            primer = false
-        }, 12000); */
+        } */
 
     </script>
 

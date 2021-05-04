@@ -423,24 +423,22 @@
             initClock() {
                 let day = new Date();
                 this.clockTimer = day.toLocaleTimeString();
-
-                /* if (this.clockTimer.includes("3:25:00")) {
-                    this.changeBackgroundMain()
-                } */
-                if (this.clockTimer.includes("4:38:10")) {
-                    //this.changeBackgroundMain()
-                    this.changeBackground = true,
-                    //this.changeBackground = false, // comentar
-                    this.viewHoverBooks = false,
-                    //this.viewHoverBooks = true,  // comentar
-                    location.reload();
-                }
-                /* if (this.clockTimer.includes("3:51:00")) {
-                    this.changeBackgroundMain()
-                }
-                if (this.clockTimer.includes("3:52:00")) {
-                    this.changeBackgroundMain()
-                } */
+            },
+            changeBackgroudPage() {
+                axios.get("/api/change-background")
+                .then( result => {
+                    let change = result.data.data;
+                    console.log(change)
+                    if (change === 'si'){
+                        this.changeBackground = false
+                        this.viewHoverBooks = true
+                    } else {
+                        this.changeBackground = true
+                        this.viewHoverBooks = false
+                    }
+                }).catch( error => {
+                    console.log('fallo');
+                });
             }
         },
         created() {
@@ -583,9 +581,12 @@
             ]
         },
         mounted() {
-            this.intervalClock = setInterval( () => {
+           /*  this.intervalClock = setInterval( () => {
                 this.initClock();
-            }, 1000);
+            }, 1000); */
+            this.intervalClock = setInterval( () => {
+                this.changeBackgroudPage();
+            }, 30000);
         }
     }
 </script>

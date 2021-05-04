@@ -9013,23 +9013,24 @@ __webpack_require__.r(__webpack_exports__);
     initClock: function initClock() {
       var day = new Date();
       this.clockTimer = day.toLocaleTimeString();
-      /* if (this.clockTimer.includes("3:25:00")) {
-          this.changeBackgroundMain()
-      } */
+    },
+    changeBackgroudPage: function changeBackgroudPage() {
+      var _this2 = this;
 
-      if (this.clockTimer.includes("4:38:10")) {
-        //this.changeBackgroundMain()
-        this.changeBackground = true, //this.changeBackground = false, // comentar
-        this.viewHoverBooks = false, //this.viewHoverBooks = true,  // comentar
-        location.reload();
-      }
-      /* if (this.clockTimer.includes("3:51:00")) {
-          this.changeBackgroundMain()
-      }
-      if (this.clockTimer.includes("3:52:00")) {
-          this.changeBackgroundMain()
-      } */
+      axios.get("/api/change-background").then(function (result) {
+        var change = result.data.data;
+        console.log(change);
 
+        if (change === 'si') {
+          _this2.changeBackground = false;
+          _this2.viewHoverBooks = true;
+        } else {
+          _this2.changeBackground = true;
+          _this2.viewHoverBooks = false;
+        }
+      })["catch"](function (error) {
+        console.log('fallo');
+      });
     }
   },
   created: function created() {
@@ -9156,11 +9157,14 @@ __webpack_require__.r(__webpack_exports__);
     }];
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
+    /*  this.intervalClock = setInterval( () => {
+         this.initClock();
+     }, 1000); */
     this.intervalClock = setInterval(function () {
-      _this2.initClock();
-    }, 1000);
+      _this3.changeBackgroudPage();
+    }, 30000);
   }
 });
 
