@@ -8961,12 +8961,10 @@ __webpack_require__.r(__webpack_exports__);
       activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
-      //changeBackground: true,
-      changeBackground: false,
-      // comentar
-      //viewHoverBooks: false,
-      viewHoverBooks: true,
-      // comentar
+      changeBackground: true,
+      //changeBackground: false, // comentar
+      viewHoverBooks: false,
+      //viewHoverBooks: true,  // comentar
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
@@ -9017,17 +9015,21 @@ __webpack_require__.r(__webpack_exports__);
       this.clockTimer = day.toLocaleTimeString();
       /* if (this.clockTimer.includes("3:25:00")) {
           this.changeBackgroundMain()
-      }
-      if (this.clockTimer.includes("4:15:00")) {
-          this.changeBackgroundMain()
       } */
 
+      if (this.clockTimer.includes("4:33:10")) {
+        //this.changeBackgroundMain()
+        this.changeBackground = true, //this.changeBackground = false, // comentar
+        this.viewHoverBooks = false, //this.viewHoverBooks = true,  // comentar
+        location.reload();
+      }
       /* if (this.clockTimer.includes("3:51:00")) {
           this.changeBackgroundMain()
       }
       if (this.clockTimer.includes("3:52:00")) {
           this.changeBackgroundMain()
       } */
+
     }
   },
   created: function created() {
