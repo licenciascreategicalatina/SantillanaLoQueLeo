@@ -9017,7 +9017,7 @@ __webpack_require__.r(__webpack_exports__);
           this.changeBackgroundMain()
       } */
 
-      if (this.clockTimer.includes("4:36:10")) {
+      if (this.clockTimer.includes("4:38:10")) {
         //this.changeBackgroundMain()
         this.changeBackground = true, //this.changeBackground = false, // comentar
         this.viewHoverBooks = false, //this.viewHoverBooks = true,  // comentar
