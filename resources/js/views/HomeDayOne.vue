@@ -4,7 +4,7 @@
             :class="{'main-background-book' : changeBackground}">
 
             <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-background-books" class="col-sm-12 col-md-12 col-lg-6">
                     <div class="view-iframe-one">
                         <!-- BEGIN: posición de los libros -->
                         <div v-if="viewHoverBooks">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-backgroud-video" class="col-sm-12 col-md-12 col-lg-6">
                     <div id="content-clock">
                         <span id="clock-timer">{{ clockTimer }}</span>
                     </div>
@@ -406,6 +406,10 @@
                 this.viewHoverBooks = !this.viewHoverBooks;
             },
             truncate( text ) {
+                if (window.innerWidth < 992) {
+                    return text.length > 200 ? text.slice(0, 150) + '...' : text;
+                }
+
                 return text.length > 350 ? text.slice(0, 350) + '...' : text;
             },
             openViewChat() {
@@ -905,59 +909,151 @@
 
     /* Styles responsive */
     @media (min-width: 30px) and (max-width: 991.98px) {
-
-        .vs-card__img img {
-            height: 180px;
+        .class-position {
+            border: 1px solid red;
         }
 
-        /* Style content first iframe */
+        #content-background-books {
+            background-image: url("/image/imgbackground/movil/preescolar-uno.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
         .view-iframe-one {
             min-height: 60vh;
             contain: content;
         }
-        .card-body-text {
-            padding: 0.8rem;
+
+        div#book-1 {
+            top: 18%;
+            left: 1%;
+            height: 9%;
+            width: 10%;
         }
-        .text-title {
-            font-size: 1.5rem;
+        div#book-2 {
+            left: 1%;
+            width: 10%;
         }
-        .text-subtitle {
-            font-size: 0.8rem;
-            margin: 1rem 0;
+        div#book-3 {
+            top: 17%;
+            left: 45%;
+            height: 8%;
+            width: 8%;
+        }
+        div#book-4 {
+            left: 45%;
+            width: 8%;
+        }
+        div#book-5 {
+            left: 45%;
+            width: 8%;
+        }
+        div#book-6 {
+            left: 5%;
+            width: 10%;
+        }
+        div#book-7 {
+            left: 17%;
+            width: 10%;
+        }
+        div#book-8 {
+            top: 45%;
+            left: 29%;
+            height: 11%;
+            width: 9%;
+        }
+        div#book-9 {
+            top: 46%;
+            left: 39%;
+            height: 10%;
+            width: 9%;
+        }
+        div#book-10 {
+            width: 9%;
+        }
+        div#book-11 {
+            top: 59%;
+            left: 39%;
+            height: 11.2%;
+            width: 10%;
+        }
+        div#book-12 {
+            top: 59%;
+            width: 10%;
+        }
+        div#book-13 {
+            top: 59%;
+            left: 70%;
+            width: 10%;
+        }
+        div#book-14 {
+            height: 13%;
+            width: 9%;
+        }
+        div#book-15 {
+            left: 63%;
+            height: 13%;
+            width: 10%;
         }
 
-        /* Read PDF */
-        #close-pdf-read {
-            top: 0px;
+        .vertical-center {
+            width: 100%;
         }
-        .close-pdf {
-            font-size: 1rem;
+        img#img-info-book {
+            max-height: 190px;
+        }
+        h3.text-center {
+            font-size: 1.1rem;
+        }
+        p.text-justify {
+            font-size: 0.7rem;
         }
         #pdf-read {
-            top: 30px;
+            top: -5%;
+        }
+        svg#icon-view-book {
+            width: 1.6rem;
+            height: 1.6rem;
         }
 
 
-        /* Estilos compartidos */
-        .vertical-center {
-            padding: 0;
+        #content-backgroud-video {
+            background-image: url("/image/imgbackground/movil/preescolar-dos.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-
 
         /* Style content second iframe */
         .view-iframe-two {
-            min-height: 40vh;
+            min-height: 60vh;
             contain: content;
+        }
+        .vertical-center-video {
+            left: 0%;
+        }
+        div#content-agenda-book {
+            margin: 0 0 0 62%;
         }
         #iframe-video {
             height: 13rem;
+        }
+        div#content-clock {
+            bottom: 2%;
+            top: auto;
+            right: auto;
+        }
+
+        div#content-chat {
+            width: 80%;
+            height: 60%;
         }
     }
 
     /* Styles for large screens  */
     @media (min-width: 1400px) {
-        .main-card .vs-card__img {
-            max-height: 350px !important;
+        #iframe-video {
+            height: 35rem;
         }
     }
 </style>
