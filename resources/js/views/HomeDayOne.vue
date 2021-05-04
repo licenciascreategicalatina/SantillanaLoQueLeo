@@ -879,7 +879,7 @@
     }
     #iframe-video {
         width: 100%;
-        height: 22rem;
+        height: 55vh;
     }
     div#content-background-img {
         margin: 0 0 0 75%;
@@ -1064,8 +1064,8 @@
 
     /* Styles for large screens  */
     @media (min-width: 2000px) {
-        #iframe-video {
-            height: 35rem;
-        }
+       /*  #iframe-video {
+            height: 55vh;
+        } */
     }
 </style>
