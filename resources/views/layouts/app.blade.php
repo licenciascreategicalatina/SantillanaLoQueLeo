@@ -148,6 +148,27 @@
             }
         });
     </script>
+
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            var hora = d.toLocaleTimeString();
+            console.log('hora: ', hora);
+            if (hora.includes("5:20:40")) {
+                console.log('object')
+                location.reload()
+            }
+        }
+
+        /* setTimeout(() => {
+            console.log('sale....', primer)
+            primer = false
+        }, 12000); */
+
+    </script>
+
     <!--Start of Tawk.to Script-->
    {{--  <script type="text/javascript">
         var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
