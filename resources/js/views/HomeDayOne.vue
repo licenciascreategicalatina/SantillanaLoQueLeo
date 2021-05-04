@@ -4,7 +4,8 @@
             :class="{'main-background-book' : changeBackground}">
 
             <div class="row justify-content-center">
-                <div id="content-background-books" class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-background-books" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-1' : changeBackground}">
                     <div class="view-iframe-one">
                         <!-- BEGIN: posición de los libros -->
                         <div v-if="viewHoverBooks">
@@ -222,7 +223,8 @@
                     </div>
                 </div>
 
-                <div id="content-backgroud-video" class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-backgroud-video" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-2' : changeBackground}">
                     <div id="content-clock">
                         <span id="clock-timer">{{ clockTimer }}</span>
                     </div>
@@ -928,6 +930,9 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .content-background-books-1 {
+            background-image: url("/image/imgbackground/movil/main-background-1.png") !important;
+        }
         .view-iframe-one {
             min-height: 60vh;
             contain: content;
@@ -1034,6 +1039,9 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        .content-background-books-2 {
+            background-image: url("/image/imgbackground/movil/main-background-2.png") !important;
         }
 
         /* Style content second iframe */
