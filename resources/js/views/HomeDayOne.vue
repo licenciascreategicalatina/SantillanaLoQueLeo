@@ -180,7 +180,8 @@
                                     <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
                                         <div class="overflow-auto">
-                                            <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
+                                            <!-- <p class="text-justify">{{ truncate(bookSelect.description) }}</p> -->
+                                            <p class="text-justify">{{ bookSelect.description }}</p>
                                         </div>
                                         <div class="text-right">
                                             <button id="btn-info-book"
@@ -626,6 +627,12 @@
         color: #9f793d;
     }
 
+    .overflow-auto {
+        height: 110px;
+        overflow: auto !important;
+        margin-bottom: 0.5rem;
+    }
+
     .main-view {
         background-image: url("/image/imgbackground/preescolar.jpg");
         //background-image: url("/image/background-day-one.jpg");
@@ -925,6 +932,9 @@
             min-height: 60vh;
             contain: content;
         }
+        .overflow-auto {
+            height: 80px;
+        }
 
         div#book-1 {
             top: 18%;
@@ -1053,7 +1063,7 @@
     }
 
     /* Styles for large screens  */
-    @media (min-width: 1400px) {
+    @media (min-width: 2000px) {
         #iframe-video {
             height: 35rem;
         }
