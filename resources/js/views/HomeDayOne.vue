@@ -372,10 +372,10 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                //changeBackground: true,
-                changeBackground: false, // comentar
-                //viewHoverBooks: false,
-                viewHoverBooks: true,  // comentar
+                changeBackground: true,
+                //changeBackground: false, // comentar
+                viewHoverBooks: false,
+                //viewHoverBooks: true,  // comentar
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
