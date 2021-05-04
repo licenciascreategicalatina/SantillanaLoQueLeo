@@ -179,7 +179,9 @@
                                     </div>
                                     <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
+                                        <div class="overflow-auto">
+                                            <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
+                                        </div>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -909,9 +911,9 @@
 
     /* Styles responsive */
     @media (min-width: 30px) and (max-width: 991.98px) {
-        .class-position {
+        /* .class-position {
             border: 1px solid red;
-        }
+        } */
 
         #content-background-books {
             background-image: url("/image/imgbackground/movil/preescolar-uno.png");
