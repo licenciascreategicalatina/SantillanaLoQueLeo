@@ -224,7 +224,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-backgroud-video" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-2' : changeBackground}">
                     <div id="content-clock">
                         <span id="clock-timer">{{ clockTimer }}</span>
                     </div>
@@ -320,6 +321,10 @@
                                     </iframe>
                                 </div>
                             </div>
+
+                            <vs-button class="video-tuto" @click="openVideo=!openVideo">
+                                Vídeo instructivo
+                            </vs-button>
                         </div>
                     </div>
 
@@ -345,6 +350,23 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <vs-dialog width="550px" v-model="openVideo">
+                <template #header>
+                <h4 class="not-margin">
+                    Vídeo instructivo
+                </h4>
+                </template>
+
+
+                <div class="con-content">
+                    <video width="100%" controls autoplay>
+                        <source src="/video/tutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </vs-dialog>
         </div>
     </div>
 </template>
@@ -368,9 +390,14 @@
                 bookSelect: null,
                 clockTimer: "",
                 intervalClock: "",
+                openVideo: false,
             }
         },
         methods: {
+            openVideoF() {
+                this.openVideo = !this.openVideo
+                console.log('listo')
+            },
             clickShowViewInfoBook( book ) {
                 this.activeModal = true
                 this.bookSelect = book;
@@ -413,7 +440,7 @@
                 axios.get("/api/change-background")
                 .then( result => {
                     let change = result.data.data;
-                    console.log(change)
+                    //console.log(change)
                     if (change === 'si'){
                         this.changeBackground = false
                         this.viewHoverBooks = true
@@ -426,10 +453,9 @@
                 });
             },
             eventClickBook( book ) {
-
                 axios.post('/click-book', book)
                     .then( (resp) => {
-                        console.log('click...')
+                        //console.log('click...')
                     })
                     .catch( error => {
                         console.log('Error clic book')
@@ -450,7 +476,7 @@
                 {
                     id: 2,
                     title: 'Una idea toda azul',
-                    description: '“Este es el primer conjunto de cuentos maravillosos que escribió Marina Colasanti cuando descubrió el don de entender la vida a través de la lengua de las hadas y creó un universo poético inconfundible. Desde su publicación en Brasil, en 1978, este libro fascinó a los lectores de todas las edades y se convirtió en un clásico de la literatura infantil contemporánea”.',
+                    description: '“Este es el primer conjunto de cuentos maravillosos que escribió Marina Colasanti cuando descubrió el don de entender la vida a través de la lengua de las hadas y creó un universo poético inconfundible. Desde su publicación en Brasil, en 1978, este libro fascinó a los lectores de todas las edades y se convirtió en un clásico de la literatura infantil contemporánea”. Yolanda Reyes',
                     alt: 'Una idea toda azul',
                     url: '/book/diados/idea-toda-azul.pdf',
                     imgCaratula: "/image/imgbooks/diados/idea-toda-azul.jpg",
@@ -531,7 +557,7 @@
                 {
                     id: 11,
                     title: 'Allá y Aquí',
-                    description: '"Érase una vez una casa. Mi casa..." La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa.',
+                    description: '"Érase una vez una casa. Mi casa...". La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa.',
                     alt: 'Allá y Aquí',
                     url: '/book/diados/alla-y-aqui.pdf',
                     imgCaratula: "/image/imgbooks/diados/alla-y-aqui.jpg",
@@ -539,9 +565,9 @@
                 },
                 {
                     id: 12,
-                    title: 'Marcial y la venganza de los lagartillos',
+                    title: 'Marcial y la venganza de los lagartijos',
                     description: 'El gran sueño de Marcial es subirse al tranvía. Un día descubre a un lagartijo y lo amarra a los rieles hasta que el tren pasa y lo mata. Pronto esto se vuelve un pasatiempo. Los lagartijos acuden a la Policía de los lagartos y nombran a Cristian Saurio Verdoso y Lucas Crestas Pintadas como los líderes de la misión para darle una lección a Marcial. Mágicamente, los lagartos toman tamaño humano y se disfrazan para que Marcial comprenda que ellos son sus amigos.',
-                    alt: 'marcial y la venganza de los lagartillos',
+                    alt: 'marcial y la venganza de los lagartijos',
                     url: '/book/diados/marcial-y-la-venganza-de-los-lagartijos.pdf',
                     imgCaratula: "/image/imgbooks/diados/marcial-y-la-venganza-de-los-lagartijos.jpg",
                     eventHover: false,
@@ -558,7 +584,7 @@
                 {
                     id: 14,
                     title: 'La gata sola',
-                    description: '"¿Qué emociones suscita la aparición de una gata en un pueblo que nunca ha visto gatos? La escritora Carolina Sanín parece inventar una nueva lengua para nombrarlas, y el ilustrador Santiago Guevara dibuja el tono y la atmósfera de esos paisajes por los que quizás todos hemos transitado. Una fábula, en el sentido más profundo y actual, que nos conmueve con su belleza, incluso en medio del dolor".',
+                    description: '"¿Qué emociones suscita la aparición de una gata en un pueblo que nunca ha visto gatos? La escritora Carolina Sanín parece inventar una nueva lengua para nombrarlas, y el ilustrador Santiago Guevara dibuja el tono y la atmósfera de esos paisajes por los que quizás todos hemos transitado. Una fábula, en el sentido más profundo y actual, que nos conmueve con su belleza, incluso en medio del dolor". Yolanda Reyes',
                     alt: 'La gata sola',
                     url: '/book/diados/la-gata-sola.pdf',
                     imgCaratula: "/image/imgbooks/diados/la-gata.jpg",
@@ -587,6 +613,16 @@
 </script>
 
 <style scoped lang="scss">
+    button.video-tuto {
+        position: fixed;
+        bottom: -8%;
+        background: #9f793d;
+    }
+    button.video-tuto:hover {
+        box-shadow: 0px 10px 20px -10px #c13b2b;
+    }
+
+
     /* BEGIN estilos chat */
     button#btn-float-chat {
         border-radius: 1.8rem !important;

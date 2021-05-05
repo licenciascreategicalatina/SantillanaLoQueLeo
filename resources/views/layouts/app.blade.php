@@ -55,7 +55,7 @@
                             {{-- <a id="text-programa" class="nav-link nav-link-book" href="#">Programa de formación a profesores</a> --}}
                         </li>
 
-                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Evento del 4 de mayo, no disponible">
+                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Evento 4 de mayo, no disponible">
                             <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Preescolar</span>
                         </li>
 

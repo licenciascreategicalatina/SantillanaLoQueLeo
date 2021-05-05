@@ -4,7 +4,8 @@
             :class="{'main-background-book' : changeBackground}">
 
             <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-background-books" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-1' : changeBackground}">
                     <div class="view-iframe-one">
                         <!-- BEGIN: posición de los libros -->
                         <div v-if="viewHoverBooks">
@@ -172,14 +173,16 @@
                                 </div>
 
                                 <div id="body-info-book" class="row">
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center" style="max-height: 350px;">
                                         <img id="img-info-book"
                                             @click="eventShowIframeBook( bookSelect )"
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
                                     </div>
                                     <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
-                                        <p class="text-justify">{{ truncate(bookSelect.description) }}</p>
+                                        <div class="overflow-auto">
+                                            <p class="text-justify">{{ bookSelect.description }}</p>
+                                        </div>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
@@ -211,7 +214,7 @@
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" /> -->
-                                <iframe :src="urlBook + '#toolbar=0'"
+                                <iframe :src="urlBook"
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" />
@@ -220,7 +223,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-12 col-md-12 col-lg-6">
+                <div id="content-backgroud-video" class="col-sm-12 col-md-12 col-lg-6"
+                    :class="{'content-background-books-2' : changeBackground}">
                     <div id="content-clock">
                         <span id="clock-timer">{{ clockTimer }}</span>
                     </div>
@@ -355,10 +359,8 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                //changeBackground: true,
-                //viewHoverBooks: false,
-                changeBackground: false, // comentar
-                viewHoverBooks: true, // comentar
+                changeBackground: true,
+                viewHoverBooks: false,
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
@@ -384,6 +386,8 @@
                     this.openPDF = !this.openPDF;
                     this.imgGif = false;
                 }, 2000);
+
+                this.eventClickBook( book )
             },
             closeIframeBook() {
                 this.openPDF = !this.openPDF;
@@ -402,19 +406,31 @@
             initClock() {
                 let day = new Date();
                 this.clockTimer = day.toLocaleTimeString();
-
-                if (this.clockTimer.includes("3:25:00")) {
-                    this.changeBackgroundMain()
-                }
-                if (this.clockTimer.includes("4:15:00")) {
-                    this.changeBackgroundMain()
-                }
-                /* if (this.clockTimer.includes("3:51:00")) {
-                    this.changeBackgroundMain()
-                }
-                if (this.clockTimer.includes("3:52:00")) {
-                    this.changeBackgroundMain()
-                } */
+            },
+            changeBackgroudPage() {
+                axios.get("/api/change-background")
+                .then( result => {
+                    let change = result.data.data;
+                    //console.log(change)
+                    if (change === 'si'){
+                        this.changeBackground = false
+                        this.viewHoverBooks = true
+                    } else {
+                        this.changeBackground = true
+                        this.viewHoverBooks = false
+                    }
+                }).catch( error => {
+                    console.log('fallo');
+                });
+            },
+            eventClickBook( book ) {
+                axios.post('/click-book', book)
+                    .then( (resp) => {
+                        //console.log('click...')
+                    })
+                    .catch( error => {
+                        console.log('Error clic book')
+                    });
             }
         },
         created() {
@@ -457,7 +473,7 @@
                 },
                 {
                     id: 5,
-                    title: 'La duenda',
+                    title: 'La Duenda',
                     description: '"La primera vez que la vimos éramos niños, aún". A partir de esa primera mirada de la Duenda, un ser de fuerza envolvente e inasible, se conjura el hechizo que será la perdición y el remedio del protagonista de esta historia. Evelio Rosero, con una prosa poética que no cesa de ofrecer poesía, consigue crear una obra cautivante.',
                     alt: 'La duenda',
                     url: '/book/diatres/la-duenda-azul.pdf',
@@ -557,9 +573,12 @@
             ]
         },
         mounted() {
-            this.intervalClock = setInterval( () => {
+            /* this.intervalClock = setInterval( () => {
                 this.initClock();
-            }, 1000);
+            }, 1000); */
+            this.intervalClock = setInterval( () => {
+                this.changeBackgroudPage();
+            }, 30000);
         }
     }
 </script>
@@ -607,6 +626,12 @@
         color: #9f793d;
     }
 
+    .overflow-auto {
+        height: 110px;
+        overflow: auto !important;
+        margin-bottom: 0.5rem;
+    }
+
     .main-view {
         //background-image: url("/image/background-day-three.jpg");
         background-image: url("/image/imgbackground/secundaria.jpg");
@@ -630,7 +655,7 @@
         height: 80%;
     }
 
-    /* STAR: estilos para libros */
+    /* BEGIN: estilos para libros */
     .class-position {
         position: absolute;
         //border: 1px solid red;
@@ -756,9 +781,9 @@
         padding: 1rem;
     }
     img#img-info-book {
-        width: 60%;
+        width: auto;
+        height: 100%;
         cursor: pointer;
-        max-height: 350px;
     }
     #btn-info-book {
         padding: 0.25rem 1rem;
@@ -851,7 +876,7 @@
     }
     #iframe-video {
         width: 100%;
-        height: 22rem;
+        height: 55vh;
     }
     div#content-background-img {
         margin: 0 0 0 75%;
@@ -891,58 +916,170 @@
     /* Styles responsive */
     @media (min-width: 30px) and (max-width: 991.98px) {
 
-        .vs-card__img img {
-            height: 180px;
-        }
+        /* .class-position {
+            border: 1px solid red;
+        } */
 
-        /* Style content first iframe */
+        #content-background-books {
+            background-image: url("/image/imgbackground/movil/secundaria-1.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .content-background-books-1 {
+            background-image: url("/image/imgbackground/movil/main-background-1.png") !important;
+        }
         .view-iframe-one {
             min-height: 60vh;
             contain: content;
         }
-        .card-body-text {
-            padding: 0.8rem;
-        }
-        .text-title {
-            font-size: 1.5rem;
-        }
-        .text-subtitle {
-            font-size: 0.8rem;
-            margin: 1rem 0;
+        .overflow-auto {
+            height: 80px;
         }
 
-        /* Read PDF */
-        #close-pdf-read {
-            top: 0px;
+        div#book-1 {
+            top: 16%;
+            left: 0%;
+            height: 12%;
+            width: 11%;
         }
-        .close-pdf {
-            font-size: 1rem;
+        div#book-2 {
+            left: 0%;
+            height: 13%;
+            width: 11%;
+        }
+        div#book-3 {
+            top: 15%;
+            left: 44%;
+            height: 9.5%;
+            width: 9%;
+        }
+        div#book-4 {
+            left: 44%;
+            width: 9%;
+        }
+        div#book-5 {
+            left: 44%;
+            width: 9%;
+        }
+        div#book-6 {
+            top: 44%;
+            left: 5%;
+            height: 12%;
+            width: 10%;
+        }
+        div#book-7 {
+            top: 44%;
+            left: 17%;
+            height: 12%;
+            width: 10%;
+        }
+        div#book-8 {
+            top: 45%;
+            left: 29%;
+            height: 11%;
+            width: 9%;
+        }
+        div#book-9 {
+            top: 46%;
+            left: 39%;
+            height: 10%;
+            width: 9%;
+        }
+        div#book-10 {
+            width: 9%;
+        }
+        div#book-11 {
+            top: 59%;
+            left: 39%;
+            height: 11.2%;
+            width: 10%;
+        }
+        div#book-12 {
+            top: 59%;
+            left: 54.77%;
+            height: 10.7%;
+            width: 10%;
+        }
+        div#book-13 {
+            top: 59%;
+            left: 71%;
+            height: 10.3%;
+            width: 10%;
+        }
+        div#book-14 {
+            top: 63.5%;
+            left: 47.3%;
+            height: 13%;
+            width: 9%;
+        }
+        div#book-15 {
+            top: 63%;
+            left: 63%;
+            height: 13%;
+            width: 10%;
+        }
+
+
+        .vertical-center {
+            width: 100%;
+        }
+        img#img-info-book {
+            max-height: 190px;
+        }
+        h3.text-center {
+            font-size: 1.1rem;
+        }
+        p.text-justify {
+            font-size: 0.7rem;
         }
         #pdf-read {
-            top: 30px;
+            top: -5%;
+        }
+        svg#icon-view-book {
+            width: 1.6rem;
+            height: 1.6rem;
         }
 
 
-        /* Estilos compartidos */
-        .vertical-center {
-            padding: 0;
+        #content-backgroud-video {
+            background-image: url("/image/imgbackground/movil/secundaria-2.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-
+        .content-background-books-2 {
+            background-image: url("/image/imgbackground/movil/main-background-2.png") !important;
+        }
 
         /* Style content second iframe */
         .view-iframe-two {
-            min-height: 40vh;
+            min-height: 60vh;
             contain: content;
+        }
+        .vertical-center-video {
+            left: 0%;
+        }
+        div#content-agenda-book {
+            margin: 0 0 0 62%;
         }
         #iframe-video {
             height: 13rem;
+        }
+        div#content-clock {
+            bottom: 2%;
+            top: auto;
+            right: auto;
+        }
+
+        div#content-chat {
+            width: 80%;
+            height: 60%;
         }
     }
 
     /* Styles for large screens  */
     @media (min-width: 1400px) {
-        .main-card .vs-card__img {
-            max-height: 350px !important;
-        }
+
     }
 </style>
