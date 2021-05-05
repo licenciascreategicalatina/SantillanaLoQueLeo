@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/reports', [\App\Http\Controllers\ReportsController::class, 'indexReports'])->name('controller.reports');
 
-Route::get('/users-login', [\App\Http\Controllers\ReportsController::class, 'getUserLogin'])->name('get.user.login');
+
+
+Route::get('/books-selected', [\App\Http\Controllers\ReportsController::class, 'getBooksSelected'])->name('get.books.selected');
 
 
 Route::middleware(['auth'])->group( function() {

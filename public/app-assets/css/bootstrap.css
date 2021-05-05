@@ -3373,7 +3373,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item:hover, .dropdown-item:focus {
-    color: #F05E7D;
+    color: #9f793dd1;
     text-decoration: none;
     /*background: rgba(40, 48, 70, 0.80);*/
     transition: 0.4s;

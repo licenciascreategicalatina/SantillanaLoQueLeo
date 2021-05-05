@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get( 'change-background', [ ChangeBackgroundController::class, 'changeBackgroundPage' ] );
 
+Route::get('/users-login', [\App\Http\Controllers\ReportsController::class, 'getUserLogin'])->name('get.user.login');
+Route::get('/users-online', [\App\Http\Controllers\ReportsController::class, 'usersOnline'])->name('get.user.online');
+Route::get('/books-count', [\App\Http\Controllers\ReportsController::class, 'countBooks'])->name('get.books.count');
+
