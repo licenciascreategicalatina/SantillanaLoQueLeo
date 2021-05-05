@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function loginPlatform() {
         return $this->hasOne(LoginPlatform::class);
     }
+
+    public function clickBook() {
+        return $this->hasOne(ClickBook::class);
+    }
 }

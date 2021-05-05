@@ -44,6 +44,11 @@ Route::middleware(['auth'])->group( function() {
         '/import-data',
         [ LandingController::class, 'importData' ]
     )->name('import-data');
+
+    Route::post(
+        'click-book',
+        [ LandingController::class, 'eventClickBook' ]
+    )->name('click-book');
 });
 
 

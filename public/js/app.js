@@ -10139,6 +10139,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.openPDF = !_this.openPDF;
         _this.imgGif = false;
       }, 2000);
+      this.eventClickBook(book);
     },
     closeIframeBook: function closeIframeBook() {
       this.openPDF = !this.openPDF;
@@ -10174,6 +10175,13 @@ __webpack_require__.r(__webpack_exports__);
         }
       })["catch"](function (error) {
         console.log('fallo');
+      });
+    },
+    eventClickBook: function eventClickBook(book) {
+      axios.post('/click-book', book).then(function (resp) {
+        console.log('click...');
+      })["catch"](function (error) {
+        console.log('Error clic book');
       });
     }
   },

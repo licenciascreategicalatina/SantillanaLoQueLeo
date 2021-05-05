@@ -388,6 +388,8 @@
                     this.openPDF = !this.openPDF;
                     this.imgGif = false;
                 }, 2000);
+
+                this.eventClickBook( book )
             },
             closeIframeBook() {
                 this.openPDF = !this.openPDF;
@@ -422,6 +424,16 @@
                 }).catch( error => {
                     console.log('fallo');
                 });
+            },
+            eventClickBook( book ) {
+
+                axios.post('/click-book', book)
+                    .then( (resp) => {
+                        console.log('click...')
+                    })
+                    .catch( error => {
+                        console.log('Error clic book')
+                    });
             }
         },
         created() {
