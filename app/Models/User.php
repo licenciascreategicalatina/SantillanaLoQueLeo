@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -41,7 +42,32 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function loginPlatform() {
+    public function loginPlatform()
+    {
         return $this->hasOne(LoginPlatform::class);
+    }
+
+    public static function userLogin()
+    {
+        $query = DB::table('login_platforms')
+            ->select('*')
+            ->join('users', 'users.id', '=', 'users_id')
+            ->orderBy('start_date', 'ASC')
+            ->get()
+            ->unique('email');
+
+        $aspirantRating = [];
+        $i = 1;
+        foreach ($query as $aspirants) {
+            array_push($aspirantRating, (object)[
+                'index' => $i++,
+                'id' => $aspirants->id,
+                'name' => $aspirants->name,
+                'email' => $aspirants->email,
+                'start_date' => $aspirants->start_date,
+            ]);
+        }
+
+        return $aspirantRating;
     }
 }
