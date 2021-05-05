@@ -10111,12 +10111,8 @@ __webpack_require__.r(__webpack_exports__);
       activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
-      //changeBackground: true,
-      //viewHoverBooks: false,
-      changeBackground: false,
-      // comentar
-      viewHoverBooks: true,
-      // comentar
+      changeBackground: true,
+      viewHoverBooks: false,
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
@@ -10161,21 +10157,24 @@ __webpack_require__.r(__webpack_exports__);
     initClock: function initClock() {
       var day = new Date();
       this.clockTimer = day.toLocaleTimeString();
+    },
+    changeBackgroudPage: function changeBackgroudPage() {
+      var _this2 = this;
 
-      if (this.clockTimer.includes("3:25:00")) {
-        this.changeBackgroundMain();
-      }
+      axios.get("/api/change-background").then(function (result) {
+        var change = result.data.data;
+        console.log(change);
 
-      if (this.clockTimer.includes("4:15:00")) {
-        this.changeBackgroundMain();
-      }
-      /* if (this.clockTimer.includes("3:51:00")) {
-          this.changeBackgroundMain()
-      }
-      if (this.clockTimer.includes("3:52:00")) {
-          this.changeBackgroundMain()
-      } */
-
+        if (change === 'si') {
+          _this2.changeBackground = false;
+          _this2.viewHoverBooks = true;
+        } else {
+          _this2.changeBackground = true;
+          _this2.viewHoverBooks = false;
+        }
+      })["catch"](function (error) {
+        console.log('fallo');
+      });
     }
   },
   created: function created() {
@@ -10205,7 +10204,7 @@ __webpack_require__.r(__webpack_exports__);
       eventHover: false
     }, {
       id: 4,
-      title: 'Flor de Luna',
+      title: 'Flor de Luna y el centavo de oro',
       description: 'Una pequeña niña china trabaja cargando paquetes en la bahía de Hong Kong. Un día una misteriosa anciana le da un centavo de oro por su ayuda. Ni Flor de Luna, ni su madre conocen el valor de la extraña moneda, pero la buena suerte apenas comienza. Una conmovedora historia sobre la fortuna que acompaña a los corazones honestos.',
       alt: 'Flor de Luna',
       url: '/book/diados/flor-de-luna.pdf',
@@ -10253,7 +10252,7 @@ __webpack_require__.r(__webpack_exports__);
       eventHover: false
     }, {
       id: 10,
-      title: 'Querido bill',
+      title: 'Querido Bill',
       description: 'Durante todo un año escolar, un intercambio de cartas se instaló entre dos niños que viven en las antípodas. Oscar, la pequeña hormiga y Bill, el pulpo. A pesar de sus diferencias físicas y de origen, se convierten en verdaderos amigos. El encanto, la sencillez y la veracidad de su correspondencia nos hacen participar de su vida con un verdadero placer... ¡hasta el momento de la sorpresa final!',
       alt: 'Querido bill',
       url: '/book/diados/querido-bill.pdf',
@@ -10302,11 +10301,14 @@ __webpack_require__.r(__webpack_exports__);
     }];
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
 
+    /* this.intervalClock = setInterval( () => {
+        this.initClock();
+    }, 1000); */
     this.intervalClock = setInterval(function () {
-      _this2.initClock();
-    }, 1000);
+      _this3.changeBackgroudPage();
+    }, 30000);
   }
 });
 
@@ -15241,7 +15243,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* BEGIN estilos chat */\nbutton#btn-float-chat[data-v-a0dfe4a4] {\n  border-radius: 1.8rem !important;\n  padding: 0.7rem;\n  position: fixed;\n  bottom: 3%;\n  right: 1.2rem;\n  z-index: 99;\n  background: #9f793d;\n  border-color: #9f793d;\n}\ndiv#content-chat[data-v-a0dfe4a4] {\n  position: fixed;\n  bottom: 12%;\n  right: 1%;\n  width: 25%;\n  height: 70%;\n  border-radius: 1rem;\n  padding: 0.4rem;\n  opacity: 0;\n}\niframe#iframe-chat[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  bottom: 0;\n  border-radius: 0.4rem;\n  opacity: 0;\n}\n.content-chat-opacity[data-v-a0dfe4a4] {\n  opacity: 1 !important;\n  z-index: 110;\n}\n\n/* END estilos chat */\ndiv#content-clock[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 2%;\n  right: 2%;\n  color: #9f793d;\n}\n.overflow-auto[data-v-a0dfe4a4] {\n  height: 110px;\n  overflow: auto !important;\n  margin-bottom: 0.5rem;\n}\n.main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/primaria.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 80%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 18%;\n  left: 4%;\n  height: 10%;\n  width: 9%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 9%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 20%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 40%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-a0dfe4a4] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-a0dfe4a4] {\n  color: #fff;\n}\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: -8%;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 55vh;\n}\ndiv#content-background-img[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 78%;\n}\n.color-button-book[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4]:hover {\n  box-shadow: 0px 10px 20px -10px #c13b2b;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\na#pdf-download[data-v-a0dfe4a4] {\n  color: #212529;\n}\na#pdf-download[data-v-a0dfe4a4]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n.vs-card__img img[data-v-a0dfe4a4] {\n    height: 180px;\n}\n\n  /* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.card-body-text[data-v-a0dfe4a4] {\n    padding: 0.8rem;\n}\n.text-title[data-v-a0dfe4a4] {\n    font-size: 1.5rem;\n}\n.text-subtitle[data-v-a0dfe4a4] {\n    font-size: 0.8rem;\n    margin: 1rem 0;\n}\n\n  /* Read PDF */\n#close-pdf-read[data-v-a0dfe4a4] {\n    top: 0px;\n}\n.close-pdf[data-v-a0dfe4a4] {\n    font-size: 1rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: 30px;\n}\n\n  /* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n    padding: 0;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 40vh;\n    contain: content;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 1400px) {\n.main-card .vs-card__img[data-v-a0dfe4a4] {\n    max-height: 350px !important;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* BEGIN estilos chat */\nbutton#btn-float-chat[data-v-a0dfe4a4] {\n  border-radius: 1.8rem !important;\n  padding: 0.7rem;\n  position: fixed;\n  bottom: 3%;\n  right: 1.2rem;\n  z-index: 99;\n  background: #9f793d;\n  border-color: #9f793d;\n}\ndiv#content-chat[data-v-a0dfe4a4] {\n  position: fixed;\n  bottom: 12%;\n  right: 1%;\n  width: 25%;\n  height: 70%;\n  border-radius: 1rem;\n  padding: 0.4rem;\n  opacity: 0;\n}\niframe#iframe-chat[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  bottom: 0;\n  border-radius: 0.4rem;\n  opacity: 0;\n}\n.content-chat-opacity[data-v-a0dfe4a4] {\n  opacity: 1 !important;\n  z-index: 110;\n}\n\n/* END estilos chat */\ndiv#content-clock[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 2%;\n  right: 2%;\n  color: #9f793d;\n}\n.overflow-auto[data-v-a0dfe4a4] {\n  height: 110px;\n  overflow: auto !important;\n  margin-bottom: 0.5rem;\n}\n.main-view[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/primaria.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-a0dfe4a4] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-a0dfe4a4] {\n  height: 80%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-a0dfe4a4] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-a0dfe4a4] {\n  top: 18%;\n  left: 4%;\n  height: 10%;\n  width: 9%;\n}\ndiv#book-2[data-v-a0dfe4a4] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-a0dfe4a4] {\n  top: 17%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-4[data-v-a0dfe4a4] {\n  top: 25.7%;\n  left: 46%;\n  height: 8%;\n  width: 7%;\n}\ndiv#book-5[data-v-a0dfe4a4] {\n  top: 34.5%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-6[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 9%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-7[data-v-a0dfe4a4] {\n  top: 44%;\n  left: 20%;\n  height: 12%;\n  width: 9%;\n}\ndiv#book-8[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 40%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-10[data-v-a0dfe4a4] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 41.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-a0dfe4a4] {\n  top: 59.4%;\n  left: 55%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-a0dfe4a4] {\n  top: 59%;\n  left: 69.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-a0dfe4a4] {\n  top: 63.5%;\n  left: 47.5%;\n  height: 11.5%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-a0dfe4a4] {\n  top: 62.6%;\n  left: 62.3%;\n  height: 11.5%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-a0dfe4a4] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-a0dfe4a4] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-a0dfe4a4] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-a0dfe4a4] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-a0dfe4a4] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n}\n\n/* img#img-info-book {\n    width: 60%;\n    cursor: pointer;\n    max-height: 350px;\n} */\nimg#img-info-book[data-v-a0dfe4a4] {\n  width: auto;\n  height: 100%;\n  cursor: pointer;\n}\n#btn-info-book[data-v-a0dfe4a4] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-a0dfe4a4] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-a0dfe4a4]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-a0dfe4a4] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-a0dfe4a4] {\n  color: #fff;\n}\n#close-pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-a0dfe4a4] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: -8%;\n}\ndiv#close-pdf-read[data-v-a0dfe4a4]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-a0dfe4a4] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-a0dfe4a4] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-a0dfe4a4] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-a0dfe4a4] {\n  width: 100%;\n  height: 55vh;\n}\ndiv#content-background-img[data-v-a0dfe4a4] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n  margin: 0 0 0 78%;\n}\n.color-button-book[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-a0dfe4a4]:hover {\n  box-shadow: 0px 10px 20px -10px #c13b2b;\n}\n#content-dialog-book[data-v-a0dfe4a4] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-a0dfe4a4] {\n  color: #fff;\n}\na#pdf-download[data-v-a0dfe4a4] {\n  color: #212529;\n}\na#pdf-download[data-v-a0dfe4a4]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n  /* .class-position {\n      border: 1px solid red;\n  } */\n#content-background-books[data-v-a0dfe4a4] {\n    background-image: url(\"/image/imgbackground/movil/preescolar-uno.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-1[data-v-a0dfe4a4] {\n    background-image: url(\"/image/imgbackground/movil/main-background-1.png\") !important;\n}\n.view-iframe-one[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.overflow-auto[data-v-a0dfe4a4] {\n    height: 80px;\n}\n.vertical-center[data-v-a0dfe4a4] {\n    width: 100%;\n}\nimg#img-info-book[data-v-a0dfe4a4] {\n    max-height: 190px;\n}\nh3.text-center[data-v-a0dfe4a4] {\n    font-size: 1.1rem;\n}\np.text-justify[data-v-a0dfe4a4] {\n    font-size: 0.7rem;\n}\n#pdf-read[data-v-a0dfe4a4] {\n    top: -5%;\n}\nsvg#icon-view-book[data-v-a0dfe4a4] {\n    width: 1.6rem;\n    height: 1.6rem;\n}\n#content-backgroud-video[data-v-a0dfe4a4] {\n    background-image: url(\"/image/imgbackground/movil/preescolar-dos.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-2[data-v-a0dfe4a4] {\n    background-image: url(\"/image/imgbackground/movil/main-background-2.png\") !important;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-a0dfe4a4] {\n    min-height: 60vh;\n    contain: content;\n}\n.vertical-center-video[data-v-a0dfe4a4] {\n    left: 0%;\n}\ndiv#content-agenda-book[data-v-a0dfe4a4] {\n    margin: 0 0 0 62%;\n}\n#iframe-video[data-v-a0dfe4a4] {\n    height: 13rem;\n}\ndiv#content-clock[data-v-a0dfe4a4] {\n    bottom: 2%;\n    top: auto;\n    right: auto;\n}\ndiv#content-chat[data-v-a0dfe4a4] {\n    width: 80%;\n    height: 60%;\n}\n}\n/* Styles for large screens  */", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -50842,22 +50844,29 @@ var render = function() {
                               attrs: { id: "body-info-book" }
                             },
                             [
-                              _c("div", { staticClass: "col-12 text-center" }, [
-                                _c("img", {
-                                  attrs: {
-                                    id: "img-info-book",
-                                    src: _vm.bookSelect.imgCaratula,
-                                    alt: _vm.bookSelect.alt
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.eventShowIframeBook(
-                                        _vm.bookSelect
-                                      )
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "col-12 text-center",
+                                  staticStyle: { "max-height": "350px" }
+                                },
+                                [
+                                  _c("img", {
+                                    attrs: {
+                                      id: "img-info-book",
+                                      src: _vm.bookSelect.imgCaratula,
+                                      alt: _vm.bookSelect.alt
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.eventShowIframeBook(
+                                          _vm.bookSelect
+                                        )
+                                      }
                                     }
-                                  }
-                                })
-                              ]),
+                                  })
+                                ]
+                              ),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-12 mt-4" }, [
                                 _c("h3", { staticClass: "text-center" }, [
@@ -50961,7 +50970,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("iframe", {
                               attrs: {
-                                src: _vm.urlBook + "#toolbar=0",
+                                src: _vm.urlBook,
                                 type: "application/pdf",
                                 width: "100%",
                                 height: "100%"

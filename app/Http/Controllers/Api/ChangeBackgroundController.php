@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class ChangeBackgroundController extends Controller
 {
     public function changeBackgroundPage() {
-        return response()->json(['data'  => 'no']);
+        return response()->json(['data'  => 'si']);
     }
 }
