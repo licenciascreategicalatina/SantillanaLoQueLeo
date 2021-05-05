@@ -10134,8 +10134,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -16179,26 +16177,20 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c(
-                      "div",
+                      "vs-button",
+                      {
+                        staticClass: "video-tuto",
+                        on: {
+                          click: function($event) {
+                            _vm.openVideo = !_vm.openVideo
+                          }
+                        }
+                      },
                       [
-                        _c(
-                          "vs-button",
-                          {
-                            staticClass: "video-tuto",
-                            on: {
-                              click: function($event) {
-                                _vm.openVideo = !_vm.openVideo
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                                Video instructivo\n                            "
-                            )
-                          ]
+                        _vm._v(
+                          "\n                            Vídeo instructivo\n                        "
                         )
-                      ],
-                      1
+                      ]
                     )
                   ],
                   1
@@ -16295,7 +16287,7 @@ var render = function() {
                   return [
                     _c("h4", { staticClass: "not-margin" }, [
                       _vm._v(
-                        "\n                Video instructivo\n            "
+                        "\n                Vídeo instructivo\n            "
                       )
                     ])
                   ]

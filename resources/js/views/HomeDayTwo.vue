@@ -322,11 +322,9 @@
                                 </div>
                             </div>
 
-                            <div>
-                                <vs-button class="video-tuto" @click="openVideo=!openVideo">
-                                    Video instructivo
-                                </vs-button>
-                            </div>
+                            <vs-button class="video-tuto" @click="openVideo=!openVideo">
+                                Vídeo instructivo
+                            </vs-button>
                         </div>
                     </div>
 
@@ -358,7 +356,7 @@
             <vs-dialog width="550px" v-model="openVideo">
                 <template #header>
                 <h4 class="not-margin">
-                    Video instructivo
+                    Vídeo instructivo
                 </h4>
                 </template>
 
