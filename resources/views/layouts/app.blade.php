@@ -55,21 +55,21 @@
                             {{-- <a id="text-programa" class="nav-link nav-link-book" href="#">Programa de formación a profesores</a> --}}
                         </li>
 
-                        {{-- <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Disponible 4 de mayo">
+                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Evento del 4 de mayo, no disponible">
                             <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Preescolar</span>
-                        </li> --}}
+                        </li>
 
-                        <li class="nav-item ml-3 {{ request()->is('preescolar') ? 'active' : '' }}">
+                        {{-- <li class="nav-item ml-3 {{ request()->is('preescolar') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
-                        </li>
-
-                        {{-- <li class="nav-item ml-3 {{ request()->is('primaria') ? 'active' : '' }}">
-                            <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
                         </li> --}}
 
-                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Disponible 5 de mayo">
-                            <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Primaria</span>
+                        <li class="nav-item ml-3 {{ request()->is('primaria') ? 'active' : '' }}">
+                            <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
                         </li>
+
+                       {{--  <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Disponible 5 de mayo">
+                            <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Primaria</span>
+                        </li> --}}
 
                         {{-- <li class="nav-item ml-3 {{ request()->is('secundaria') ? 'active' : '' }}">
                             <a class="nav-link nav-link-book" href="{{ route('day-three') }}">Secundaria</a>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClickBook;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Rap2hpoutre\FastExcel\FastExcel;
@@ -55,6 +57,18 @@ class LandingController extends Controller
         });
 
         return back()->with('message', 'Se importo correctamente.');
+    }
+
+    public function eventClickBook( Request $request ) {
+
+        $clickbook = new ClickBook;
+        $clickbook->users_id = auth()->user()->id;
+        $clickbook->start_date = Carbon::now()->timezone("America/Bogota");
+        $clickbook->book = $request->title;
+        $clickbook->img_book = $request->imgCaratula;
+        $clickbook->save();
+
+        return response()->json('ok');
     }
 
 }

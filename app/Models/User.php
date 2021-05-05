@@ -70,4 +70,7 @@ class User extends Authenticatable
 
         return $aspirantRating;
     }
+    public function clickBook() {
+        return $this->hasOne(ClickBook::class);
+    }
 }

@@ -13,7 +13,6 @@ class ReportsController extends Controller
     }
 
     public function getUserLogin(Request $request){
-        dd('hola');
         if ($request->input("day1")){
             $query = DB::table('login_platforms')
                 ->select('*')
