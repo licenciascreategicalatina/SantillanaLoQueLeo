@@ -321,6 +321,12 @@
                                     </iframe>
                                 </div>
                             </div>
+
+                            <div>
+                                <vs-button class="video-tuto" @click="openVideo=!openVideo">
+                                    Video instructivo
+                                </vs-button>
+                            </div>
                         </div>
                     </div>
 
@@ -346,6 +352,23 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <vs-dialog width="550px" v-model="openVideo">
+                <template #header>
+                <h4 class="not-margin">
+                    Video instructivo
+                </h4>
+                </template>
+
+
+                <div class="con-content">
+                    <video width="100%" controls autoplay>
+                        <source src="/video/tutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </vs-dialog>
         </div>
     </div>
 </template>
@@ -369,9 +392,14 @@
                 bookSelect: null,
                 clockTimer: "",
                 intervalClock: "",
+                openVideo: false,
             }
         },
         methods: {
+            openVideoF() {
+                this.openVideo = !this.openVideo
+                console.log('listo')
+            },
             clickShowViewInfoBook( book ) {
                 this.activeModal = true
                 this.bookSelect = book;
@@ -587,6 +615,16 @@
 </script>
 
 <style scoped lang="scss">
+    button.video-tuto {
+        position: fixed;
+        bottom: -8%;
+        background: #9f793d;
+    }
+    button.video-tuto:hover {
+        box-shadow: 0px 10px 20px -10px #c13b2b;
+    }
+
+
     /* BEGIN estilos chat */
     button#btn-float-chat {
         border-radius: 1.8rem !important;
