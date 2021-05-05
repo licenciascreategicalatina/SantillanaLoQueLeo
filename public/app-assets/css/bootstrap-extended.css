@@ -2347,7 +2347,7 @@ ul.list-inline.list-inline-pipe > li + li:before {
   box-shadow: none; }
 
 .page-item .page-link:hover {
-  color: #F05E7D; }
+  color: #9f793dd1; }
 
 .page-item.active {
   background-color: #f3f2f7;
@@ -2356,7 +2356,7 @@ ul.list-inline.list-inline-pipe > li + li:before {
 .page-item.active .page-link {
   z-index: 3;
   border-radius: 5rem;
-  background-color: #F05E7D;
+  background-color: #9f793dd1;
   color: #fff !important;
   font-weight: 600; }
 
