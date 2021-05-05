@@ -917,7 +917,7 @@
         } */
 
         #content-background-books {
-            background-image: url("/image/imgbackground/movil/preescolar-uno.png");
+            background-image: url("/image/imgbackground/movil/primaria-1.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -931,6 +931,80 @@
         }
         .overflow-auto {
             height: 80px;
+        }
+
+        div#book-1 {
+            left: 1%;
+            width: 10%;
+        }
+        div#book-2 {
+            left: 1%;
+            height: 12%;
+            width: 11%;
+        }
+        div#book-3 {
+            top: 16%;
+            left: 45%;
+            height: 9%;
+            width: 8%;
+        }
+        div#book-4 {
+            left: 45%;
+            width: 9%;
+        }
+        div#book-5 {
+            left: 45%;
+            height: 9%;
+            width: 9%;
+        }
+        div#book-6 {
+            left: 5%;
+            height: 13%;
+            width: 10%;
+        }
+        div#book-7 {
+            left: 17%;
+            height: 13%;
+            width: 10%;
+        }
+        div#book-8 {
+            top: 45%;
+            left: 29%;
+            height: 12%;
+            width: 9%;
+        }
+        div#book-9 {
+            left: 39%;
+            height: 11%;
+            width: 9%;
+        }
+        div#book-10 {
+            width: 9%;
+        }
+        div#book-11 {
+            left: 39%;
+            width: 10%;
+        }
+        div#book-12 {
+            top: 58%;
+            left: 55%;
+            height: 12%;
+            width: 9%;
+        }
+        div#book-13 {
+            top: 58%;
+            left: 71%;
+            height: 11.7%;
+            width: 11%;
+        }
+        div#book-14 {
+            height: 13%;
+            width: 9%;
+        }
+        div#book-15 {
+            left: 63%;
+            height: 13%;
+            width: 10%;
         }
 
         .vertical-center {
@@ -955,7 +1029,7 @@
 
 
         #content-backgroud-video {
-            background-image: url("/image/imgbackground/movil/preescolar-dos.png");
+            background-image: url("/image/imgbackground/movil/primaria-2.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
