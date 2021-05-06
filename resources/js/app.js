@@ -42,6 +42,7 @@ Vue.component('view-day-three', require('./views/HomeDayThree.vue').default);
 Vue.component('view-component', require('./views/ViewComponent.vue').default);
 Vue.component('button-view', require('./views/ButtonView.vue').default);
 Vue.component('view-programa', require('./views/Programa.vue').default);
+Vue.component('user-online', require('./components/UserOnLine.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

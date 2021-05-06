@@ -551,7 +551,7 @@
                 {
                     id: 13,
                     title: 'Fuera de norma',
-                    description: 'Reúne los más importantes artículos , cartas y ensayos referentes a los derechos de las mujeres y a los movimientos feministas en Hispanoamérica desde el siglo XVII hasta mediados del siglo XX. Sor Juana Inés de la Cruz, Emilia Pardo Bazán, Gabriela Mistral y Victoria Ocampo son algunas de las once mujeres que contribuyeron a la reflexión y a la discusión de género en diferentes países de habla hispana.',
+                    description: 'Reúne los más importantes artículos, cartas y ensayos referentes a los derechos de las mujeres y a los movimientos feministas en Hispanoamérica desde el siglo XVII hasta mediados del siglo XX. Sor Juana Inés de la Cruz, Emilia Pardo Bazán, Gabriela Mistral y Victoria Ocampo son algunas de las once mujeres que contribuyeron a la reflexión y a la discusión de género en diferentes países de habla hispana.',
                     alt: 'Fuera de norma',
                     url: '/book/diatres/fuera-de-norma.pdf',
                     imgCaratula: "/image/imgbooks/diatres/fuera-de-norma.jpg",

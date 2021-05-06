@@ -241,4 +241,40 @@ class ReportsController extends Controller
         }
         return datatables()->of($online)->toJson();
     }
+
+    public function getTotaluser() {
+        $countUser = DB::select('select count(*) as total from users');
+        return response()->json([ 'totalUser' => $countUser[0]->total ]);
+    }
+
+    public function getUserOnline() {
+       $users = User::all();
+        $i = 0;
+        foreach ($users as $onlineUsers) {
+            if ( $onlineUsers->isOnline() ){
+               $i++;
+            }
+        }
+        return response()->json([ 'userOnline' => $i ]);
+    }
+
+    public function getListUserOnline() {
+        $users = User::all();
+        $i = 0;
+        $online = [];
+
+        foreach ($users as $onlineUsers) {
+            if ($onlineUsers->isOnline()){
+                array_push($online, (object)[
+                    'index' => $i++,
+                    'id' => $onlineUsers->id,
+                    'name' => $onlineUsers->name,
+                    'email' => $onlineUsers->email,
+                    'estado' => 1
+                ]);
+            }
+        }
+
+        return datatables()->of( $online )->toJson();
+    }
 }

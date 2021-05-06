@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\ChangeBackgroundController;
+use App\Http\Controllers\ReportsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,4 @@ Route::get('/users-login', [\App\Http\Controllers\ReportsController::class, 'get
 Route::get('/users-online', [\App\Http\Controllers\ReportsController::class, 'usersOnline'])->name('get.user.online');
 Route::get('/books-count', [\App\Http\Controllers\ReportsController::class, 'countBooks'])->name('get.books.count');
 
+Route::get('/list-user-online', [ ReportsController::class, 'getListUserOnline' ])->name('user.online');

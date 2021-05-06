@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\ReportsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,8 @@ Route::get('/reports', [\App\Http\Controllers\ReportsController::class, 'indexRe
 
 
 Route::get('/books-selected', [\App\Http\Controllers\ReportsController::class, 'getBooksSelected'])->name('get.books.selected');
-
+Route::get('/total-user', [ ReportsController::class, 'getTotaluser' ]);
+Route::get('/user-online', [ ReportsController::class, 'getUserOnline' ]);
 
 Route::middleware(['auth'])->group( function() {
     /* Route::get(

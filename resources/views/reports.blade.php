@@ -26,37 +26,14 @@
                 <h1 class="display-3 text-center">Reportes</h1>
             </div>
         </div>
-        <div class="row pt-2">
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="avatar bg-light-success p-50 mb-1">
-                            <div class="avatar-content">
-                                <i data-feather="eye" class="font-medium-5"></i>
-                            </div>
-                        </div>
-                        <h2 class="font-weight-bolder">{{ $countData }}</h2>
-                        <p class="card-text">Usuarios Online</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <div class="avatar bg-light-success p-50 mb-1">
-                            <div class="avatar-content">
-                                <i data-feather="users" class="font-medium-5"></i>
-                            </div>
-                        </div>
-                        <h2 class="font-weight-bolder">{{ $countUser }}</h2>
-                        <p class="card-text">Usuarios Registrados</p>
-                    </div>
-                </div>
-            </div>
+        <div id="user-online">
+            <user-online/>
         </div>
+
         <div class="row pt-2">
-            <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-2 col-lg-2"></div>
+            <div class="col-12 col-md-8 col-lg-8">
                 <div class="card p-2">
                     <h6 style="margin-bottom: -2rem;">Usuarios activos</h6>
                     <table
@@ -73,7 +50,9 @@
                     </table>
                 </div>
             </div>
+            <div class="col-12 col-md-2 col-lg-2"></div>
         </div>
+
         <div class="row">
             <div class="col-12">
                 <div class="form-group float-right">
@@ -152,170 +131,149 @@
         /*=============================================
            TABLA CON LOS USUARIOS AUTENTICADOS
         =============================================*/
+        var userOnline = null;
         const loadTableUserOnline = function () {
+            if (userOnline !== null) {
+                userOnline.destroy();
+            }
             setTimeout(() => {
-                    tableBooks = $('.datatables-all-users-online').DataTable({
+                userOnline = $('.datatables-all-users-online').DataTable({
+                    "processing": true,
+                    "lengthMenu": [10, 30, 50, 75, 100, 1000],
+                    "scrollX": true,
+                    "pageLength": 10,
+                    "autoWidth": false,
+                    "columnDefs": [
+                        {"width": '10%', targets: 0},
+                        {
+                            "searchable": false,
+                            "orderable": false,
+                            "targets": 0
+                        }
+                    ],
 
-                        "processing": true,
-                        "lengthMenu": [10, 30, 50, 75, 100, 1000],
-                        // "scrollY": 800,
-                        "scrollX": true,
-                        // "scrollCollapse": true,
-                        // "paging": false,
-                        // "fixedColumns": {
-                        //     "leftColumns": 2,
-                        // },
-                        "pageLength": 10,
-                        "autoWidth": false,
-                        "columnDefs": [
-                            {"width": '10%', targets: 0},
-                            {
-                                "searchable": false,
-                                "orderable": false,
-                                "targets": 0
-                            }
-                        ],
+                    "dom":
+                        '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
+                    "buttons": [
+                        {
+                            "extend": 'collection',
+                            "className": 'btn btn-outline-secondary theme-light dropdown-toggle mr-2',
+                            "text": feather.icons['share'].toSvg({class: 'font-small-4 mr-50'}) + 'Exportar',
+                            "buttons": [
+                                {
+                                    "title": 'Usuarios Online',
+                                    "extend": 'print',
+                                    "text": feather.icons['printer'].toSvg({class: 'font-small-4 mr-50'}) + 'Imprimir',
+                                    "className": 'dropdown-item',
+                                    "exportOptions": {columns: [0, 1, 2]},
+                                },
+                                {
+                                    "title": 'Usuarios Online',
+                                    "extend": 'csv',
+                                    "text": feather.icons['file-text'].toSvg({class: 'font-small-4 mr-50'}) + 'Csv',
+                                    "className": 'dropdown-item',
+                                    "exportOptions": {columns: [0, 1, 2]}
+                                },
+                                {
+                                    "title": 'Usuarios Online',
+                                    "extend": 'excel',
+                                    "text": feather.icons['file'].toSvg({class: 'font-small-4 mr-50'}) + 'Excel',
+                                    "className": 'dropdown-item',
+                                    "exportOptions": {columns: [0, 1, 2]}
+                                },
+                                {
+                                    "extend": 'pdf',
+                                    "title": 'Usuarios Online',
+                                    "text": feather.icons['clipboard'].toSvg({class: 'font-small-4 mr-50'}) + 'Pdf',
+                                    "className": 'dropdown-item',
+                                    "exportOptions": {columns: [0, 1, 2]},
+                                    "orientation": 'portrait',
+                                },
+                                {
+                                    "title": 'Usuarios Online',
+                                    "extend": 'copy',
+                                    "text": feather.icons['copy'].toSvg({class: 'font-small-4 mr-50'}) + 'Copiar',
+                                    "className": 'dropdown-item',
+                                    "exportOptions": {columns: [0, 1, 2]}
+                                }
+                            ],
 
-                        "dom":
-                            '<"card-header border-bottom p-1"<"head-label"><"dt-action-buttons text-right"B>><"d-flex justify-content-between align-items-center mx-0 row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>t<"d-flex justify-content-between mx-0 row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6"p>>',
-                        // "displayLength": 7,
-                        "buttons": [
-                            {
-                                "extend": 'collection',
-                                "className": 'btn btn-outline-secondary theme-light dropdown-toggle mr-2',
-                                "text": feather.icons['share'].toSvg({class: 'font-small-4 mr-50'}) + 'Exportar',
-                                "buttons": [
-                                    {
-                                        "title": 'Usuarios Online',
-                                        "extend": 'print',
-                                        "text": feather.icons['printer'].toSvg({class: 'font-small-4 mr-50'}) + 'Imprimir',
-                                        "className": 'dropdown-item',
-                                        "exportOptions": {columns: [0, 1, 2]},
-                                        // "customize": function (win) {
-                                        //     console.log(window.url, window.logo_ligth)
-                                        //     $(win.document.body)
-                                        //         .css('font-size', '10pt')
-                                        //         .prepend(
-                                        //             `<div align='center' style="text-align: center;top:50%;"><img width="550" src="${window.url}${window.logo_ligth}" style=" opacity: 12%;" /></div>`
-                                        //         );
-                                        //
-                                        //     $(win.document.body).find('table')
-                                        //         .addClass('compact')
-                                        //         .css('font-size', 'inherit');
-                                        // }
-                                    },
-                                    {
-                                        "title": 'Usuarios Online',
-                                        "extend": 'csv',
-                                        "text": feather.icons['file-text'].toSvg({class: 'font-small-4 mr-50'}) + 'Csv',
-                                        "className": 'dropdown-item',
-                                        "exportOptions": {columns: [0, 1, 2]}
-                                    },
-                                    {
-                                        "title": 'Usuarios Online',
-                                        "extend": 'excel',
-                                        "text": feather.icons['file'].toSvg({class: 'font-small-4 mr-50'}) + 'Excel',
-                                        "className": 'dropdown-item',
-                                        "exportOptions": {columns: [0, 1, 2]}
-                                    },
-                                    {
-                                        "extend": 'pdf',
-                                        "title": 'Usuarios Online',
-                                        "text": feather.icons['clipboard'].toSvg({class: 'font-small-4 mr-50'}) + 'Pdf',
-                                        "className": 'dropdown-item',
-                                        "exportOptions": {columns: [0, 1, 2]},
-                                        "orientation": 'portrait',
-                                    },
-                                    {
-                                        "title": 'Usuarios Online',
-                                        "extend": 'copy',
-                                        "text": feather.icons['copy'].toSvg({class: 'font-small-4 mr-50'}) + 'Copiar',
-                                        "className": 'dropdown-item',
-                                        "exportOptions": {columns: [0, 1, 2]}
-                                    }
-                                ],
-
-                            },
-                        ],
-                        // "order": [[1, 'asc']],
-
-                        "ajax": {
-                            url: "{{route('get.user.online')}}",
-                            // data: {
-                            //     day1: day1,
-                            // }
                         },
-                        "columns": [
-                            {"data": "index"},
-                            {
-                                render: function (data, type, JsonResultRow, meta) {
-                                    if (JsonResultRow.name === null) {
-                                        return '<span class="label label-danger text-center" style="color:#F05E7D !important">Ningún valor por defecto</span>'
-                                    } else {
-                                        return `<span class="label text-center font-weight-bold">${JsonResultRow.name}</span>`;
-                                    }
-                                },
-                            },
-                            {
-                                render: function (data, type, JsonResultRow, meta) {
-                                    if (JsonResultRow.email === null) {
-                                        return '<span class="label label-danger text-center" style="color:#F05E7D !important">Ningún valor por defecto</span>'
-                                    } else {
-                                        return `<span class="label text-center font-weight-bold">${JsonResultRow.email}</span>`;
-                                    }
-                                },
-                            },
-                            {
-                                render: function (data, type, JsonResultRow, meta) {
-                                    if (JsonResultRow.estado === 0) {
-                                        return '<span class="badge badge-pill badge-light-danger mr-1">Desconectado</span>'
-                                    } else {
-                                        return '<span class="badge badge-pill badge-light-success mr-1">Online</span>'
-                                    }
-                                },
-                            },
-                        ],
+                    ],
 
-
-                        "language": {
-                            "sProcessing": "{{__('Procesando')}}",
-                            "sLengthMenu": "{{__('Mostrar')}} _MENU_ {{__('registros')}}",
-                            "sZeroRecords": "No se encontraron resultados",
-                            "sEmptyTable": "{{__('Ningún dato en la tabla')}}",
-                            "sInfo": "{{__('Mostrando registros') }} _START_ {{__('de')}} _END_ {{__('total de')}} _TOTAL_ {{__('registros')}}",
-                            "sInfoEmpty": "No hay registros",
-                            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                            "sInfoPostFix": "",
-                            "sSearch": "{{__('Buscar')}}:",
-                            "sUrl": "",
-                            "sInfoThousands": ",",
-                            "sLoadingRecords": "{{__('cargando')}}",
-                            "oPaginate": {
-                                "sFirst": "Primero",
-                                "sLast": "Último",
-                                "sNext": "{{__('Siguiente')}}",
-                                "sPrevious": "{{__('Anterior')}}"
+                    "ajax": {
+                        url: "{{route('user.online')}}",
+                    },
+                    "columns": [
+                        {"data": "index"},
+                        {
+                            render: function (data, type, JsonResultRow, meta) {
+                                if (JsonResultRow.name === null) {
+                                    return '<span class="label label-danger text-center" style="color:#F05E7D !important">Ningún valor por defecto</span>'
+                                } else {
+                                    return `<span class="label text-center font-weight-bold">${JsonResultRow.name}</span>`;
+                                }
                             },
-                            "oAria": {
-                                "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                            }
                         },
+                        {
+                            render: function (data, type, JsonResultRow, meta) {
+                                if (JsonResultRow.email === null) {
+                                    return '<span class="label label-danger text-center" style="color:#F05E7D !important">Ningún valor por defecto</span>'
+                                } else {
+                                    return `<span class="label text-center font-weight-bold">${JsonResultRow.email}</span>`;
+                                }
+                            },
+                        },
+                        {
+                            render: function (data, type, JsonResultRow, meta) {
+                                if (JsonResultRow.estado === 0) {
+                                    return '<span class="badge badge-pill badge-light-danger mr-1">Desconectado</span>'
+                                } else {
+                                    return '<span class="badge badge-pill badge-light-success mr-1">Online</span>'
+                                }
+                            },
+                        },
+                    ],
 
+
+                    "language": {
+                        "sProcessing": "{{__('Procesando')}}",
+                        "sLengthMenu": "{{__('Mostrar')}} _MENU_ {{__('registros')}}",
+                        "sZeroRecords": "No se encontraron resultados",
+                        "sEmptyTable": "{{__('Ningún dato en la tabla')}}",
+                        "sInfo": "{{__('Mostrando registros') }} _START_ {{__('de')}} _END_ {{__('total de')}} _TOTAL_ {{__('registros')}}",
+                        "sInfoEmpty": "No hay registros",
+                        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                        "sInfoPostFix": "",
+                        "sSearch": "{{__('Buscar')}}:",
+                        "sUrl": "",
+                        "sInfoThousands": ",",
+                        "sLoadingRecords": "{{__('cargando')}}",
+                        "oPaginate": {
+                            "sFirst": "Primero",
+                            "sLast": "Último",
+                            "sNext": "{{__('Siguiente')}}",
+                            "sPrevious": "{{__('Anterior')}}"
+                        },
+                        "oAria": {
+                            "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                            "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                        }
+                    },
+
+                });
+
+                userOnline.on('order.dt search.dt', function () {
+                    userOnline.column(0, {search: 'applied', order: 'applied'}).nodes().each(function (cell, i) {
+                        cell.innerHTML = i + 1;
                     });
-                    // let textBook = 'Libros seleccionados'
-                    // $('div.head-label').html(`<h6 class="mb-0">${textBook}</h6>`);
-                    tableBooks.on('order.dt search.dt', function () {
-                        tableBooks.column(0, {search: 'applied', order: 'applied'}).nodes().each(function (cell, i) {
-                            cell.innerHTML = i + 1;
-                        });
-                    }).draw();
-
-                }
-                , 1000);
+                }).draw();
+            }
+            , 1000);
         };
 
-        var day1 = null;
+        //var day1 = null;
+        var day1 = '3';
         /*=============================================
            TABLA CON LOS LIBROS SELECCIONADOS
         =============================================*/
