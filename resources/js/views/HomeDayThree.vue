@@ -302,14 +302,6 @@
 
                             <div class="card animate__animated animate__slideInRight animate__slower">
                                 <div class="view-body">
-                                    <!-- <iframe id="iframe-video" width=""
-                                        height=""
-                                        :src="urlTransmision"
-                                        title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen /> -->
-
                                     <iframe id="iframe-video"
                                         :src="urlTransmision"
                                         width=""
@@ -319,6 +311,10 @@
                                         allowfullscreen/>
                                 </div>
                             </div>
+
+                            <vs-button v-if="viewHoverBooks" class="video-tuto" @click="openVideo=!openVideo">
+                                Vídeo instructivo
+                            </vs-button>
                         </div>
                     </div>
 
@@ -343,6 +339,21 @@
                     </div>
                 </div>
             </div>
+
+            <vs-dialog width="550px" v-model="openVideo">
+                <template #header>
+                    <h4 class="not-margin">
+                        Vídeo instructivo
+                    </h4>
+                </template>
+
+
+                <div class="con-content">
+                    <video width="100%" controls autoplay>
+                        <source src="/video/tutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </vs-dialog>
         </div>
     </div>
 </template>
@@ -359,13 +370,14 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: true,
-                viewHoverBooks: false,
+                changeBackground: false,
+                viewHoverBooks: true,
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
                 clockTimer: "",
                 intervalClock: "",
+                openVideo: false,
             }
         },
         methods: {
@@ -397,15 +409,8 @@
                 this.changeBackground = !this.changeBackground;
                 this.viewHoverBooks = !this.viewHoverBooks;
             },
-            truncate( text ) {
-                return text.length > 350 ? text.slice(0, 350) + '...' : text;
-            },
             openViewChat() {
                 this.openChatIcon = !this.openChatIcon
-            },
-            initClock() {
-                let day = new Date();
-                this.clockTimer = day.toLocaleTimeString();
             },
             changeBackgroudPage() {
                 axios.get("/api/change-background")
@@ -573,9 +578,8 @@
             ]
         },
         mounted() {
-            /* this.intervalClock = setInterval( () => {
-                this.initClock();
-            }, 1000); */
+            this.changeBackgroudPage();
+            console.log('mounted..')
             this.intervalClock = setInterval( () => {
                 this.changeBackgroudPage();
             }, 30000);
@@ -584,6 +588,15 @@
 </script>
 
 <style scoped lang="scss">
+    button.video-tuto {
+        position: fixed;
+        bottom: -8%;
+        background: #9f793d;
+    }
+    button.video-tuto:hover {
+        box-shadow: 0px 10px 20px -10px #c13b2b;
+    }
+
     /* BEGIN estilos chat */
     button#btn-float-chat {
         border-radius: 1.8rem !important;
@@ -633,7 +646,6 @@
     }
 
     .main-view {
-        //background-image: url("/image/background-day-three.jpg");
         background-image: url("/image/imgbackground/secundaria.jpg");
         background-position: center;
         background-repeat: no-repeat;
@@ -812,14 +824,7 @@
     svg#icon-view-book {
         color: #fff;
     }
-    #close-pdf-read {
-        position: absolute;
-        background: rgb(0 0 0 / 46%);
-        top: -40px;
-        right: 0;
-        padding: 0.2rem 1rem;
-        cursor: pointer;
-    }
+
     .close-pdf {
         color: #fff;
         font-size: 2rem;
@@ -829,9 +834,6 @@
         width: 92%;
         height: 100%;
         top: -8%;
-    }
-    div#close-pdf-read:hover {
-        background: #90080861;
     }
 
     #image-gif {
