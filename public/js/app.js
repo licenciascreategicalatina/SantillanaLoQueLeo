@@ -7911,7 +7911,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       totalUser: 0,
       userOnLine: 0,
-      interval: ''
+      interval: '',
+      intervalData: ''
     };
   },
   methods: {
@@ -7942,10 +7943,17 @@ __webpack_require__.r(__webpack_exports__);
     var _this3 = this;
 
     this.interval = setInterval(function () {
+      console.log('online...');
+
       _this3.getUserOnLine();
 
       loadTableUserOnline();
-    }, 30000);
+    }, 35000);
+    this.intervalData = setInterval(function () {
+      console.log('data...');
+      loadTable();
+      loadTableBooksSelected();
+    }, 60000);
   }
 });
 

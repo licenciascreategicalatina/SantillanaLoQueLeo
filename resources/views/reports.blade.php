@@ -294,7 +294,7 @@
                         // "fixedColumns": {
                         //     "leftColumns": 2,
                         // },
-                        "pageLength": 20,
+                        "pageLength": 15,
                         "autoWidth": false,
                         "columnDefs": [
                             {"width": '10%', targets: 0},

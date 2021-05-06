@@ -39,6 +39,7 @@
                 totalUser: 0,
                 userOnLine: 0,
                 interval: '',
+                intervalData: '',
             }
         },
         methods: {
@@ -67,9 +68,16 @@
         },
         mounted() {
             this.interval = setInterval( () => {
+                console.log('online...')
                 this.getUserOnLine()
                 loadTableUserOnline();
-            }, 30000);
+            }, 35000);
+
+            this.intervalData = setInterval( () => {
+                console.log('data...')
+                loadTable();
+                loadTableBooksSelected();
+            }, 60000);
         }
     }
 </script>
