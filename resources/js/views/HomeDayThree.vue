@@ -370,8 +370,8 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: false,
-                viewHoverBooks: true,
+                changeBackground: false, // pasar a false para ver los libros 
+                viewHoverBooks: true, //pasar a true para ver los libros 
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,

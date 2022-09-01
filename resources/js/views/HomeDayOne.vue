@@ -372,10 +372,10 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                changeBackground: true,
-                //changeBackground: false, // comentar
-                viewHoverBooks: false,
-                //viewHoverBooks: true,  // comentar
+                //changeBackground: true,
+                changeBackground: false, // comentar
+                //viewHoverBooks: false,
+                viewHoverBooks: true,  // comentar
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
@@ -396,11 +396,12 @@
                 this.heightIframeBook = true
                 this.imgGif = true;
                 this.urlBook = book.url;
-
+                
                 setTimeout( () => {
                     this.openPDF = !this.openPDF;
                     this.imgGif = false;
                 }, 2000);
+                
             },
             closeIframeBook() {
                 this.openPDF = !this.openPDF;
@@ -445,137 +446,136 @@
             this.listBooks = [
                 {
                     id: 1,
-                    title: 'Jacobo y el platena de los miedos',
-                    description: 'Todos le tenemos miedo a algo, así Jacobo diga que no le tiene miedo a nada.',
-                    alt: 'Jacobo',
-                    url: '/book/diauno/jacobo-y-el-planeta-de-los-miedos.pdf',
-                    imgCaratula:"/image/imgbooks/diauno/jacobo-y-el-planeta-de-los-miedos.jpg",
+                    title: 'JACOBO Y EL PLANETA DE LOS MIEDOS',
+                    description: 'Todos le tenemos miedo a algo, así Jacobo diga que no le tiene miedo a nada. Después de que mamá, papá y Susi comparten sus miedos más profundos, papá revela un lugar al cual ir a esconder aquello que nos asusta. ¡Fuera del planeta!',
+                    alt: 'JACOBO Y EL PLANETA DE LOS MIEDOS',
+                    url: '/book/diauno/10_JACOBO_Y_EL_PLANETA_DE_LOS_MIEDOS.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/10_JACOBO_Y_EL_PLANETA_DE_LOS_MIEDOS.jpg",
                     eventHover: false,
                 },
                 {
                     id: 2,
-                    title: 'Uno está bien, pero dos mejor',
+                    title: 'UNO ESTÁ BIEN PERO DOS MEJOR',
                     description: 'Uno puede jugar, correr, leer o balancearse, pero con dos todo es mejor. Louis Slobodkin nos muestra que con amigos la vida es más divertida.',
-                    alt: 'Uno está bien',
-                    url: '/book/diauno/uno-esta-bien.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/uno-esta-bien.jpg",
+                    alt: 'UNO ESTÁ BIEN PERO DOS MEJOR',
+                    url: '/book/diauno/07_UNO_ESTA_BIEN_PERO_DOS_MEJOR.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/07_UNO_ESTA_BIEN_PERO_DOS_MEJOR.jpg",
                     eventHover: false,
                 },
                 {
                     id: 3,
-                    title: 'Ahora no, Bernardo',
+                    title: 'AHORA NO, BERNARDO',
                     description: 'Se retoma la típica frase que todos los padres dicen a los niños, para construir una historia en la que el humor y el absurdo conducen a un inesperado desenlace. Hará sonrojar a los adultos y dibujará una sonrisa en los pequeños.',
-                    alt: 'Ahora no, Bernardo',
-                    url: '/book/diauno/ahora-no-bernardo.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/ahora-no-bernardo.jpg",
+                    alt: 'AHORA NO, BERNARDO',
+                    url: '/book/diauno/14_AHORA_NO_BERNARDO.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/14_AHORA_NO_BERNARDO.jpg",
                     eventHover: false,
                 },
                 {
                     id: 4,
-                    title: 'Nomi y sus queridos animales',
-                    description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar.',
-                    alt: 'Nomi y sus queridos animales',
-                    url: '/book/diauno/nomi-y-sus-queridos-animales.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/nomi-y-sus-queridos-animales.jpg",
+                     title: 'NOMI Y SUS QUERIDOS ANIMALES',
+                    description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar. ',
+                    url: '/book/diauno/06_NOMI_Y_SUS_QUERIDOS_ANIMALES.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/06_NOMI_Y_SUS_QUERIDOS_ANIMALES.jpg",
                     eventHover: false,
                 },
                 {
                     id: 5,
-                    title: 'Los matices de matisse',
+                    title: 'LOS MATICES DE MATISSE',
                     description: 'Si fueras un niño llamado Henri Matisse y vivieras en una sombría ciudad en el norte de Francia, ¿cómo sería tu vida? ¿Estaría llena de colores y objetos hermosos? ¿Plena de líneas y figuras que danzan? Esta delicada exploración de la infancia del pintor Henri Matisse, muestra sutilmente que la creatividad se puede alimentar y que la genialidad puede dispararse a partir de los detalles más inesperados, como la imagen de un frutero o la rica textura de una tela.',
-                    alt: 'Los matices de matisse',
-                    url: '/book/diauno/los-matices-de-matisse.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/los-matisse.jpg",
+                    alt: 'LOS MATICES DE MATISSE',
+                    url: '/book/diauno/08_LOS_MATICES_DE MATISSE.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/08_LOS_MATICES_DE MATISSE.jpg",
                     eventHover: false,
                 },
                 {
                     id: 6,
-                    title: 'Tobi y los ancianos',
+                    title: 'TOBI Y LOS ANCIANOS',
                     description: 'Tobi piensa que los ancianos son personas muy aburridas. Un día, durante el verano, cuando todos sus amigos se marchan de vacaciones y él está jugando solo, su pelota cae justo donde está sentado el señor Cabra. Este encuentro le permite a Tobi conocer emocionantes e increíbles historias que vivieron algunos ancianos de su vecindario cuando eran jóvenes. Desde ese momento, su opinión acerca de las personas mayores cambia para siempre.',
-                    alt: 'Tobi y los ancianos',
-                    url: '/book/diauno/tobi-y-los-ancianos.pdf',
-                    imgCaratula:"/image/imgbooks/diauno/tobi-y-los-ancianos.jpg",
+                    alt: 'TOBI Y LOS ANCIANOS',
+                    url: '/book/diauno/02_TOBI_Y_LOS_ANCIANOS.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/02_TOBI_Y_LOS_ANCIANOS.jpg",
                     eventHover: false,
                 },
                 {
                     id: 7,
-                    title: 'Benjamino',
-                    description: 'Había una vez una madre que tenía un hijo tan pequeño que podía vivir dentro de una cáscara de nuez. Lo llamaban Benjamino. Un día se encontró con el lobo y demostró cuán astuto es.',
-                    alt: 'Benjamino',
-                    url: '/book/diauno/benjamino.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/benjamino.jpg",
+                    title: '¡ADIÓS, PEQUEÑO!',
+                    description: 'Un niño pequeño que vive solo se propone buscar una mamá. En su camino, les pregunta a un gato, a un osito de peluche, a una gallina y a un señor si quieren ser su mamá. Aunque ellos le dicen que no, le ayudan a encontrar una.',
+                    alt: '¡ADIÓS, PEQUEÑO!',
+                    url: '/book/diauno/09_ADIOS_PEQUENIO.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/09_ADIOS_PEQUENIO.jpg",
                     eventHover: false,
                 },
                 {
                     id: 8,
-                    title: 'El libro que canta',
+                    title: 'EL LIBRO QUE CANTA',
                     description: 'Desde antes de nacer, la poesía hace parte de la vida. En los primeros arrullos y en todos los juegos, rimas y rondas que escribimos en el cuerpo de un bebé, está presente una herencia de palabras, ritmo y afecto que será su primer texto de lectura y que quedará escrito en su memoria poética. El libro que canta acompaña a toda la familia durante ese tiempo maravilloso de la primera infancia. Sus capítulos trazan una ruta que comienza en el vientre materno y que va creciendo con el bebé.',
-                    alt: 'El libro que canta',
-                    url: '/book/diauno/el-libro-que-canta.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/el-libro-que-canta.jpg",
+                    alt: 'EL LIBRO QUE CANTA',
+                    url: '/book/diauno/11_EL_LIBRO_QUE_CANTA.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/11_EL_LIBRO_QUE_CANTA.jpg",
                     eventHover: false,
                 },
                 {
                     id: 9,
-                    title: 'Escondidas',
-                    description: 'Un libro de imágenes para crear una historia diferente en cada lectura. El libro cero del bebé para leer, acariciar y morder.',
-                    alt: 'Escondidas',
-                    url: '/book/diauno/escondidas.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/escondidas.jpg",
+                    title: 'PEQUEÑO',
+                    description: 'En este mundo hay dos tipos de personas: los grandes y los pequeños. Los grandes deben siempre cuidar a los pequeños, pero, desafortunadamente, no siempre sucede así. En casa de Pequeño hay peleas grandes. Demasiado grandes. Enormes. Y, muchas veces, no hay nadie que se ocupe de él. Entonces Pequeño siente tristeza en toda la panza, en la cabeza y en los brazos también. Por suerte, Pequeño tiene una muy buena Maestra que lo quiere, y entre ambos buscarán a Alguien que le dé a Pequeño el cuidado y cariño que tanto necesita. Un libro perfecto para hablar con los más pequeños sobre los derechos de los niños y las obligaciones de los adultos.',
+                    alt: 'PEQUEÑO',
+                    url: '/book/diauno/01_PEQUENIO.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/01_PEQUENIO.jpg",
                     eventHover: false,
                 },
                 {
                     id: 10,
-                    title: 'El abuelo armadillo',
-                    description: 'El abuelo armadillo sale de excursión con sus nietos. En el camino son sorprendidos por el cazador y sus perros. ¿Podrán escapar de su furia y sus balas? Será una misión del abuelo enseñarles a sus nietos sobre sus talentos naturales para protegerse y escapar a salvo para llegar a casa.',
-                    alt: 'El abuelo armadillo',
-                    url: '/book/diauno/el-abuelo-armadillo.pdf',
-                    imgCaratula:"/image/imgbooks/diauno/el-abuelo-armadillo.jpg",
+                    title: 'HISTORIA DE BABAR EL ELEFANTITO',
+                    description: 'Babar el elefantito sufre la muerte de su madre, y escapa lejos hasta llegar a París. Allí encuentra una amiga y se vuelve un ciudadano más de esta ciudad. Hasta que sus primos llegan a buscarlo, pues el rey elefante ha muerto y Babar es heredero del trono. Este entrañable libro de imágenes nació de los diálogos entre padres e hijos de la familia de Brunhoff. La madre narraba sus aventuras, el padre las ilustraba y los niños las seguían absortos noche tras noche.',
+                    alt: 'HISTORIA DE BABAR EL ELEFANTITO',
+                    url: '/book/diauno/13_HISTORIA_DE_BABAR_EL_ELEFANTITO.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/13_HISTORIA_DE_BABAR_EL_ELEFANTITO.jpg",
                     eventHover: false,
                 },
                 {
                     id: 11,
-                    title: 'El cuento de hadas de Harold',
+                    title: 'EL CUENTO DE HADAS DE HAROLD',
                     description: 'Una noche en vela, el pequeño Harold usa su crayola morada de nuevo para desatar su imaginación. Esta vez, Harold creará su propio cuento de hadas y vivirá muchas peripecias hasta regresar, en su alfombra mágica, a la silla de su mamá, para pedirle que le cuente un cuento antes de volver a la cama.',
-                    alt: 'El cuento de hadas de Harold',
-                    url: '/book/diauno/cuento-de-hadas-de-harold.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/cuento-de-hadas-de-harold.jpg",
+                    alt: 'EL CUENTO DE HADAS DE HAROLD',
+                    url: '/book/diauno/05_EL_CUENTO_DE_HADAS_DE_HAROLD.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/05_EL_CUENTO_DE_HADAS_DE_HAROLD.jpg",
                     eventHover: false,
                 },
                 {
                     id: 12,
-                    title: 'Boris y las manzanas',
-                    description: 'Boris es un cerdito que adora las manzanas, tiene amigos, le gusta explorar e ir al colegio, pero tiene un problema: no sabe contar. Tras varias decepciones, lo logra con la ayuda de su amiga Gladis, quien le sugiere intentar con manzanas. Así, Boris se acerca a sus debilidades desde sus gustos.',
-                    alt: 'Boris y las manzanas',
-                    url: '/book/diauno/boris-y-las-manzanas.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/boris-y-las-manzanas.jpg",
+                    title: 'JACOBO Y EL PRIMER DÍA',
+                    description: 'Jacobo nunca ha ido al jardín infantil, le da un poco de miedo alejarse de mamá y dejar en casa a su hermanita Susi. Quién hubiera creído que el jardín estaba lleno de juegos disparatados y nuevos amigos.',
+                    alt: 'JACOBO Y EL PRIMER DÍA',
+                    url: '/book/diauno/03_JACOBO_Y_EL_PRIMER_DIA.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/03_JACOBO_Y_EL_PRIMER_DIA.jpg",
                     eventHover: false,
                 },
                 {
                     id: 13,
-                    title: 'Un dinosaurio es',
-                    description: 'Los dinosaurios son seres fascinantes. Se caracterizan por tener enormes dientes, colas poderosas, apetito voraz… a veces se parecen incluso a, ¡un niño!',
-                    alt: 'Un dinosaurio es',
-                    url: '/book/diauno/un-dinosaurio-es.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/un-dinosaurio-es.jpg",
+                    title: 'LA ESCUELA DE LOS ÁNGELES',
+                    description: '“La Escuela de los Ángeles rinde homenaje a estos personajes alados que acompañan a la humanidad –y, especialmente, a la infancia– con ánimo protector, desde tiempos muy antiguos, y pretende bajarlos de los altares para ponerlos a jugar, como niños pícaros y traviesos,en el espacio familiar y cercano de la escuela”. Así define Rodríguez esta historia que conjuga la maestría narrativa con la belleza de las ilustraciones del artista cubano Alexis Lago.',
+                    alt: 'LA ESCUELA DE LOS ÁNGELES',
+                    url: '/book/diauno/12_LA_ESCUELA_DE_LOS_ANGELES.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/12_LA_ESCUELA_DE_LOS_ANGELES.jpg",
                     eventHover: false,
                 },
                 {
                     id: 14,
-                    title: 'Los tres bandidos',
+                    title: 'LOS TRES BANDIDOS',
                     description: 'Una historia singular. Tres bandidos salen en busca de tesoros, pero ¡oh, sorpresa! Sin pensarlo, capturan un tesoro que les cambia la vida.',
-                    alt: 'Los tres bandidos',
-                    url: '/book/diauno/los-tres-bandidos.pdf',
-                    imgCaratula:"/image/imgbooks/diauno/los-tres-bandidos.jpg",
+                    alt: 'LOS TRES BANDIDOS',
+                    url: '/book/diauno/15_LOS_TRES_BANDIDOS.pdf',
+                    imgCaratula:"/image/imgbooks/diauno/15_LOS_TRES_BANDIDOS.jpg",
                     eventHover: false,
                 },
                 {
                     id: 15,
-                    title: 'Cuentos al revés',
-                    description: 'Érase una vez un pobre lobillo que llevaba la comida de su abuela en un paquetillo. Tropezó con la temible Caperucita Roja, imaginen ustedes todo lo que pasó después. Junto a Gianni Rodari, viajemos a un mundo de fantasía, en donde los cuentos suceden al revés.',
-                    alt: 'Cuentos al revés',
-                    url: '/book/diauno/cuentos-al-reves.pdf',
-                    imgCaratula: "/image/imgbooks/diauno/cuentos-al-reves.jpg",
+                    title: 'JACOBO VA AL HOSPITAL',
+                    description: 'Jacobo no quiere que lo operen, no quiere que le pongan la anestesia ni mucho menos quiere quedarse a dormir en el hospital. Por suerte tío Eduar está aquí para convertir cada momento difícil en una nueva aventura.',
+                    alt: 'JACOBO VA AL HOSPITAL',
+                    url: '/book/diauno/04_JACOBO_VA_AL_HOSPITAL.pdf',
+                    imgCaratula: "/image/imgbooks/diauno/04_JACOBO_VA_AL_HOSPITAL.jpg",
                     eventHover: false,
                 }
             ]
@@ -583,10 +583,11 @@
         mounted() {
            /*  this.intervalClock = setInterval( () => {
                 this.initClock();
-            }, 1000); */
+            }, 1000); 
             this.intervalClock = setInterval( () => {
                 this.changeBackgroudPage();
             }, 30000);
+            */
         }
     }
 </script>
