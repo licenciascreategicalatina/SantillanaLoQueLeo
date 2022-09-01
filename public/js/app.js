@@ -9059,10 +9059,12 @@ __webpack_require__.r(__webpack_exports__);
       activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
-      changeBackground: true,
-      //changeBackground: false, // comentar
-      viewHoverBooks: false,
-      //viewHoverBooks: true,  // comentar
+      //changeBackground: true,
+      changeBackground: false,
+      // comentar
+      //viewHoverBooks: false,
+      viewHoverBooks: true,
+      // comentar
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
@@ -9134,135 +9136,133 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.listBooks = [{
       id: 1,
-      title: 'Jacobo y el platena de los miedos',
-      description: 'Todos le tenemos miedo a algo, así Jacobo diga que no le tiene miedo a nada.',
-      alt: 'Jacobo',
-      url: '/book/diauno/jacobo-y-el-planeta-de-los-miedos.pdf',
-      imgCaratula: "/image/imgbooks/diauno/jacobo-y-el-planeta-de-los-miedos.jpg",
+      title: 'JACOBO Y EL PLANETA DE LOS MIEDOS',
+      description: 'Todos le tenemos miedo a algo, así Jacobo diga que no le tiene miedo a nada. Después de que mamá, papá y Susi comparten sus miedos más profundos, papá revela un lugar al cual ir a esconder aquello que nos asusta. ¡Fuera del planeta!',
+      alt: 'JACOBO Y EL PLANETA DE LOS MIEDOS',
+      url: '/book/diauno/10_JACOBO_Y_EL_PLANETA_DE_LOS_MIEDOS.pdf',
+      imgCaratula: "/image/imgbooks/diauno/10_JACOBO_Y_EL_PLANETA_DE_LOS_MIEDOS.jpg",
       eventHover: false
     }, {
       id: 2,
-      title: 'Uno está bien, pero dos mejor',
+      title: 'UNO ESTÁ BIEN PERO DOS MEJOR',
       description: 'Uno puede jugar, correr, leer o balancearse, pero con dos todo es mejor. Louis Slobodkin nos muestra que con amigos la vida es más divertida.',
-      alt: 'Uno está bien',
-      url: '/book/diauno/uno-esta-bien.pdf',
-      imgCaratula: "/image/imgbooks/diauno/uno-esta-bien.jpg",
+      alt: 'UNO ESTÁ BIEN PERO DOS MEJOR',
+      url: '/book/diauno/07_UNO_ESTA_BIEN_PERO_DOS_MEJOR.pdf',
+      imgCaratula: "/image/imgbooks/diauno/07_UNO_ESTA_BIEN_PERO_DOS_MEJOR.jpg",
       eventHover: false
     }, {
       id: 3,
-      title: 'Ahora no, Bernardo',
+      title: 'AHORA NO, BERNARDO',
       description: 'Se retoma la típica frase que todos los padres dicen a los niños, para construir una historia en la que el humor y el absurdo conducen a un inesperado desenlace. Hará sonrojar a los adultos y dibujará una sonrisa en los pequeños.',
-      alt: 'Ahora no, Bernardo',
-      url: '/book/diauno/ahora-no-bernardo.pdf',
-      imgCaratula: "/image/imgbooks/diauno/ahora-no-bernardo.jpg",
+      alt: 'AHORA NO, BERNARDO',
+      url: '/book/diauno/14_AHORA_NO_BERNARDO.pdf',
+      imgCaratula: "/image/imgbooks/diauno/14_AHORA_NO_BERNARDO.jpg",
       eventHover: false
     }, {
       id: 4,
-      title: 'Nomi y sus queridos animales',
-      description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar.',
-      alt: 'Nomi y sus queridos animales',
-      url: '/book/diauno/nomi-y-sus-queridos-animales.pdf',
-      imgCaratula: "/image/imgbooks/diauno/nomi-y-sus-queridos-animales.jpg",
+      title: 'NOMI Y SUS QUERIDOS ANIMALES',
+      description: 'Nomi quiere llevar a su casa a todos los animales del zoológico ( y de la granja también, como es logico). Mamá sin embargo, no está de acuerdo en tener de mascota a un león, a una jirafa o un oso. En este libro de rimas acompañaremos a Nomi en búsqueda del animal que puede caber en su hogar. ',
+      url: '/book/diauno/06_NOMI_Y_SUS_QUERIDOS_ANIMALES.pdf',
+      imgCaratula: "/image/imgbooks/diauno/06_NOMI_Y_SUS_QUERIDOS_ANIMALES.jpg",
       eventHover: false
     }, {
       id: 5,
-      title: 'Los matices de matisse',
+      title: 'LOS MATICES DE MATISSE',
       description: 'Si fueras un niño llamado Henri Matisse y vivieras en una sombría ciudad en el norte de Francia, ¿cómo sería tu vida? ¿Estaría llena de colores y objetos hermosos? ¿Plena de líneas y figuras que danzan? Esta delicada exploración de la infancia del pintor Henri Matisse, muestra sutilmente que la creatividad se puede alimentar y que la genialidad puede dispararse a partir de los detalles más inesperados, como la imagen de un frutero o la rica textura de una tela.',
-      alt: 'Los matices de matisse',
-      url: '/book/diauno/los-matices-de-matisse.pdf',
-      imgCaratula: "/image/imgbooks/diauno/los-matisse.jpg",
+      alt: 'LOS MATICES DE MATISSE',
+      url: '/book/diauno/08_LOS_MATICES_DE MATISSE.pdf',
+      imgCaratula: "/image/imgbooks/diauno/08_LOS_MATICES_DE MATISSE.jpg",
       eventHover: false
     }, {
       id: 6,
-      title: 'Tobi y los ancianos',
+      title: 'TOBI Y LOS ANCIANOS',
       description: 'Tobi piensa que los ancianos son personas muy aburridas. Un día, durante el verano, cuando todos sus amigos se marchan de vacaciones y él está jugando solo, su pelota cae justo donde está sentado el señor Cabra. Este encuentro le permite a Tobi conocer emocionantes e increíbles historias que vivieron algunos ancianos de su vecindario cuando eran jóvenes. Desde ese momento, su opinión acerca de las personas mayores cambia para siempre.',
-      alt: 'Tobi y los ancianos',
-      url: '/book/diauno/tobi-y-los-ancianos.pdf',
-      imgCaratula: "/image/imgbooks/diauno/tobi-y-los-ancianos.jpg",
+      alt: 'TOBI Y LOS ANCIANOS',
+      url: '/book/diauno/02_TOBI_Y_LOS_ANCIANOS.pdf',
+      imgCaratula: "/image/imgbooks/diauno/02_TOBI_Y_LOS_ANCIANOS.jpg",
       eventHover: false
     }, {
       id: 7,
-      title: 'Benjamino',
-      description: 'Había una vez una madre que tenía un hijo tan pequeño que podía vivir dentro de una cáscara de nuez. Lo llamaban Benjamino. Un día se encontró con el lobo y demostró cuán astuto es.',
-      alt: 'Benjamino',
-      url: '/book/diauno/benjamino.pdf',
-      imgCaratula: "/image/imgbooks/diauno/benjamino.jpg",
+      title: '¡ADIÓS, PEQUEÑO!',
+      description: 'Un niño pequeño que vive solo se propone buscar una mamá. En su camino, les pregunta a un gato, a un osito de peluche, a una gallina y a un señor si quieren ser su mamá. Aunque ellos le dicen que no, le ayudan a encontrar una.',
+      alt: '¡ADIÓS, PEQUEÑO!',
+      url: '/book/diauno/09_ADIOS_PEQUENIO.pdf',
+      imgCaratula: "/image/imgbooks/diauno/09_ADIOS_PEQUENIO.jpg",
       eventHover: false
     }, {
       id: 8,
-      title: 'El libro que canta',
+      title: 'EL LIBRO QUE CANTA',
       description: 'Desde antes de nacer, la poesía hace parte de la vida. En los primeros arrullos y en todos los juegos, rimas y rondas que escribimos en el cuerpo de un bebé, está presente una herencia de palabras, ritmo y afecto que será su primer texto de lectura y que quedará escrito en su memoria poética. El libro que canta acompaña a toda la familia durante ese tiempo maravilloso de la primera infancia. Sus capítulos trazan una ruta que comienza en el vientre materno y que va creciendo con el bebé.',
-      alt: 'El libro que canta',
-      url: '/book/diauno/el-libro-que-canta.pdf',
-      imgCaratula: "/image/imgbooks/diauno/el-libro-que-canta.jpg",
+      alt: 'EL LIBRO QUE CANTA',
+      url: '/book/diauno/11_EL_LIBRO_QUE_CANTA.pdf',
+      imgCaratula: "/image/imgbooks/diauno/11_EL_LIBRO_QUE_CANTA.jpg",
       eventHover: false
     }, {
       id: 9,
-      title: 'Escondidas',
-      description: 'Un libro de imágenes para crear una historia diferente en cada lectura. El libro cero del bebé para leer, acariciar y morder.',
-      alt: 'Escondidas',
-      url: '/book/diauno/escondidas.pdf',
-      imgCaratula: "/image/imgbooks/diauno/escondidas.jpg",
+      title: 'PEQUEÑO',
+      description: 'En este mundo hay dos tipos de personas: los grandes y los pequeños. Los grandes deben siempre cuidar a los pequeños, pero, desafortunadamente, no siempre sucede así. En casa de Pequeño hay peleas grandes. Demasiado grandes. Enormes. Y, muchas veces, no hay nadie que se ocupe de él. Entonces Pequeño siente tristeza en toda la panza, en la cabeza y en los brazos también. Por suerte, Pequeño tiene una muy buena Maestra que lo quiere, y entre ambos buscarán a Alguien que le dé a Pequeño el cuidado y cariño que tanto necesita. Un libro perfecto para hablar con los más pequeños sobre los derechos de los niños y las obligaciones de los adultos.',
+      alt: 'PEQUEÑO',
+      url: '/book/diauno/01_PEQUENIO.pdf',
+      imgCaratula: "/image/imgbooks/diauno/01_PEQUENIO.jpg",
       eventHover: false
     }, {
       id: 10,
-      title: 'El abuelo armadillo',
-      description: 'El abuelo armadillo sale de excursión con sus nietos. En el camino son sorprendidos por el cazador y sus perros. ¿Podrán escapar de su furia y sus balas? Será una misión del abuelo enseñarles a sus nietos sobre sus talentos naturales para protegerse y escapar a salvo para llegar a casa.',
-      alt: 'El abuelo armadillo',
-      url: '/book/diauno/el-abuelo-armadillo.pdf',
-      imgCaratula: "/image/imgbooks/diauno/el-abuelo-armadillo.jpg",
+      title: 'HISTORIA DE BABAR EL ELEFANTITO',
+      description: 'Babar el elefantito sufre la muerte de su madre, y escapa lejos hasta llegar a París. Allí encuentra una amiga y se vuelve un ciudadano más de esta ciudad. Hasta que sus primos llegan a buscarlo, pues el rey elefante ha muerto y Babar es heredero del trono. Este entrañable libro de imágenes nació de los diálogos entre padres e hijos de la familia de Brunhoff. La madre narraba sus aventuras, el padre las ilustraba y los niños las seguían absortos noche tras noche.',
+      alt: 'HISTORIA DE BABAR EL ELEFANTITO',
+      url: '/book/diauno/13_HISTORIA_DE_BABAR_EL_ELEFANTITO.pdf',
+      imgCaratula: "/image/imgbooks/diauno/13_HISTORIA_DE_BABAR_EL_ELEFANTITO.jpg",
       eventHover: false
     }, {
       id: 11,
-      title: 'El cuento de hadas de Harold',
+      title: 'EL CUENTO DE HADAS DE HAROLD',
       description: 'Una noche en vela, el pequeño Harold usa su crayola morada de nuevo para desatar su imaginación. Esta vez, Harold creará su propio cuento de hadas y vivirá muchas peripecias hasta regresar, en su alfombra mágica, a la silla de su mamá, para pedirle que le cuente un cuento antes de volver a la cama.',
-      alt: 'El cuento de hadas de Harold',
-      url: '/book/diauno/cuento-de-hadas-de-harold.pdf',
-      imgCaratula: "/image/imgbooks/diauno/cuento-de-hadas-de-harold.jpg",
+      alt: 'EL CUENTO DE HADAS DE HAROLD',
+      url: '/book/diauno/05_EL_CUENTO_DE_HADAS_DE_HAROLD.pdf',
+      imgCaratula: "/image/imgbooks/diauno/05_EL_CUENTO_DE_HADAS_DE_HAROLD.jpg",
       eventHover: false
     }, {
       id: 12,
-      title: 'Boris y las manzanas',
-      description: 'Boris es un cerdito que adora las manzanas, tiene amigos, le gusta explorar e ir al colegio, pero tiene un problema: no sabe contar. Tras varias decepciones, lo logra con la ayuda de su amiga Gladis, quien le sugiere intentar con manzanas. Así, Boris se acerca a sus debilidades desde sus gustos.',
-      alt: 'Boris y las manzanas',
-      url: '/book/diauno/boris-y-las-manzanas.pdf',
-      imgCaratula: "/image/imgbooks/diauno/boris-y-las-manzanas.jpg",
+      title: 'JACOBO Y EL PRIMER DÍA',
+      description: 'Jacobo nunca ha ido al jardín infantil, le da un poco de miedo alejarse de mamá y dejar en casa a su hermanita Susi. Quién hubiera creído que el jardín estaba lleno de juegos disparatados y nuevos amigos.',
+      alt: 'JACOBO Y EL PRIMER DÍA',
+      url: '/book/diauno/03_JACOBO_Y_EL_PRIMER_DIA.pdf',
+      imgCaratula: "/image/imgbooks/diauno/03_JACOBO_Y_EL_PRIMER_DIA.jpg",
       eventHover: false
     }, {
       id: 13,
-      title: 'Un dinosaurio es',
-      description: 'Los dinosaurios son seres fascinantes. Se caracterizan por tener enormes dientes, colas poderosas, apetito voraz… a veces se parecen incluso a, ¡un niño!',
-      alt: 'Un dinosaurio es',
-      url: '/book/diauno/un-dinosaurio-es.pdf',
-      imgCaratula: "/image/imgbooks/diauno/un-dinosaurio-es.jpg",
+      title: 'LA ESCUELA DE LOS ÁNGELES',
+      description: '“La Escuela de los Ángeles rinde homenaje a estos personajes alados que acompañan a la humanidad –y, especialmente, a la infancia– con ánimo protector, desde tiempos muy antiguos, y pretende bajarlos de los altares para ponerlos a jugar, como niños pícaros y traviesos,en el espacio familiar y cercano de la escuela”. Así define Rodríguez esta historia que conjuga la maestría narrativa con la belleza de las ilustraciones del artista cubano Alexis Lago.',
+      alt: 'LA ESCUELA DE LOS ÁNGELES',
+      url: '/book/diauno/12_LA_ESCUELA_DE_LOS_ANGELES.pdf',
+      imgCaratula: "/image/imgbooks/diauno/12_LA_ESCUELA_DE_LOS_ANGELES.jpg",
       eventHover: false
     }, {
       id: 14,
-      title: 'Los tres bandidos',
+      title: 'LOS TRES BANDIDOS',
       description: 'Una historia singular. Tres bandidos salen en busca de tesoros, pero ¡oh, sorpresa! Sin pensarlo, capturan un tesoro que les cambia la vida.',
-      alt: 'Los tres bandidos',
-      url: '/book/diauno/los-tres-bandidos.pdf',
-      imgCaratula: "/image/imgbooks/diauno/los-tres-bandidos.jpg",
+      alt: 'LOS TRES BANDIDOS',
+      url: '/book/diauno/15_LOS_TRES_BANDIDOS.pdf',
+      imgCaratula: "/image/imgbooks/diauno/15_LOS_TRES_BANDIDOS.jpg",
       eventHover: false
     }, {
       id: 15,
-      title: 'Cuentos al revés',
-      description: 'Érase una vez un pobre lobillo que llevaba la comida de su abuela en un paquetillo. Tropezó con la temible Caperucita Roja, imaginen ustedes todo lo que pasó después. Junto a Gianni Rodari, viajemos a un mundo de fantasía, en donde los cuentos suceden al revés.',
-      alt: 'Cuentos al revés',
-      url: '/book/diauno/cuentos-al-reves.pdf',
-      imgCaratula: "/image/imgbooks/diauno/cuentos-al-reves.jpg",
+      title: 'JACOBO VA AL HOSPITAL',
+      description: 'Jacobo no quiere que lo operen, no quiere que le pongan la anestesia ni mucho menos quiere quedarse a dormir en el hospital. Por suerte tío Eduar está aquí para convertir cada momento difícil en una nueva aventura.',
+      alt: 'JACOBO VA AL HOSPITAL',
+      url: '/book/diauno/04_JACOBO_VA_AL_HOSPITAL.pdf',
+      imgCaratula: "/image/imgbooks/diauno/04_JACOBO_VA_AL_HOSPITAL.jpg",
       eventHover: false
     }];
   },
   mounted: function mounted() {
-    var _this3 = this;
-
     /*  this.intervalClock = setInterval( () => {
          this.initClock();
-     }, 1000); */
-    this.intervalClock = setInterval(function () {
-      _this3.changeBackgroudPage();
-    }, 30000);
+     }, 1000); 
+     this.intervalClock = setInterval( () => {
+         this.changeBackgroudPage();
+     }, 30000);
+     */
   }
 });
 
@@ -9651,7 +9651,9 @@ __webpack_require__.r(__webpack_exports__);
       heightIframeBook: false,
       agendaBook: false,
       changeBackground: false,
+      // pasar a false para ver los libros 
       viewHoverBooks: true,
+      //pasar a true para ver los libros 
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
@@ -10247,8 +10249,10 @@ __webpack_require__.r(__webpack_exports__);
       activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
-      changeBackground: true,
-      viewHoverBooks: false,
+      changeBackground: false,
+      //pasar esto de verdadero a false
+      viewHoverBooks: true,
+      //pasar esto de false a verdadero
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
@@ -10327,135 +10331,133 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     this.listBooks = [{
       id: 1,
-      title: 'Perro callejero',
-      description: 'En la calle vive un perro abandonado. Un perro rojo ira, rojo sangre. Un día, se encuentra con una niña que quiere jugar con él. No lo persigue ni le tira piedras, como hacen los otros. El perro no reacciona, pero, con el paso del tiempo, extraña a la niña y al sonido de la pelota, y anhela que vuelva. Entonces, un día oye el rebote de una pelota. No duda en seguir el sonido instintivamente, corre y corre y atraviesa la ciudad, el bosque, y llega por fin donde está la niña, quien no tuvo miedo de él, quien vio más allá de su color rojo y su rabia, quien es como él, de pelo rojo.',
-      alt: 'Perro callejero',
-      url: '/book/diados/perro-callejero.pdf',
-      imgCaratula: "/image/imgbooks/diados/perro-callejero.jpg",
+      title: 'UN ELEFANTE OCUPA MUCHO ESPACIO',
+      description: '"En estos quince cuentos breves puede suceder que los animales de un circo decidan rebelarse, que una chica tenga un trenza muy larga, que los espejos reflejen el pasado o el futuro, que una caricia inicie un viaje interminable por el campo… \nElsa Bornemann transmite una visión sensible sobre el mundo y sorprende por la originalidad de sus argumentos. Un clásico que marcó un hito en la historia de la literatura infantil argentina"',
+      alt: 'UN ELEFANTE OCUPA MUCHO ESPACIO',
+      url: '/book/diados/05_UN_ELEFANTE_OCUPA_MUCHO_ESPACIO.pdf',
+      imgCaratula: "/image/imgbooks/diados/05_UN_ELEFANTE_OCUPA_MUCHO_ESPACIO.jpg",
       eventHover: false
     }, {
       id: 2,
-      title: 'Una idea toda azul',
-      description: '“Este es el primer conjunto de cuentos maravillosos que escribió Marina Colasanti cuando descubrió el don de entender la vida a través de la lengua de las hadas y creó un universo poético inconfundible. Desde su publicación en Brasil, en 1978, este libro fascinó a los lectores de todas las edades y se convirtió en un clásico de la literatura infantil contemporánea”. Yolanda Reyes',
-      alt: 'Una idea toda azul',
-      url: '/book/diados/idea-toda-azul.pdf',
-      imgCaratula: "/image/imgbooks/diados/idea-toda-azul.jpg",
+      title: 'UNA IDEA TODA AZUL',
+      description: '"“Este es el primer conjunto de cuentos maravillosos que escribió Marina Colasanti cuando descubrió el don de entender la vida a través de la lengua de las hadas y creó un universo poético inconfundible. Desde su publicación en Brasil, en 1978, este libro fascinó a los lectores de todas las edades y se convirtió en un clásico de la literatura infantil contemporánea”. Yolanda Reyes "',
+      alt: 'UNA IDEA TODA AZUL',
+      url: '/book/diados/04_UNA_IDEA_TODA_AZUL.pdf',
+      imgCaratula: "/image/imgbooks/diados/04_UNA_IDEA_TODA_AZUL.jpg",
       eventHover: false
     }, {
       id: 3,
-      title: 'Los gatos (y gatitos) del señor Petersand',
+      title: 'LOS GATOS (Y GATITOS) DEL SEÑOR PETERSAND ',
       description: 'Isla Luciérnaga está llena de gatos que el Señor Petersand cuida todo el año y que a los veraneantes les encanta adoptar durante las vacaciones.Después de una visita al médico de la ciudad el señor Petersand regresa a la isla y no encuentra ni un solo gato. ¿Dónde están los gatos (y gatitos) del señor Petersand?',
-      alt: 'Los gatos (y gatitos) del señor Petersand',
-      url: '/book/diados/los-gatos-del-señor-petersand.pdf',
-      imgCaratula: "/image/imgbooks/diados/petersand.jpg",
+      alt: 'LOS GATOS (Y GATITOS) DEL SEÑOR PETERSAND',
+      url: '/book/diados/09_LOS_GATOS_(Y_GATITOS)_DEL_SEÑOR_PETERSAND.pdf',
+      imgCaratula: "/image/imgbooks/diados/09_LOS_GATOS_(Y_GATITOS)_DEL_SEÑOR_PETERSAND.jpg",
       eventHover: false
     }, {
       id: 4,
-      title: 'Flor de Luna y el centavo de oro',
+      title: 'FLOR DE LUNA Y  EL CENTAVO DE ORO',
       description: 'Una pequeña niña china trabaja cargando paquetes en la bahía de Hong Kong. Un día una misteriosa anciana le da un centavo de oro por su ayuda. Ni Flor de Luna, ni su madre conocen el valor de la extraña moneda, pero la buena suerte apenas comienza. Una conmovedora historia sobre la fortuna que acompaña a los corazones honestos.',
-      alt: 'Flor de Luna',
-      url: '/book/diados/flor-de-luna.pdf',
-      imgCaratula: "/image/imgbooks/diados/flor-de-luna.jpg",
+      alt: 'FLOR DE LUNA Y  EL CENTAVO DE ORO',
+      url: '/book/diados/10_FLOR_DE_LUNA_Y_EL_CENTAVO_DE_ORO.pdf',
+      imgCaratula: "/image/imgbooks/diados/10_FLOR_DE_LUNA_Y_EL_CENTAVO_DE_ORO.jpg",
       eventHover: false
     }, {
       id: 5,
-      title: 'El búho que no podía dormir',
+      title: 'EL BÚHO QUE NO PODÍA DORMIR',
       description: 'Louis Slobodkin nos cuenta la historia de un pequeño búho con insomnio. Sus amigos del bosque le sugieren todo tipo de poses para poder dormir, pero nada parecer ayudar al pobre búho a conciliar el sueño.',
-      alt: 'El búho que no podía dormir',
-      url: '/book/diados/el-buho-que-no-podia-dormir.pdf',
-      imgCaratula: "/image/imgbooks/diados/buho-dormir.jpg",
+      alt: 'EL BÚHO QUE NO PODÍA DORMIR',
+      url: '/book/diados/08_EL_BUHO_QUE_NO_PODIA_DORMIR.pdf',
+      imgCaratula: "/image/imgbooks/diados/08_EL_BUHO_QUE_NO_PODIA_DORMIR.jpg",
       eventHover: false
     }, {
       id: 6,
-      title: 'Los fantasmas huelen a vainilla',
+      title: 'LOS FANTASMAS HUELEN A VAINILLA',
       description: 'Hay días en que el mundo se pone de cabeza, se quema el horno y papá se queda sin trabajo. En esta segunda entrega de las historias de Manuela nuestra protagonista se enfrenta a unas vacaciones de lo más extrañas. Aldo, nuestro amigo fantasma, no contesta. Trueno parece haber desaparecido y Xavier y Elvira se han inscrito a una academia que resulta no ser lo  que aparenta.',
-      alt: 'Los fantasmas huelen a vainilla',
-      url: '/book/diados/los-fantasmas-huelen-a-vainilla.pdf',
-      imgCaratula: "/image/imgbooks/diados/los-fantasmas-huelen-a-vainilla.jpg",
+      alt: 'LOS FANTASMAS HUELEN A VAINILLA',
+      url: '/book/diados/11_LOS_FANTASMAS_HUELEN_A_VAINILLA.pdf',
+      imgCaratula: "/image/imgbooks/diados/11_LOS_FANTASMAS_HUELEN_A_VAINILLA.jpg",
       eventHover: false
     }, {
       id: 7,
-      title: 'Diario de un suplente',
-      description: 'El fútbol es un asunto muy importante en la vida de los hermanos Daniel y Joaquín;es una dicha que corpanten y gozan juntos. \nUn día, en un partido en la cancha del barrio, Joaquín cae al piso y no se levanta. Ocurre un terrible accidente que cambia sus vidas.La unión familiar, el amor y el fútbol, serán las herramientas para superar la tragedia y volver a sonreír.',
-      alt: 'Diario de un suplente',
-      url: '/book/diados/diario-de-un-suplente.pdf',
-      imgCaratula: "/image/imgbooks/diados/diario-de-un-suplente.jpg",
+      title: 'EL ROCK DE LA MOMIA',
+      description: 'El escritor cubano Antonio Orlando Rodríguez despliega todo su talento, su sensibilidad y su humor para crear una poesía moderna a partir de antiguas estrofas como el lay, el zéjel o el ovillejo, que usaron los poetas españoles de tiempos de Don Quijote. Así regresan estos versos pegajosos y musicales, mezclados con Frankenstein, Drácula, La Mano Asesina y muchos otros monstruos que pueblan nuestras pesadillas. Y junto a esos poemas, los niños encontrarán versos diversos para nombrar sus emociones y descubrir que la buena poesía jamás pasa de moda.',
+      alt: 'EL ROCK DE LA MOMIA',
+      url: '/book/diados/01_EL_ROCK_DE_LA_MOMIA.pdf',
+      imgCaratula: "/image/imgbooks/diados/01_EL_ROCK_DE_LA_MOMIA.jpg",
       eventHover: false
     }, {
       id: 8,
-      title: 'El perfume del viento',
-      description: 'Entre el perfume del viento y el recuerdo de esas tardes eternas que son patrimonio de la infancia y la vejez, Triunfo Arciniegas, uno de los autores más versátiles de la literatura colombiana, propicia un encuentro entre generaciones alrededor de esas preguntas difíciles que alguna vez todos tenemos que hacer. Y el ilustrador Juan Camilo Mayorga se une a la conversación para situar ese universo poético en un lugar donde es posible escudriñar nuevos detalles, historias y emociones.',
-      alt: 'El perfume del viento',
-      url: '/book/diados/el-perfume-del-viento.pdf',
-      imgCaratula: "/image/imgbooks/diados/viento-triunfo.jpg",
+      title: 'LA CABAÑA EN EL ÁRBOL',
+      description: 'A Santi y a Juan, su padre les promete construir una casa en el árbol del jardín. Pero, justo cuando los tres comienzan el trabajo, el padre tiene que irse a trabajar afuera. Entonces, promete mandarles, cada mes, algo para la casa. Y, como lo prometido es deuda, los paquetes van llegando puntuales.',
+      alt: 'LA CABAÑA EN EL ÁRBOL',
+      url: '/book/diados/03_LA CABANA_EN_EL_ARBOL.pdf',
+      imgCaratula: "/image/imgbooks/diados/03_LA CABANA_EN_EL_ARBOL.jpg",
       eventHover: false
     }, {
       id: 9,
-      title: 'Sobre un rayo de luz',
+      title: 'SOBRE UN RAYO DE LUZ',
       description: 'Un niño avanza rápidamente en su bicicleta por el campo. Pero en su mente, se ve viajando sobre un rayo de luz a una velocidad inimaginable. Esta mente brillante dará al mundo algunas de las ideas más revolucionarias que se hayan concebido. Desde su infancia hasta su vida adulta como el genio reconocido por haber iluminado la manera en que comprendemos el Universo, Jennifer Berne y Vladimir Radunsky invitan al lector a viajar junto con Albert Einstein en un recorrido por la curiosidad, la risa y el descubrimiento científico.',
-      alt: 'Sobre un rayo de luz',
-      url: '/book/diados/un-rayo-de-luz.pdf',
-      imgCaratula: "/image/imgbooks/diados/un-rayo-de-luz.jpg",
+      alt: 'SOBRE UN RAYO DE LUZ',
+      url: '/book/diados/02_SOBRE_UN_RAYO_DE_LUZ.pdf',
+      imgCaratula: "/image/imgbooks/diados/02_SOBRE_UN_RAYO_DE_LUZ.jpg",
       eventHover: false
     }, {
       id: 10,
-      title: 'Querido Bill',
+      title: 'QUERIDO BILL',
       description: 'Durante todo un año escolar, un intercambio de cartas se instaló entre dos niños que viven en las antípodas. Oscar, la pequeña hormiga y Bill, el pulpo. A pesar de sus diferencias físicas y de origen, se convierten en verdaderos amigos. El encanto, la sencillez y la veracidad de su correspondencia nos hacen participar de su vida con un verdadero placer... ¡hasta el momento de la sorpresa final!',
-      alt: 'Querido bill',
-      url: '/book/diados/querido-bill.pdf',
-      imgCaratula: "/image/imgbooks/diados/querido-bill.jpg",
+      alt: 'QUERIDO BILL',
+      url: '/book/diados/14_QUERIDO_BILL.pdf',
+      imgCaratula: "/image/imgbooks/diados/14_QUERIDO_BOLL.jpg",
       eventHover: false
     }, {
       id: 11,
-      title: 'Allá y Aquí',
-      description: '"Érase una vez una casa. Mi casa...". La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa.',
-      alt: 'Allá y Aquí',
-      url: '/book/diados/alla-y-aqui.pdf',
-      imgCaratula: "/image/imgbooks/diados/alla-y-aqui.jpg",
+      title: 'ALLÁ Y AQUÍ',
+      description: '"Érase una vez una casa. Mi casa..."\n"La escritora Carolina Moreyra puso en palabras una experiencia difícil y el ilustrador Odilon Moraes la reinventó con imágenes. Así, con dos voces y dos lenguajes, estos autores brasileños construyen un lugar seguro para refugiarse cuando algo se rompe en la casa".\nYolanda Reyes',
+      alt: 'ALLÁ Y AQUÍ',
+      url: '/book/diados/13_ALLA_Y_AQUI.pdf',
+      imgCaratula: "/image/imgbooks/diados/13_ALLA_Y_AQUI.jpg",
       eventHover: false
     }, {
       id: 12,
-      title: 'Marcial y la venganza de los lagartijos',
-      description: 'El gran sueño de Marcial es subirse al tranvía. Un día descubre a un lagartijo y lo amarra a los rieles hasta que el tren pasa y lo mata. Pronto esto se vuelve un pasatiempo. Los lagartijos acuden a la Policía de los lagartos y nombran a Cristian Saurio Verdoso y Lucas Crestas Pintadas como los líderes de la misión para darle una lección a Marcial. Mágicamente, los lagartos toman tamaño humano y se disfrazan para que Marcial comprenda que ellos son sus amigos.',
-      alt: 'marcial y la venganza de los lagartijos',
-      url: '/book/diados/marcial-y-la-venganza-de-los-lagartijos.pdf',
-      imgCaratula: "/image/imgbooks/diados/marcial-y-la-venganza-de-los-lagartijos.jpg",
+      title: 'EL AMOR POR LAS TINIEBLAS',
+      description: '"Popayán, finales del siglo XVIII. El hijo de un humilde campesino conoce a un señor de mirada intensa pero bondadosa en un mercado. Ese hombre es ni más ni menos que el sabio Francisco José de Caldas, que anda en busca de un asistente personal para su trabajo científico.\nEsta es la historia del pequeño Santiago, y del camino que lo lleva de la ignorancia a la libertad."',
+      alt: 'EL AMOR POR LAS TINIEBLAS',
+      url: '/book/diados/06_EL_AMOR_POR_LAS_TINIEBLAS.pdf',
+      imgCaratula: "/image/imgbooks/diados/06_EL_AMOR_POR_LAS_TINIEBLAS.jpg",
       eventHover: false
     }, {
       id: 13,
-      title: 'El corazón del árbol',
-      description: 'Una poeta y un artista plástico se unen en las páginas de este libro para darle forma a la música y textura a las palabras. Rindiéndole homenaje a un poema de Óscar Hahn, los versos de Piedad Bonnett se enredan como raíces en imágenes de Daniel Gómez para demostrarnos que el universo puede estar contenido en la madera de un árbol.',
-      alt: 'El corazón del árbol',
-      url: '/book/diados/corazon-del-arbol.pdf',
-      imgCaratula: "/image/imgbooks/diados/corazon-del-arbol.jpg",
+      title: '¡DATE UNA VUELTA EN BICI!',
+      description: 'En holandés, la expresión "ga toch fietsen!" (título original en holandés) quiere decir, literalmente, ¡vete a dar una vuelta en bici!, y se utiliza para zanjar una discusión que parece no tener fin. Joukje Akveld, autora de esta historia, decidió tomar esa expresión en su sentido más literal y construir una ingeniosa historia en la que Boris sale a andar en bicicleta después de una pelea con Víctor. El resultado es un maravilloso viaje por una serie de bellos e improbables paisajes.',
+      alt: '¡DATE UNA VUELTA EN BICI!',
+      url: '/book/diados/07_DATE_UNA_VUELTA_EN_BICI.pdf',
+      imgCaratula: "/image/imgbooks/diados/07_DATE_UNA_VUELTA_EN_BICI.jpg",
       eventHover: false
     }, {
       id: 14,
-      title: 'La gata sola',
-      description: '"¿Qué emociones suscita la aparición de una gata en un pueblo que nunca ha visto gatos? La escritora Carolina Sanín parece inventar una nueva lengua para nombrarlas, y el ilustrador Santiago Guevara dibuja el tono y la atmósfera de esos paisajes por los que quizás todos hemos transitado. Una fábula, en el sentido más profundo y actual, que nos conmueve con su belleza, incluso en medio del dolor". Yolanda Reyes',
-      alt: 'La gata sola',
-      url: '/book/diados/la-gata-sola.pdf',
-      imgCaratula: "/image/imgbooks/diados/la-gata.jpg",
+      title: 'LA GATA SOLA',
+      description: '"¿Qué emociones suscita la aparición de una gata en un pueblo que nunca ha visto gatos? La escritora Carolina Sanín parece inventar una nueva lengua para nombrarlas, y el ilustrador Santiago Guevara dibuja el tono y la atmósfera de esos paisajes por los que quizás todos hemos transitado. Una fábula, en el sentido más profundo y actual, que nos conmueve con su belleza, incluso en medio del dolor".\nYolanda Reyes"',
+      alt: 'LA GATA SOLA',
+      url: '/book/diados/15_LA_GATA_SOLA.pdf',
+      imgCaratula: "/image/imgbooks/diados/15_LA_GATA_SOLA.jpg",
       eventHover: false
     }, {
       id: 15,
-      title: 'Cuentos de Tomás',
-      description: '¿Cuál podrá ser el miedo más grande de Tomás? ¿Qué lo atrapen los niños del conjunto cerrado? ¿Qué por vivir ahora lejos de la casa de Susana no la vaya a volver a ver nunca? ¿Qué sus compañeros de colegio descubranque es pésimo jugador de fútbol, a pesar de su estatura?',
-      alt: 'Cuentos de Tomás',
-      url: '/book/diados/cuentos-de-tomas.pdf',
-      imgCaratula: "/image/imgbooks/diados/cuentos-de-tomas.jpg",
+      title: 'CLÍMACO LUPÍN Y EL SECRETO DE LAS SANDÍAS GIGANTES',
+      description: 'El mejor detective de Ñapachicute se enfrenta a uno de los casos más importantes de su carrera. Una conspiración pretende robarle a la presidenta de la república la fórmula de las sandías gigantes. Clímaco Lupín tendrá que usar centenares de disfraces, aliarse con enemigos y enfrentarse al poder del mítico ojo de Telemo para solucionar el misterio de las sandías y defender el derecho que tiene la humanidad a calmar la sed.',
+      alt: 'CLÍMACO LUPÍN Y EL SECRETO DE LAS SANDÍAS GIGANTES',
+      url: '/book/diados/12_CLIMACO_LUPIN_Y_EL_SECRETO_DE_LAS_SANDIAS_GIGANTES.pdf',
+      imgCaratula: "/image/imgbooks/diados/12_CLIMACO_LUPIN_Y_EL_SECRETO_DE_LAS_SANDIAS_GIGANTES.jpg",
       eventHover: false
     }];
   },
   mounted: function mounted() {
-    var _this3 = this;
-
     /* this.intervalClock = setInterval( () => {
         this.initClock();
-    }, 1000); */
-    this.intervalClock = setInterval(function () {
-      _this3.changeBackgroudPage();
-    }, 30000);
+    }, 1000); 
+    this.intervalClock = setInterval( () => {
+        this.changeBackgroudPage();
+    }, 30000);*/
   }
 });
 
@@ -11046,7 +11048,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.color-white[data-v-d1eb8008] {\n    color: #fff;\n}\n#content-programa[data-v-d1eb8008] {\n    font-size: 1.8rem;\n    font-weight: 600;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.color-white[data-v-d1eb8008] {\r\n    color: #fff;\n}\n#content-programa[data-v-d1eb8008] {\r\n    font-size: 1.8rem;\r\n    font-weight: 600;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
