@@ -9639,6 +9639,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -9650,16 +9652,17 @@ __webpack_require__.r(__webpack_exports__);
       activeModal: false,
       heightIframeBook: false,
       agendaBook: false,
+      //changeBackground: true,
       changeBackground: false,
-      // pasar a false para ver los libros 
+      // comentar
+      //viewHoverBooks: false,
       viewHoverBooks: true,
-      //pasar a true para ver los libros 
+      // comentar
       openChatIcon: false,
       listBooks: [],
       bookSelect: null,
       clockTimer: "",
-      intervalClock: "",
-      openVideo: false
+      intervalClock: ""
     };
   },
   methods: {
@@ -9681,7 +9684,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.openPDF = !_this.openPDF;
         _this.imgGif = false;
       }, 2000);
-      this.eventClickBook(book);
     },
     closeIframeBook: function closeIframeBook() {
       this.openPDF = !this.openPDF;
@@ -9691,14 +9693,26 @@ __webpack_require__.r(__webpack_exports__);
       this.changeBackground = !this.changeBackground;
       this.viewHoverBooks = !this.viewHoverBooks;
     },
+    truncate: function truncate(text) {
+      if (window.innerWidth < 992) {
+        return text.length > 200 ? text.slice(0, 150) + '...' : text;
+      }
+
+      return text.length > 350 ? text.slice(0, 350) + '...' : text;
+    },
     openViewChat: function openViewChat() {
       this.openChatIcon = !this.openChatIcon;
+    },
+    initClock: function initClock() {
+      var day = new Date();
+      this.clockTimer = day.toLocaleTimeString();
     },
     changeBackgroudPage: function changeBackgroudPage() {
       var _this2 = this;
 
       axios.get("/api/change-background").then(function (result) {
-        var change = result.data.data; //console.log(change)
+        var change = result.data.data;
+        console.log(change);
 
         if (change === 'si') {
           _this2.changeBackground = false;
@@ -9710,145 +9724,137 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log('fallo');
       });
-    },
-    eventClickBook: function eventClickBook(book) {
-      axios.post('/click-book', book).then(function (resp) {//console.log('click...')
-      })["catch"](function (error) {
-        console.log('Error clic book');
-      });
     }
   },
   created: function created() {
     this.listBooks = [{
       id: 1,
-      title: 'El juego de la nieve',
-      description: 'Está a punto de inaugurarse la Feria de Juegos de Zyl. Iván Dragó parece dispuesto a olvidar los enigmas de su pasado para concentrarse en su oficio de inventor de juegos. Pero se cruza en su camino lo inesperado: una filmación de pocos segundos en la que cree reconocer a su madre, en medio de un paisaje nevado. Para saber qué pasó realmente con sus padres, tendrá que enfrentarse con juguetes peligrosos, deberá pasar las exigentes pruebas de Spativo y seguir las huellas de Morodian. Ante Iván se abre la región del frío y el olvido: el juego de la nieve.',
-      alt: 'El juego de la nieve',
-      url: '/book/diatres/el-juego-de-la-nieve.pdf',
-      imgCaratula: "/image/imgbooks/diatres/juego-de-la-nieve.jpg",
+      title: 'EL JUEGO DE LA NIEVE',
+      description: 'Está a punto de inaugurarse la Feria de Juegos de Zyl. Iván Dragó parece dispuesto a olvidar los enigmas de su pasado para concentrarse en su oficio de inventor de juegos. Pero se cruza en su camino lo inesperado: una filmación de pocos segundos en la que cree reconocer a su madre, en medio de un paisaje nevado. Para saber qué pasó realmente con sus padres, tendrá que enfrentarse con juguetes peligrosos, deberá pasar las exigentes pruebas de Spativo y seguir las huellas de Morodian. Ante Iván se abre la región del frío y el olvido: el juego de la nieve. ',
+      alt: 'EL JUEGO DE LA NIEVE',
+      url: '/book/diatres/04_EL_JUEGO_DE_LA_NIEVE.pdf',
+      imgCaratula: "/image/imgbooks/diatres/04_EL_JUEGO_DE_LA_NIEVE.jpg",
       eventHover: false
     }, {
       id: 2,
-      title: 'Antología poética de la generación del 27',
+      title: 'ANTOLOGÍA POÉTICA DE LA GENERACIÓN DEL 27',
       description: 'Federico García Lorca, Carmen Conde, Luis Cernuda, Concha Méndez, Rafael Alberti, Elisabeth Mulder, Pedro Salinas… Los nombres que componen la llamada generación del 27 son esenciales para entender la historia de la poesía contemporánea. Hombres y mujeres que hicieron de la creación una forma de vida y que, en esta antología, hemos intentado acompañar desde sus primeros versos hasta sus últimas obras. Una selección que ofrece todas las claves para entender y disfrutar de su evolución literaria y que, además, devuelve al primer plano a las autoras del 27, otorgándoles el lugar y espacio que su indudable calidad merece.',
-      alt: 'Antología poética de la generación del 27',
-      url: '/book/diatres/antologia-poetica-del-27.pdf',
-      imgCaratula: "/image/imgbooks/diatres/antologia-poetica.jpg",
+      alt: 'ANTOLOGÍA POÉTICA DE LA GENERACIÓN DEL 27',
+      url: '/book/diatres/12_ANTOLOGIA_POETICA_DE_LA_GENERACION_DEL_27.pdf',
+      imgCaratula: "/image/imgbooks/diatres/12_ANTOLOGIA_POETICA_DE_LA_GENERACION_DEL_27.jpg",
       eventHover: false
     }, {
       id: 3,
-      title: 'El canto del manatí',
-      description: 'Tanana y Tanene son dos gemelos hijos de la armonía, junto a Buinaria han crecido entre los ríos y han aprendido a ser parte del fluir de la naturaleza. Cuando Buinaria vuelve de un largo viaje la armonía del clan se rompe, los hermanos ya no quieren ser parte de un todo y deciden llevar la lucha por el amor de su amiga hasta las últimas consecuencias.',
-      alt: 'El canto del manatí',
-      url: '/book/diatres/canto-manati.pdf',
-      imgCaratula: "/image/imgbooks/diatres/canto-manati.jpg",
+      title: 'MI AMIGO LUKI-LIVE',
+      description: '"Algo muy extraño le ha pasado a Luki-live en Inglaterra. Después de las vacaciones parece otra persona. Ariane, su mejor amiga, no sabe qué hacer respecto a este cambio. No es solo esa forma de vestir tan estrafalaria, es que hace cosas tan raras…\nUn perfecto relato sobre la crisis de la adolescencia. Afortunadamente, todo tiene solución, sobre todo cuando se trata de la amistad."',
+      alt: 'AHORA NO, BERNARDO',
+      url: '/book/diatres/07_MI_AMIGO_LUKI-LIVE.pdf',
+      imgCaratula: "/image/imgbooks/diatres/07_MI_AMIGO_LUKI-LIVE.jpg",
       eventHover: false
     }, {
       id: 4,
-      title: 'Puente a Terabitia',
+      title: 'PUENTE A TERABITIA',
       description: 'Jess Aarons ha entrenado todo el verano para ser el corredor más rápido de quinto grado. Y casi lo logra, de no ser por la niña nueva, Leslie Burke, que lo rebasa. Pronto, los dos se hacen mejores amigos y pasan los días en el bosque detrás de la casa de Leslie, donde ambos inventan un reino encantado llamado Terabitia. Una mañana, Leslie decide ir sola a Terabitia y ocurre una tragedia. Sólo el amor de su familia y la fuerza que Leslie le ha dado permitirá que Jess pueda superar su pérdida.',
-      alt: 'Puente a Terabitia',
-      url: '/book/diatres/puente-terabitia.pdf',
-      imgCaratula: "/image/imgbooks/diatres/puente-terabitia.jpg",
+      url: '/book/diatres/15_PUENTE_A_TERABITIA.pdf',
+      imgCaratula: "/image/imgbooks/diatres/15_PUENTE_A_TERABITIA.jpg",
       eventHover: false
     }, {
       id: 5,
-      title: 'La Duenda',
-      description: '"La primera vez que la vimos éramos niños, aún". A partir de esa primera mirada de la Duenda, un ser de fuerza envolvente e inasible, se conjura el hechizo que será la perdición y el remedio del protagonista de esta historia. Evelio Rosero, con una prosa poética que no cesa de ofrecer poesía, consigue crear una obra cautivante.',
-      alt: 'La duenda',
-      url: '/book/diatres/la-duenda-azul.pdf',
-      imgCaratula: "/image/imgbooks/diatres/la-duenda-azul.jpg",
+      title: 'UNA AMISTAD EN JUEGO',
+      description: '"Camilo hace una visita obligada al convento vecino del colegio para recuperar un balón de fútbol. Nunca se le habría pasado por la cabeza que allí iba a conocer a sor Alicia, una monja peculiar con mucho sentido del humor, amor por el ajedrez, el karate y los amigos verdaderos. Desde entonces, la vida de Camilo no será la misma. Tampoco la de sor Alicia.\nA veces, sin buscarlos, encontramos a grandes amigas y amigos en lugares insospechados."',
+      alt: 'UNA AMISTAD EN JUEGO',
+      url: '/book/diatres/10_UNA_AMISTAD_EN_JUEGO.pdf',
+      imgCaratula: "/image/imgbooks/diatres/10_UNA_AMISTAD_EN_JUEGO.jpg",
       eventHover: false
     }, {
       id: 6,
-      title: 'Las siete vidas de Agustín Codazzi',
-      description: 'Agustín Codazzi recorrió el mundo y fue tantos seres en una persona que vivió siete vidas. Cada una de estas corresponde a una edad, a un lugar, a una faceta suya. Hay que conocerlas todas para comprender por qué ese anónimo soldado italiano, aventurero y mercenario, se volvió libertador, geógrafo y cartógrafo de Venezuela y de la Nueva Granada, y para concluir que fue él quien verdaderamente descubrió el continente. En un tono desenfadado y familiar, Beatriz Caballero narra las peripecias de Codazzi y consigue transmitirle al lector la apasionante aventura que fue su vida. Este libro relata la vida del italiano a mediados del siglo XIX, desde su infancia en Lugo, para pasar a ser soldado de Napoleón en su adolescencia, a aventurarse como pirata y luego desembarcar en América para participar en la independencia de la Nueva Granada y emprender la Comisión Corográfica. ',
-      alt: 'Las siete vidas de Agustín Codazzi',
-      url: '/book/diatres/las-siete-vidas-de-agustin-codazzi.pdf',
-      imgCaratula: "/image/imgbooks/diatres/las-siete-vidas-de-agustin.jpg",
+      title: 'LAS SIETE VIDAS DE AGUSTÍN CODAZZI',
+      description: '"Agustín Codazzi recorrió el mundo y fue tantos seres en una persona que vivió siete vidas. Cada una de estas corresponde a una edad, a un lugar, a una faceta suya. Hay que conocerlas todas para comprender por qué ese anónimo soldado italiano, aventurero y mercenario, se volvió libertador, geógrafo y cartógrafo de Venezuela y de la Nueva Granada, y para concluir que fue él quien verdaderamente descubrió el continente.\nEn un tono desenfadado y familiar, Beatriz Caballero narra las peripecias de Codazzi y consigue transmitirle al lector la apasionante aventura que fue su vida. Este libro relata la vida del italiano a mediados del siglo XIX, desde su infancia en Lugo, para pasar a ser soldado de Napoleón en su adolescencia, a aventurarse como pirata y luego desembarcar en América para participar en la independencia de la Nueva Granada y emprender la Comisión Corográfica. "',
+      alt: 'LAS SIETE VIDAS DE AGUSTÍN CODAZZI',
+      url: '/book/diatres/03_LAS_SIETE_VIDAS_DE_AGUSTÍN_CODAZZI.pdf',
+      imgCaratula: "/image/imgbooks/diatres/03_LAS_SIETE_VIDAS_DE_AGUSTÍN_CODAZZI.jpg",
       eventHover: false
     }, {
       id: 7,
-      title: 'La guerra que salvó mi vida',
-      description: 'Ada tiene nueve años y su madre nunca le ha permitido salir de su habitación, ya que nació con un pie zambo que le impide caminar. Su única conexión con el mundo es su hermano, Jamie, y la pequeña ventana de un tercer piso por la que ve el mundo. Irónicamente, gracias a la Segunda Guerra Mundial, la vida de Ada cambiará para siempre: escapa de su mamá, de las bombas de Hitler y de la prisión de su habitación. Pero, ¿qué pasará cuando la guerra termine y deba regresar a casa con su madre? Una narración histórica y, al mismo tiempo, un relato dolorosamente encantador sobre cómo se puede encontrar una familia en lugares inesperados.',
-      alt: 'La guerra que salvó mi vida',
-      url: '/book/diatres/la-guerra-que-salvo-mi-vida.pdf',
-      imgCaratula: "/image/imgbooks/diatres/La-guerra-que-salvo-mi-vida.jpg",
+      title: 'LA GUERRA QUE AL FIN GANÉ',
+      description: 'Ada, la protagonista de La guerra que salvó mi vida, se somete a una operación quirúrgica para arreglar su pie zambo. Gracias a esto, ella puede caminar, liberarse del dolor físico y dares cuenta de que no es una lisiada, como su madre Ada. Pero ahora el dolor y las dudas regresan de otro modo… La Segunda Guerra Mundial continúa, y Ada y su hermano tienen que mudarse con Susan, su tutora, a la casa de Lady Thorton. La vida ahí es tensa y se pone peor cuando llega a vivir con ellos Ruth, una niña alemana. ¿Será Ruth una espía?, ¿podrá Ada confiar en ella?',
+      url: '/book/diatres/02_LA_GUERRA_QUE_AL_FIN_GANE.pdf',
+      imgCaratula: "/image/imgbooks/diatres/02_LA_GUERRA_QUE_AL_FIN_GANE.jpg",
       eventHover: false
     }, {
       id: 8,
-      title: 'La muda',
-      description: 'En un barrio pobre, dos hermanos sobrellevan una infancia difícil. Desatendidos por su madre, viven con su abuela, cuya sombra autoritaria los sigue a todas partes. Solo la fantasía y el amor fraterno les ayudan a soportar el abandono y el miedo. Pero un día, dentro de un carro destartalado encuentran una gallina. Desde ese momento, diario visitan al ave a escondidas para cuidarla y alimentarla, y eso le da un sentido diferente a sus vidas.',
-      alt: 'La muda',
-      url: '/book/diatres/la-muda.pdf',
-      imgCaratula: "/image/imgbooks/diatres/la-muda.jpg",
+      title: 'LA MUDA',
+      description: '"Todo lo que habían visto era gris. Los días pasaban y no había cambio entre uno y otro. Pero entonces un día trajo una sorpresa: entre una selva de fierro oxidados, escondida, encontraron una gallina roja. Una gallina tibia, tranquila y muda. El animal será una distracción para estos hermanos que viven una vida dde maltrato, abandono, pobreza y hambre. \nCon un lenguaje que juega a veces con lo simbólico y a veces es directo, esta novela retrata la historia de la violencia que viven en sus casas muchos niños y jóvenes en el mundo."',
+      alt: 'LA MUDA',
+      url: '/book/diatres/06_LA_MUDA.pdf',
+      imgCaratula: "/image/imgbooks/diatres/06_LA_MUDA.jpg",
       eventHover: false
     }, {
       id: 9,
-      title: 'La gran Gilly Hopkins',
-      description: 'Gilly Hopkins tiene once años. Desde muy pequeña ha vivido con diferentes familias, ya que su madre nunca se ha ocupado de ella. Debido a su carácter rebelde, todos los intentos de adopción han fracasado. Cuando llega a casa de la señora Trotter, mujer sencilla y cordial, la niña la rechaza, pero poco a poco, a fuerza de cariño y comprensión, Gilly comienza a querer a su nueva familia.',
-      alt: 'La gran Gilly Hopkins',
-      url: '/book/diatres/la-gran-gilly-hopkins.pdf',
-      imgCaratula: "/image/imgbooks/diatres/la-gran-gilly.jpg",
+      title: 'EL GRAN GIGANTE BONACHÓN',
+      description: '"Una noche, el Gran Gigante Bonachón entra por la ventana del orfanato, envuelve a la pequeña Sofía en una sábana y se la lleva al país de los gigantes. Pero en esas tierras viven también gigantes malos. Tendrán que enfrentarlos a todos.\nUn libro lleno de fantasía, humor, ternura y sinceridad, con un protagonista a la altura de su impresionante físico."',
+      alt: 'EL GRAN GIGANTE BONACHÓN',
+      url: '/book/diatres/01_EL_GRAN_GIGANTE_BONACHON.pdf',
+      imgCaratula: "/image/imgbooks/diatres/01_EL_GRAN_GIGANTE_BONACHON.jpg",
       eventHover: false
     }, {
       id: 10,
-      title: 'Fortunato',
-      description: 'El sueño de Fortunato es llegar a España. En las laderas del Cocuy, la Vuelta a Colombia se atraviesa en su camino. El muchacho de ruana y sombrero avanza como una bala, al ritmo de los ciclistas profesionales.',
-      alt: 'Fortunato',
-      url: '/book/diatres/fortunato.pdf',
-      imgCaratula: "/image/imgbooks/diatres/fortunato.jpg",
+      title: 'MALAMANDRA',
+      description: '"Para Herbie Lemon, la ciudad de Puerto Misterioso es su lugar todo el año. Él permanece ahí cuando los turistas se van, lo cual es algo bueno porque los turistas suelen olvidar muchas pertenencias. El trabajo de Herbie, como encargado de las cosas perdidas del Hotel Gran Nautilus, consiste en reunir a las personas con sus objetos perdidos. ¿Pero quién olvidaría a un bebé?\nCuando Violeta Parma llama a la puerta de Herbie y le insiste en que le ayude a encontrar a sus padres, quienes la dejaron en el hotel diez años antes, las habilidades detectivescas de Herbie se pondrán a prueba como nunca..."',
+      alt: 'MALAMANDRA',
+      url: '/book/diatres/09_MALAMANDRA.pdf',
+      imgCaratula: "/image/imgbooks/diatres/09_MALAMANDRA.jpg",
       eventHover: false
     }, {
       id: 11,
-      title: 'Martina y la carta del monje Yukio',
+      title: 'MARTINA Y LA CARTA DEL MONJE YUKIO',
       description: 'Cuando Martina llega Nueva York a casa de su papá tras mucho tiempo sin verlo, no solo lo encuentra a él muy diferente, sino que todo le resulta nuevo y sorpresivo: los paisajes, la gente, el idioma. Martina comprenderá que las circunstancias pueden moldear el carácter y los sentimientos. Afortunadamente conoce a alguien que le ayudará a sobrellevar la nueva situación: su vecino, el monje Yukio.',
-      alt: 'martina y la carta del monje Yukio',
-      url: '/book/diatres/martina-y-la-carta-del-monje-yukio.pdf',
-      imgCaratula: "/image/imgbooks/diatres/martina-monje-yukio.jpg",
+      alt: 'MARTINA Y LA CARTA DEL MONJE YUKIO',
+      url: '/book/diatres/05_MARTINA_Y_LA_CARTA_DEL_MO_JE_YUKIO.pdf',
+      imgCaratula: "/image/imgbooks/diatres/05_MARTINA_Y_LA_CARTA_DEL_MO_JE_YUKIO.jpg",
       eventHover: false
     }, {
       id: 12,
-      title: 'Temple Teyuna, el infierno verde',
+      title: 'TEMPLE',
       description: 'Desde pequeña, Temple ha tenido dos sueños: conocer a su padre y tener una gran aventura. Ahora, con 15 años, está a punto de cumplir ambos. Un viaje inesperado la llevará a reencontrarse con su padre y a internarse en la sierra colombiana para descubrir la ciudad Teyuna. Sin embargo, Temple comprenderá que cumplir sus deseos no es gratuito y que, en este caso, vivir una aventura implica arriesgar lo que ella más ama.',
-      alt: 'Temple Teyuna, el infierno verde',
-      url: '/book/diatres/temple.pdf',
-      imgCaratula: "/image/imgbooks/diatres/tapa-temple.jpg",
+      alt: 'TEMPLE',
+      url: '/book/diatres/14_TEMPLE.pdf',
+      imgCaratula: "/image/imgbooks/diatres/14_TEMPLE.jpg",
       eventHover: false
     }, {
       id: 13,
-      title: 'Fuera de norma',
-      description: 'Reúne los más importantes artículos, cartas y ensayos referentes a los derechos de las mujeres y a los movimientos feministas en Hispanoamérica desde el siglo XVII hasta mediados del siglo XX. Sor Juana Inés de la Cruz, Emilia Pardo Bazán, Gabriela Mistral y Victoria Ocampo son algunas de las once mujeres que contribuyeron a la reflexión y a la discusión de género en diferentes países de habla hispana.',
-      alt: 'Fuera de norma',
-      url: '/book/diatres/fuera-de-norma.pdf',
-      imgCaratula: "/image/imgbooks/diatres/fuera-de-norma.jpg",
+      title: 'LOS MUNDOS DISTÓPICOS DE CAMILO CHANG',
+      description: '"Para Camilo no ha sido fácil el paso de la infancia a la adolescencia: la magia de ser niño se disolvió poco a poco y surgieron el desconcierto, las pesadillas y el deseo de aislarse. Un juego en internet se convierte en su única guía para transitar por el mundo, y su habitación, un refugio en el que, sin embargo, constantemente imagina futuros aterradores para la raza humana. En medio de esas circunstancias Camilo toma una importante decisión, pero la llegada del coronavirus transforma su vida y la de todas las personas a su alrededor.\nCon una prosa envolvente, que atrapa al lector desde el primer momento, Alejandra Jaramillo entreteje el pasado y el presente con escenarios distópicos, para resaltar la importancia de comunicarnos con nuestros seres queridos en medio de un mundo cada vez más extraño.\nUna novela para reflexionar sobre la incertidumbre que todos vivimos y que nos recuerda la fragilidad de los seres humanos."',
+      alt: 'LOS MUNDOS DISTÓPICOS DE CAMILO CHANG',
+      url: '/book/diatres/13_ LOS_MUNDOS_DISTOPICOS_DE_CAMILO_CHANG.pdf',
+      imgCaratula: "/image/imgbooks/diatres/13_ LOS_MUNDOS_DISTOPICOS_DE_CAMILO_CHANG.jpg",
       eventHover: false
     }, {
       id: 14,
-      title: 'Rompecabezas',
-      description: 'Mora es una chica de once años que vive con su abuela y su gata. Tiene un grupo de amigas llamadas “Las Chicas de Siberia” con las que comparte horas de clase, juegos y charlas. También están Juan, su primo inseparable, y Dani, el chico de sus sueños, con quienes ella descubre la aventura y el rock. Pero su historia se ve atravesada por secretos y ausencias. Algunas piezas no encajan en el rompecabezas de su vida.',
-      alt: 'Rompecabezas',
-      url: '/book/diatres/rompecabezas.pdf',
-      imgCaratula: "/image/imgbooks/diatres/rompecabezas.jpg",
+      title: 'LOS TUCANES NO HABLAN',
+      description: '"Tras la llegada de una carta con letra desconocida, Aquiles y su hermano deben abandonar la casa donde vivían con su mamá y mudarse a vivir a la ciudad con sus tíos Rudolf y Peggy. En la casa de sus tíos Aquiles conoce a una extraña mascota: un túcan. ¿Será que el tucán podrá decirle a Aquiles qué le pasó a su mamá y por qué su vida cambió para siempre?… Pero, los tucanes no hablan.\nUna novela profunda y conmovedora sobre los cambios a los que nos somete la vida y nuestra capacidad para adaptarnos a ellos."',
+      alt: 'LOS TUCANES NO HABLAN',
+      url: '/book/diatres/08_LOS_TUCANES_NO_HABLAN.pdf',
+      imgCaratula: "/image/imgbooks/diatres/08_LOS_TUCANES_NO_HABLAN.jpg",
       eventHover: false
     }, {
       id: 15,
-      title: 'Cuando Hitler robó el conejo rosa',
-      description: 'La llegada de Hitler al poder va a cambiar radicalmente la vida de Anna y su familia. En su huida del horror nazi deberán abandonar su país y dejar atrás muchas cosas queridas, como su conejo de peluche. Con él también quedará su infancia.',
-      alt: 'Cuando Hitler robó el conejo rosa',
-      url: '/book/diatres/cuando-hitler-robo-el-conejo-rosa.pdf',
-      imgCaratula: "/image/imgbooks/diatres/cuando-hitler.jpg",
+      title: 'LA GOLONDRINA QUE TRAJO EL VERANO',
+      description: 'Jacobo no quiere que lo operen, no quiere que le pongan la anestesia ni mucho menos quiere quedarse a dormir en el hospital. Por suerte tío Eduar está aquí para convertir cada momento difícil en una nueva aventura.',
+      alt: 'LA GOLONDRINA QUE TRAJO EL VERANO',
+      url: '/book/diatres/11_LA_GOLONDRINA_QUE_TRAJO_EL_VERANO.pdf',
+      imgCaratula: "/image/imgbooks/diatres/11_LA_GOLONDRINA_QUE_TRAJO_EL_VERANO.jpg",
       eventHover: false
     }];
   },
   mounted: function mounted() {
-    var _this3 = this;
-
-    this.changeBackgroudPage();
-    console.log('mounted..');
-    this.intervalClock = setInterval(function () {
-      _this3.changeBackgroudPage();
-    }, 30000);
+    /*  this.intervalClock = setInterval( () => {
+         this.initClock();
+     }, 1000); 
+     this.intervalClock = setInterval( () => {
+         this.changeBackgroudPage();
+     }, 30000);
+     */
   }
 });
 
@@ -10928,7 +10934,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "button.video-tuto[data-v-1de12500] {\n  position: fixed;\n  bottom: -8%;\n  background: #9f793d;\n}\nbutton.video-tuto[data-v-1de12500]:hover {\n  box-shadow: 0px 10px 20px -10px #c13b2b;\n}\n\n/* BEGIN estilos chat */\nbutton#btn-float-chat[data-v-1de12500] {\n  border-radius: 1.8rem !important;\n  padding: 0.7rem;\n  position: fixed;\n  bottom: 3%;\n  right: 1.2rem;\n  z-index: 99;\n  background: #9f793d;\n  border-color: #9f793d;\n}\ndiv#content-chat[data-v-1de12500] {\n  position: fixed;\n  bottom: 12%;\n  right: 1%;\n  width: 25%;\n  height: 70%;\n  border-radius: 1rem;\n  padding: 0.4rem;\n  opacity: 0;\n}\niframe#iframe-chat[data-v-1de12500] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  bottom: 0;\n  border-radius: 0.4rem;\n  opacity: 0;\n}\n.content-chat-opacity[data-v-1de12500] {\n  opacity: 1 !important;\n  z-index: 110;\n}\n\n/* END estilos chat */\ndiv#content-clock[data-v-1de12500] {\n  position: absolute;\n  top: 2%;\n  right: 2%;\n  color: #9f793d;\n}\n.overflow-auto[data-v-1de12500] {\n  height: 110px;\n  overflow: auto !important;\n  margin-bottom: 0.5rem;\n}\n.main-view[data-v-1de12500] {\n  background-image: url(\"/image/imgbackground/secundaria.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-1de12500] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-1de12500] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-1de12500] {\n  height: 80%;\n}\n\n/* BEGIN: estilos para libros */\n.class-position[data-v-1de12500] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-1de12500] {\n  top: 17%;\n  left: 4%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-2[data-v-1de12500] {\n  top: 28.6%;\n  left: 4%;\n  height: 12%;\n  width: 10%;\n}\ndiv#book-3[data-v-1de12500] {\n  top: 16%;\n  left: 45.6%;\n  height: 9.5%;\n  width: 7.5%;\n}\ndiv#book-4[data-v-1de12500] {\n  top: 25.7%;\n  left: 45.5%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-5[data-v-1de12500] {\n  top: 34.7%;\n  left: 45.5%;\n  height: 9%;\n  width: 7%;\n}\ndiv#book-6[data-v-1de12500] {\n  top: 45%;\n  left: 9%;\n  height: 11%;\n  width: 8%;\n}\ndiv#book-7[data-v-1de12500] {\n  top: 45%;\n  left: 20%;\n  height: 11%;\n  width: 8.5%;\n}\ndiv#book-8[data-v-1de12500] {\n  top: 45.8%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-1de12500] {\n  top: 46%;\n  left: 40.4%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-10[data-v-1de12500] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-1de12500] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-1de12500] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-1de12500] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-1de12500] {\n  top: 63.5%;\n  left: 47.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-1de12500] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-1de12500] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-1de12500] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-1de12500] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-1de12500] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-1de12500] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-1de12500] {\n  width: auto;\n  height: 100%;\n  cursor: pointer;\n}\n#btn-info-book[data-v-1de12500] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-1de12500] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-1de12500]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-1de12500] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-1de12500] {\n  color: #fff;\n}\n.close-pdf[data-v-1de12500] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-1de12500] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: -8%;\n}\n#image-gif[data-v-1de12500] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-1de12500] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-1de12500] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-1de12500] {\n  width: 100%;\n  height: 55vh;\n}\ndiv#content-background-img[data-v-1de12500] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-1de12500] {\n  margin: 0 0 0 78%;\n}\n.color-button-book[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-1de12500]:hover {\n  box-shadow: 0px 10px 20px -10px #c13b2b;\n}\n#content-dialog-book[data-v-1de12500] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-1de12500] {\n  color: #fff;\n}\na#pdf-download[data-v-1de12500] {\n  color: #212529;\n}\na#pdf-download[data-v-1de12500]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n  /* .class-position {\n      border: 1px solid red;\n  } */\n#content-background-books[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/secundaria-1.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-1[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/main-background-1.png\") !important;\n}\n.view-iframe-one[data-v-1de12500] {\n    min-height: 60vh;\n    contain: content;\n}\n.overflow-auto[data-v-1de12500] {\n    height: 80px;\n}\ndiv#book-1[data-v-1de12500] {\n    top: 16%;\n    left: 0%;\n    height: 12%;\n    width: 11%;\n}\ndiv#book-2[data-v-1de12500] {\n    left: 0%;\n    height: 13%;\n    width: 11%;\n}\ndiv#book-3[data-v-1de12500] {\n    top: 15%;\n    left: 44%;\n    height: 9.5%;\n    width: 9%;\n}\ndiv#book-4[data-v-1de12500] {\n    left: 44%;\n    width: 9%;\n}\ndiv#book-5[data-v-1de12500] {\n    left: 44%;\n    width: 9%;\n}\ndiv#book-6[data-v-1de12500] {\n    top: 44%;\n    left: 5%;\n    height: 12%;\n    width: 10%;\n}\ndiv#book-7[data-v-1de12500] {\n    top: 44%;\n    left: 17%;\n    height: 12%;\n    width: 10%;\n}\ndiv#book-8[data-v-1de12500] {\n    top: 45%;\n    left: 29%;\n    height: 11%;\n    width: 9%;\n}\ndiv#book-9[data-v-1de12500] {\n    top: 46%;\n    left: 39%;\n    height: 10%;\n    width: 9%;\n}\ndiv#book-10[data-v-1de12500] {\n    width: 9%;\n}\ndiv#book-11[data-v-1de12500] {\n    top: 59%;\n    left: 39%;\n    height: 11.2%;\n    width: 10%;\n}\ndiv#book-12[data-v-1de12500] {\n    top: 59%;\n    left: 54.77%;\n    height: 10.7%;\n    width: 10%;\n}\ndiv#book-13[data-v-1de12500] {\n    top: 59%;\n    left: 71%;\n    height: 10.3%;\n    width: 10%;\n}\ndiv#book-14[data-v-1de12500] {\n    top: 63.5%;\n    left: 47.3%;\n    height: 13%;\n    width: 9%;\n}\ndiv#book-15[data-v-1de12500] {\n    top: 63%;\n    left: 63%;\n    height: 13%;\n    width: 10%;\n}\n.vertical-center[data-v-1de12500] {\n    width: 100%;\n}\nimg#img-info-book[data-v-1de12500] {\n    max-height: 190px;\n}\nh3.text-center[data-v-1de12500] {\n    font-size: 1.1rem;\n}\np.text-justify[data-v-1de12500] {\n    font-size: 0.7rem;\n}\n#pdf-read[data-v-1de12500] {\n    top: -5%;\n}\nsvg#icon-view-book[data-v-1de12500] {\n    width: 1.6rem;\n    height: 1.6rem;\n}\n#content-backgroud-video[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/secundaria-2.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-2[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/main-background-2.png\") !important;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-1de12500] {\n    min-height: 60vh;\n    contain: content;\n}\n.vertical-center-video[data-v-1de12500] {\n    left: 0%;\n}\ndiv#content-agenda-book[data-v-1de12500] {\n    margin: 0 0 0 62%;\n}\n#iframe-video[data-v-1de12500] {\n    height: 13rem;\n}\ndiv#content-clock[data-v-1de12500] {\n    bottom: 2%;\n    top: auto;\n    right: auto;\n}\ndiv#content-chat[data-v-1de12500] {\n    width: 80%;\n    height: 60%;\n}\n}\n/* Styles for large screens  */", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* BEGIN estilos chat */\nbutton#btn-float-chat[data-v-1de12500] {\n  border-radius: 1.8rem !important;\n  padding: 0.7rem;\n  position: fixed;\n  bottom: 3%;\n  right: 1.2rem;\n  z-index: 99;\n  background: #9f793d;\n  border-color: #9f793d;\n}\ndiv#content-chat[data-v-1de12500] {\n  position: fixed;\n  bottom: 12%;\n  right: 1%;\n  width: 25%;\n  height: 70%;\n  border-radius: 1rem;\n  padding: 0.4rem;\n  opacity: 0;\n}\n\n/* z-index: 99; */\niframe#iframe-chat[data-v-1de12500] {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  bottom: 0;\n  border-radius: 0.4rem;\n  opacity: 0;\n}\n.content-chat-opacity[data-v-1de12500] {\n  opacity: 1 !important;\n  z-index: 110;\n}\n\n/* END estilos chat */\ndiv#content-clock[data-v-1de12500] {\n  position: absolute;\n  top: 2%;\n  right: 2%;\n  color: #9f793d;\n}\n.overflow-auto[data-v-1de12500] {\n  height: 110px;\n  overflow: auto !important;\n  margin-bottom: 0.5rem;\n}\n.main-view[data-v-1de12500] {\n  background-image: url(\"/image/imgbackground/secundaria.jpg\");\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: cover;\n  min-height: 100vh;\n}\n.main-background-book[data-v-1de12500] {\n  background-image: url(\"/image/imgbackground/main-background.png\");\n}\n\n/* Style content first iframe */\n.view-iframe-one[data-v-1de12500] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.height-iframe-book[data-v-1de12500] {\n  height: 80%;\n}\n\n/* STAR: estilos para libros */\n.class-position[data-v-1de12500] {\n  position: absolute;\n  cursor: pointer;\n}\ndiv#book-1[data-v-1de12500] {\n  top: 19%;\n  left: 4.6%;\n  height: 8.5%;\n  width: 9%;\n}\ndiv#book-2[data-v-1de12500] {\n  top: 28.6%;\n  left: 4.6%;\n  height: 11.3%;\n  width: 9%;\n}\ndiv#book-3[data-v-1de12500] {\n  top: 18%;\n  left: 46%;\n  height: 7%;\n  width: 6.5%;\n}\ndiv#book-4[data-v-1de12500] {\n  top: 25.3%;\n  left: 46%;\n  height: 8.5%;\n  width: 7%;\n}\ndiv#book-5[data-v-1de12500] {\n  top: 34.7%;\n  left: 46%;\n  height: 9%;\n  width: 7%;\n}\ndiv#book-6[data-v-1de12500] {\n  top: 45%;\n  left: 9%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-7[data-v-1de12500] {\n  top: 45%;\n  left: 20%;\n  height: 11%;\n  width: 9%;\n}\ndiv#book-8[data-v-1de12500] {\n  top: 46%;\n  left: 31%;\n  height: 10%;\n  width: 8%;\n}\ndiv#book-9[data-v-1de12500] {\n  top: 47%;\n  left: 40%;\n  height: 9%;\n  width: 8%;\n}\ndiv#book-10[data-v-1de12500] {\n  top: 46%;\n  left: 49%;\n  height: 10%;\n  width: 7%;\n}\ndiv#book-11[data-v-1de12500] {\n  top: 60%;\n  left: 41.4%;\n  height: 11.2%;\n  width: 8.5%;\n}\ndiv#book-12[data-v-1de12500] {\n  top: 60.2%;\n  left: 54.77%;\n  height: 10.7%;\n  width: 8.5%;\n}\ndiv#book-13[data-v-1de12500] {\n  top: 60.2%;\n  left: 69.77%;\n  height: 10.3%;\n  width: 8.5%;\n}\ndiv#book-14[data-v-1de12500] {\n  top: 63.5%;\n  left: 47.6%;\n  height: 11.7%;\n  width: 8.5%;\n}\ndiv#book-15[data-v-1de12500] {\n  top: 63%;\n  left: 62.3%;\n  height: 11.2%;\n  width: 8.5%;\n}\n\n/* END: estilos para libros */\n.content-img-hover-book[data-v-1de12500] {\n  margin: -1rem;\n}\n.img-hover-book[data-v-1de12500] {\n  width: 5rem;\n}\ndiv#content-info-book[data-v-1de12500] {\n  background: #EBEBEB;\n  margin: 0 6% 0 0;\n}\n.header-info-book[data-v-1de12500] {\n  background: #7B592F;\n  height: 2.2rem;\n  text-align: right;\n  cursor: pointer;\n}\n#icon-info-book[data-v-1de12500] {\n  margin: 0.47rem;\n  color: #fff;\n}\n#body-info-book[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n}\nimg#img-info-book[data-v-1de12500] {\n  width: 60%;\n  cursor: pointer;\n  max-height: 350px;\n}\n#btn-info-book[data-v-1de12500] {\n  padding: 0.25rem 1rem;\n  background: #9E7441;\n  border-color: #9E7441;\n}\n\n/* style for books */\n.style-select-book[data-v-1de12500] {\n  position: absolute;\n  background: transparent;\n  cursor: pointer;\n}\n.style-select-book[data-v-1de12500]:hover {\n  background: #ff00003d;\n}\n\n/* Read PDF */\ndiv#close-view-pdf[data-v-1de12500] {\n  background: #9f793d;\n  padding: 0.4rem;\n  text-align: right;\n  cursor: pointer;\n}\nsvg#icon-view-book[data-v-1de12500] {\n  color: #fff;\n}\n#close-pdf-read[data-v-1de12500] {\n  position: absolute;\n  background: rgba(0, 0, 0, 0.46);\n  top: -40px;\n  right: 0;\n  padding: 0.2rem 1rem;\n  cursor: pointer;\n}\n.close-pdf[data-v-1de12500] {\n  color: #fff;\n  font-size: 2rem;\n}\n#pdf-read[data-v-1de12500] {\n  position: absolute;\n  width: 92%;\n  height: 100%;\n  top: -8%;\n}\ndiv#close-pdf-read[data-v-1de12500]:hover {\n  background: #90080861;\n}\n#image-gif[data-v-1de12500] {\n  position: absolute;\n  top: 40%;\n  left: 25%;\n}\n\n/* Estilos compartidos */\n.vertical-center[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n  width: 90%;\n  position: absolute;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.vertical-center-video[data-v-1de12500] {\n  margin: 0;\n  padding: 1rem;\n  width: 100%;\n  position: absolute;\n  top: 35%;\n  left: -20%;\n  transform: translateY(-50%);\n}\n\n/* Style content second iframe */\n.view-iframe-two[data-v-1de12500] {\n  position: relative;\n  min-height: 100vh;\n  z-index: 99;\n}\n.view-body[data-v-1de12500] {\n  flex: 1 1 auto;\n  min-height: 1px;\n  padding: 0.5rem !important;\n}\n#iframe-video[data-v-1de12500] {\n  width: 100%;\n  height: 55vh;\n}\ndiv#content-background-img[data-v-1de12500] {\n  margin: 0 0 0 75%;\n}\ndiv#content-background-img button[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book[data-v-1de12500] {\n  margin: 0 0 0 78%;\n}\n.color-button-book[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-1de12500] {\n  background: #9f793d;\n}\ndiv#content-agenda-book button[data-v-1de12500]:hover {\n  box-shadow: 0px 10px 20px -10px #c13b2b;\n}\n#content-dialog-book[data-v-1de12500] {\n  background: #b1935e;\n  margin-top: 1rem;\n  border-radius: 1rem;\n  padding: 0.6rem 0;\n}\n.color-white[data-v-1de12500] {\n  color: #fff;\n}\na#pdf-download[data-v-1de12500] {\n  color: #212529;\n}\na#pdf-download[data-v-1de12500]:hover {\n  text-decoration: none;\n}\n\n/* Styles responsive */\n@media (min-width: 30px) and (max-width: 991.98px) {\n  /* .class-position {\n      border: 1px solid red;\n  } */\n#content-background-books[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/secundaria-2.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-1[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/main-background-1.png\") !important;\n}\n.view-iframe-one[data-v-1de12500] {\n    min-height: 60vh;\n    contain: content;\n}\n.overflow-auto[data-v-1de12500] {\n    height: 80px;\n}\ndiv#book-1[data-v-1de12500] {\n    top: 18%;\n    left: 1%;\n    height: 9%;\n    width: 10%;\n}\ndiv#book-2[data-v-1de12500] {\n    left: 1%;\n    width: 10%;\n}\ndiv#book-3[data-v-1de12500] {\n    top: 17%;\n    left: 45%;\n    height: 8%;\n    width: 8%;\n}\ndiv#book-4[data-v-1de12500] {\n    left: 45%;\n    width: 8%;\n}\ndiv#book-5[data-v-1de12500] {\n    left: 45%;\n    width: 8%;\n}\ndiv#book-6[data-v-1de12500] {\n    left: 5%;\n    width: 10%;\n}\ndiv#book-7[data-v-1de12500] {\n    left: 17%;\n    width: 10%;\n}\ndiv#book-8[data-v-1de12500] {\n    top: 45%;\n    left: 29%;\n    height: 11%;\n    width: 9%;\n}\ndiv#book-9[data-v-1de12500] {\n    top: 46%;\n    left: 39%;\n    height: 10%;\n    width: 9%;\n}\ndiv#book-10[data-v-1de12500] {\n    width: 9%;\n}\ndiv#book-11[data-v-1de12500] {\n    top: 59%;\n    left: 39%;\n    height: 11.2%;\n    width: 10%;\n}\ndiv#book-12[data-v-1de12500] {\n    top: 59%;\n    width: 10%;\n}\ndiv#book-13[data-v-1de12500] {\n    top: 59%;\n    left: 70%;\n    width: 10%;\n}\ndiv#book-14[data-v-1de12500] {\n    height: 13%;\n    width: 9%;\n}\ndiv#book-15[data-v-1de12500] {\n    left: 63%;\n    height: 13%;\n    width: 10%;\n}\n.vertical-center[data-v-1de12500] {\n    width: 100%;\n}\nimg#img-info-book[data-v-1de12500] {\n    max-height: 190px;\n}\nh3.text-center[data-v-1de12500] {\n    font-size: 1.1rem;\n}\np.text-justify[data-v-1de12500] {\n    font-size: 0.7rem;\n}\n#pdf-read[data-v-1de12500] {\n    top: -5%;\n}\nsvg#icon-view-book[data-v-1de12500] {\n    width: 1.6rem;\n    height: 1.6rem;\n}\n#content-backgroud-video[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/secundaria-2.png\");\n    background-position: center;\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.content-background-books-2[data-v-1de12500] {\n    background-image: url(\"/image/imgbackground/movil/main-background-2.png\") !important;\n}\n\n  /* Style content second iframe */\n.view-iframe-two[data-v-1de12500] {\n    min-height: 60vh;\n    contain: content;\n}\n.vertical-center-video[data-v-1de12500] {\n    left: 0%;\n}\ndiv#content-agenda-book[data-v-1de12500] {\n    margin: 0 0 0 62%;\n}\n#iframe-video[data-v-1de12500] {\n    height: 13rem;\n}\ndiv#content-clock[data-v-1de12500] {\n    bottom: 2%;\n    top: auto;\n    right: auto;\n}\ndiv#content-chat[data-v-1de12500] {\n    width: 80%;\n    height: 60%;\n}\n}\n/* Styles for large screens  */\n@media (min-width: 2000px) {\n  /*  #iframe-video {\n       height: 55vh;\n   } */\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -14839,29 +14845,22 @@ var render = function() {
                               attrs: { id: "body-info-book" }
                             },
                             [
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-12 text-center",
-                                  staticStyle: { "max-height": "350px" }
-                                },
-                                [
-                                  _c("img", {
-                                    attrs: {
-                                      id: "img-info-book",
-                                      src: _vm.bookSelect.imgCaratula,
-                                      alt: _vm.bookSelect.alt
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        return _vm.eventShowIframeBook(
-                                          _vm.bookSelect
-                                        )
-                                      }
+                              _c("div", { staticClass: "col-12 text-center" }, [
+                                _c("img", {
+                                  attrs: {
+                                    id: "img-info-book",
+                                    src: _vm.bookSelect.imgCaratula,
+                                    alt: _vm.bookSelect.alt
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.eventShowIframeBook(
+                                        _vm.bookSelect
+                                      )
                                     }
-                                  })
-                                ]
-                              ),
+                                  }
+                                })
+                              ]),
                               _vm._v(" "),
                               _c("div", { staticClass: "col-12 mt-4" }, [
                                 _c("h3", { staticClass: "text-center" }, [
@@ -14965,7 +14964,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("iframe", {
                               attrs: {
-                                src: _vm.urlBook,
+                                src: _vm.urlBook + "#toolbar=0",
                                 type: "application/pdf",
                                 width: "100%",
                                 height: "100%"
@@ -15268,26 +15267,7 @@ var render = function() {
                           })
                         ])
                       ]
-                    ),
-                    _vm._v(" "),
-                    _vm.viewHoverBooks
-                      ? _c(
-                          "vs-button",
-                          {
-                            staticClass: "video-tuto",
-                            on: {
-                              click: function($event) {
-                                _vm.openVideo = !_vm.openVideo
-                              }
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "\n                            Vídeo instructivo\n                        "
-                            )
-                          ]
-                        )
-                      : _vm._e()
+                    )
                   ],
                   1
                 )
@@ -15370,52 +15350,8 @@ var render = function() {
               )
             ]
           )
-        ]),
-        _vm._v(" "),
-        _c(
-          "vs-dialog",
-          {
-            attrs: { width: "550px" },
-            scopedSlots: _vm._u([
-              {
-                key: "header",
-                fn: function() {
-                  return [
-                    _c("h4", { staticClass: "not-margin" }, [
-                      _vm._v(
-                        "\n                    Vídeo instructivo\n                "
-                      )
-                    ])
-                  ]
-                },
-                proxy: true
-              }
-            ]),
-            model: {
-              value: _vm.openVideo,
-              callback: function($$v) {
-                _vm.openVideo = $$v
-              },
-              expression: "openVideo"
-            }
-          },
-          [
-            _vm._v(" "),
-            _c("div", { staticClass: "con-content" }, [
-              _c(
-                "video",
-                { attrs: { width: "100%", controls: "", autoplay: "" } },
-                [
-                  _c("source", {
-                    attrs: { src: "/video/tutorial.mp4", type: "video/mp4" }
-                  })
-                ]
-              )
-            ])
-          ]
-        )
-      ],
-      1
+        ])
+      ]
     )
   ])
 }

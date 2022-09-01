@@ -173,7 +173,7 @@
                                 </div>
 
                                 <div id="body-info-book" class="row">
-                                    <div class="col-12 text-center">
+                                    <div class="col-12 text-center" style="max-height: 350px;">
                                         <img id="img-info-book"
                                             @click="eventShowIframeBook( bookSelect )"
                                             :src="bookSelect.imgCaratula" :alt="bookSelect.alt">
@@ -181,13 +181,13 @@
                                     <div class="col-12 mt-4">
                                         <h3 class="text-center">{{ bookSelect.title }}</h3>
                                         <div class="overflow-auto">
-                                            <!-- <p class="text-justify">{{ truncate(bookSelect.description) }}</p> -->
                                             <p class="text-justify">{{ bookSelect.description }}</p>
                                         </div>
                                         <div class="text-right">
                                             <button id="btn-info-book"
                                                 @click="eventShowIframeBook( bookSelect )"
-                                                type="button" class="btn btn-primary btn-sm">
+                                                type="button"
+                                                class="btn btn-primary btn-sm">
                                                 PDF
                                             </button>
                                         </div>
@@ -214,7 +214,7 @@
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" /> -->
-                                <iframe :src="urlBook + '#toolbar=0'"
+                                <iframe :src="urlBook"
                                     type="application/pdf"
                                     width="100%"
                                     height="100%" />
@@ -231,6 +231,7 @@
 
                     <div class="view-iframe-two">
                         <div class="vertical-center-video">
+
                             <div id="content-agenda-book">
                                 <vs-button @click="agendaBook=!agendaBook">
                                     Agenda del dia
@@ -301,37 +302,21 @@
 
                             <div class="card animate__animated animate__slideInRight animate__slower">
                                 <div class="view-body">
-                                    <!-- <iframe id="iframe-video" width=""
-                                        height=""
-                                        :src="urlTransmision"
-                                        title="YouTube video player"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen /> -->
-                                    <!-- <iframe id="iframe-video" src="https://player.vimeo.com/video/543207075"
-                                        frameborder="0"
-                                        allow="autoplay; fullscreen; picture-in-picture"
-                                        allowfullscreen    https://player.vimeo.com/video/543242638?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479
-                                        style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                                    </iframe> -->
                                     <iframe id="iframe-video"
                                         :src="urlTransmision"
                                         width=""
                                         height=""
                                         frameborder="0"
                                         allow="autoplay; fullscreen; picture-in-picture"
-                                        allowfullscreen>
-                                    </iframe>
+                                        allowfullscreen/>
                                 </div>
                             </div>
+
+                            <vs-button v-if="viewHoverBooks" class="video-tuto" @click="openVideo=!openVideo">
+                                Vídeo instructivo
+                            </vs-button>
                         </div>
                     </div>
-
-                    <!-- <div id="chat">
-                        <iframe src="https://www6.cbox.ws/box/?boxid=861776&boxtag=9fCpoB" width="100%" height="450" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
-                    </div> -->
-                    <!-- <iframe src='https://deadsimplechat.com/Ixm0bpQOb' width='100%' height='500px'></iframe> -->
-                    <!-- <iframe src="https://deadsimplechat.com/ETp0098vF" width="400px" height="600px"></iframe> -->
 
                     <button @click="openViewChat" id="btn-float-chat" type="button" class="btn btn-primary">
                         <svg v-if="openChatIcon" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
@@ -341,7 +326,6 @@
                             <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                         </svg>
                     </button>
-
                     <div :class="{'content-chat-opacity' : openChatIcon}"
                         id="content-chat">
                         <div id="body-chat">
@@ -350,12 +334,26 @@
                                 :src="urlChat"
                                 width=""
                                 height=""
-                                frameborder="0">
-                            </iframe>
+                                frameborder="0"/>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <vs-dialog width="550px" v-model="openVideo">
+                <template #header>
+                    <h4 class="not-margin">
+                        Vídeo instructivo
+                    </h4>
+                </template>
+
+
+                <div class="con-content">
+                    <video width="100%" controls autoplay>
+                        <source src="/video/tutorial.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </vs-dialog>
         </div>
     </div>
 </template>
@@ -372,15 +370,14 @@
                 activeModal: false,
                 heightIframeBook: false,
                 agendaBook: false,
-                //changeBackground: true,
-                changeBackground: false, // comentar
-                //viewHoverBooks: false,
-                viewHoverBooks: true,  // comentar
+                changeBackground: false, // pasar a false para ver los libros 
+                viewHoverBooks: true, //pasar a true para ver los libros 
                 openChatIcon: false,
                 listBooks: [],
                 bookSelect: null,
                 clockTimer: "",
                 intervalClock: "",
+                openVideo: false,
             }
         },
         methods: {
@@ -396,12 +393,13 @@
                 this.heightIframeBook = true
                 this.imgGif = true;
                 this.urlBook = book.url;
-                
+
                 setTimeout( () => {
                     this.openPDF = !this.openPDF;
                     this.imgGif = false;
                 }, 2000);
-                
+
+                this.eventClickBook( book )
             },
             closeIframeBook() {
                 this.openPDF = !this.openPDF;
@@ -411,25 +409,14 @@
                 this.changeBackground = !this.changeBackground;
                 this.viewHoverBooks = !this.viewHoverBooks;
             },
-            truncate( text ) {
-                if (window.innerWidth < 992) {
-                    return text.length > 200 ? text.slice(0, 150) + '...' : text;
-                }
-
-                return text.length > 350 ? text.slice(0, 350) + '...' : text;
-            },
             openViewChat() {
                 this.openChatIcon = !this.openChatIcon
-            },
-            initClock() {
-                let day = new Date();
-                this.clockTimer = day.toLocaleTimeString();
             },
             changeBackgroudPage() {
                 axios.get("/api/change-background")
                 .then( result => {
                     let change = result.data.data;
-                    console.log(change)
+                    //console.log(change)
                     if (change === 'si'){
                         this.changeBackground = false
                         this.viewHoverBooks = true
@@ -440,158 +427,175 @@
                 }).catch( error => {
                     console.log('fallo');
                 });
+            },
+            eventClickBook( book ) {
+                axios.post('/click-book', book)
+                    .then( (resp) => {
+                        //console.log('click...')
+                    })
+                    .catch( error => {
+                        console.log('Error clic book')
+                    });
             }
         },
         created() {
             this.listBooks = [
                 {
                     id: 1,
-                    title: 'EL JUEGO DE LA NIEVE',
-                    description: 'Está a punto de inaugurarse la Feria de Juegos de Zyl. Iván Dragó parece dispuesto a olvidar los enigmas de su pasado para concentrarse en su oficio de inventor de juegos. Pero se cruza en su camino lo inesperado: una filmación de pocos segundos en la que cree reconocer a su madre, en medio de un paisaje nevado. Para saber qué pasó realmente con sus padres, tendrá que enfrentarse con juguetes peligrosos, deberá pasar las exigentes pruebas de Spativo y seguir las huellas de Morodian. Ante Iván se abre la región del frío y el olvido: el juego de la nieve. ',
-                    alt: 'EL JUEGO DE LA NIEVE',
-                    url: '/book/diatres/04_EL_JUEGO_DE_LA_NIEVE.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/04_EL_JUEGO_DE_LA_NIEVE.jpg",
+                    title: 'El juego de la nieve',
+                    description: 'Está a punto de inaugurarse la Feria de Juegos de Zyl. Iván Dragó parece dispuesto a olvidar los enigmas de su pasado para concentrarse en su oficio de inventor de juegos. Pero se cruza en su camino lo inesperado: una filmación de pocos segundos en la que cree reconocer a su madre, en medio de un paisaje nevado. Para saber qué pasó realmente con sus padres, tendrá que enfrentarse con juguetes peligrosos, deberá pasar las exigentes pruebas de Spativo y seguir las huellas de Morodian. Ante Iván se abre la región del frío y el olvido: el juego de la nieve.',
+                    alt: 'El juego de la nieve',
+                    url: '/book/diatres/el-juego-de-la-nieve.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/juego-de-la-nieve.jpg",
                     eventHover: false,
                 },
                 {
                     id: 2,
-                    title: 'ANTOLOGÍA POÉTICA DE LA GENERACIÓN DEL 27',
+                    title: 'Antología poética de la generación del 27',
                     description: 'Federico García Lorca, Carmen Conde, Luis Cernuda, Concha Méndez, Rafael Alberti, Elisabeth Mulder, Pedro Salinas… Los nombres que componen la llamada generación del 27 son esenciales para entender la historia de la poesía contemporánea. Hombres y mujeres que hicieron de la creación una forma de vida y que, en esta antología, hemos intentado acompañar desde sus primeros versos hasta sus últimas obras. Una selección que ofrece todas las claves para entender y disfrutar de su evolución literaria y que, además, devuelve al primer plano a las autoras del 27, otorgándoles el lugar y espacio que su indudable calidad merece.',
-                    alt: 'ANTOLOGÍA POÉTICA DE LA GENERACIÓN DEL 27',
-                    url: '/book/diatres/12_ANTOLOGIA_POETICA_DE_LA_GENERACION_DEL_27.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/12_ANTOLOGIA_POETICA_DE_LA_GENERACION_DEL_27.jpg",
+                    alt: 'Antología poética de la generación del 27',
+                    url: '/book/diatres/antologia-poetica-del-27.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/antologia-poetica.jpg",
                     eventHover: false,
                 },
                 {
                     id: 3,
-                    title: 'MI AMIGO LUKI-LIVE',
-                    description: '"Algo muy extraño le ha pasado a Luki-live en Inglaterra. Después de las vacaciones parece otra persona. Ariane, su mejor amiga, no sabe qué hacer respecto a este cambio. No es solo esa forma de vestir tan estrafalaria, es que hace cosas tan raras…\nUn perfecto relato sobre la crisis de la adolescencia. Afortunadamente, todo tiene solución, sobre todo cuando se trata de la amistad."',
-                    alt: 'AHORA NO, BERNARDO',
-                    url: '/book/diatres/07_MI_AMIGO_LUKI-LIVE.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/07_MI_AMIGO_LUKI-LIVE.jpg",
+                    title: 'El canto del manatí',
+                    description: 'Tanana y Tanene son dos gemelos hijos de la armonía, junto a Buinaria han crecido entre los ríos y han aprendido a ser parte del fluir de la naturaleza. Cuando Buinaria vuelve de un largo viaje la armonía del clan se rompe, los hermanos ya no quieren ser parte de un todo y deciden llevar la lucha por el amor de su amiga hasta las últimas consecuencias.',
+                    alt: 'El canto del manatí',
+                    url: '/book/diatres/canto-manati.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/canto-manati.jpg",
                     eventHover: false,
                 },
                 {
                     id: 4,
-                    title: 'PUENTE A TERABITIA',
+                    title: 'Puente a Terabitia',
                     description: 'Jess Aarons ha entrenado todo el verano para ser el corredor más rápido de quinto grado. Y casi lo logra, de no ser por la niña nueva, Leslie Burke, que lo rebasa. Pronto, los dos se hacen mejores amigos y pasan los días en el bosque detrás de la casa de Leslie, donde ambos inventan un reino encantado llamado Terabitia. Una mañana, Leslie decide ir sola a Terabitia y ocurre una tragedia. Sólo el amor de su familia y la fuerza que Leslie le ha dado permitirá que Jess pueda superar su pérdida.',
-                    url: '/book/diatres/15_PUENTE_A_TERABITIA.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/15_PUENTE_A_TERABITIA.jpg",
+                    alt: 'Puente a Terabitia',
+                    url: '/book/diatres/puente-terabitia.pdf',
+                    imgCaratula:"/image/imgbooks/diatres/puente-terabitia.jpg",
                     eventHover: false,
                 },
                 {
                     id: 5,
-                    title: 'UNA AMISTAD EN JUEGO',
-                    description: '"Camilo hace una visita obligada al convento vecino del colegio para recuperar un balón de fútbol. Nunca se le habría pasado por la cabeza que allí iba a conocer a sor Alicia, una monja peculiar con mucho sentido del humor, amor por el ajedrez, el karate y los amigos verdaderos. Desde entonces, la vida de Camilo no será la misma. Tampoco la de sor Alicia.\nA veces, sin buscarlos, encontramos a grandes amigas y amigos en lugares insospechados."',
-                    alt: 'UNA AMISTAD EN JUEGO',
-                    url: '/book/diatres/10_UNA_AMISTAD_EN_JUEGO.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/10_UNA_AMISTAD_EN_JUEGO.jpg",
+                    title: 'La Duenda',
+                    description: '"La primera vez que la vimos éramos niños, aún". A partir de esa primera mirada de la Duenda, un ser de fuerza envolvente e inasible, se conjura el hechizo que será la perdición y el remedio del protagonista de esta historia. Evelio Rosero, con una prosa poética que no cesa de ofrecer poesía, consigue crear una obra cautivante.',
+                    alt: 'La duenda',
+                    url: '/book/diatres/la-duenda-azul.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/la-duenda-azul.jpg",
                     eventHover: false,
                 },
                 {
                     id: 6,
-                    title: 'LAS SIETE VIDAS DE AGUSTÍN CODAZZI',
-                    description: '"Agustín Codazzi recorrió el mundo y fue tantos seres en una persona que vivió siete vidas. Cada una de estas corresponde a una edad, a un lugar, a una faceta suya. Hay que conocerlas todas para comprender por qué ese anónimo soldado italiano, aventurero y mercenario, se volvió libertador, geógrafo y cartógrafo de Venezuela y de la Nueva Granada, y para concluir que fue él quien verdaderamente descubrió el continente.\nEn un tono desenfadado y familiar, Beatriz Caballero narra las peripecias de Codazzi y consigue transmitirle al lector la apasionante aventura que fue su vida. Este libro relata la vida del italiano a mediados del siglo XIX, desde su infancia en Lugo, para pasar a ser soldado de Napoleón en su adolescencia, a aventurarse como pirata y luego desembarcar en América para participar en la independencia de la Nueva Granada y emprender la Comisión Corográfica. "',
-                    alt: 'LAS SIETE VIDAS DE AGUSTÍN CODAZZI',
-                    url: '/book/diatres/03_LAS_SIETE_VIDAS_DE_AGUSTÍN_CODAZZI.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/03_LAS_SIETE_VIDAS_DE_AGUSTÍN_CODAZZI.jpg",
+                    title: 'Las siete vidas de Agustín Codazzi',
+                    description: 'Agustín Codazzi recorrió el mundo y fue tantos seres en una persona que vivió siete vidas. Cada una de estas corresponde a una edad, a un lugar, a una faceta suya. Hay que conocerlas todas para comprender por qué ese anónimo soldado italiano, aventurero y mercenario, se volvió libertador, geógrafo y cartógrafo de Venezuela y de la Nueva Granada, y para concluir que fue él quien verdaderamente descubrió el continente. En un tono desenfadado y familiar, Beatriz Caballero narra las peripecias de Codazzi y consigue transmitirle al lector la apasionante aventura que fue su vida. Este libro relata la vida del italiano a mediados del siglo XIX, desde su infancia en Lugo, para pasar a ser soldado de Napoleón en su adolescencia, a aventurarse como pirata y luego desembarcar en América para participar en la independencia de la Nueva Granada y emprender la Comisión Corográfica. ',
+                    alt: 'Las siete vidas de Agustín Codazzi',
+                    url: '/book/diatres/las-siete-vidas-de-agustin-codazzi.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/las-siete-vidas-de-agustin.jpg",
                     eventHover: false,
                 },
                 {
                     id: 7,
-                    title: 'LA GUERRA QUE AL FIN GANÉ',
-                    description: 'Ada, la protagonista de La guerra que salvó mi vida, se somete a una operación quirúrgica para arreglar su pie zambo. Gracias a esto, ella puede caminar, liberarse del dolor físico y dares cuenta de que no es una lisiada, como su madre Ada. Pero ahora el dolor y las dudas regresan de otro modo… La Segunda Guerra Mundial continúa, y Ada y su hermano tienen que mudarse con Susan, su tutora, a la casa de Lady Thorton. La vida ahí es tensa y se pone peor cuando llega a vivir con ellos Ruth, una niña alemana. ¿Será Ruth una espía?, ¿podrá Ada confiar en ella?',
-                    url: '/book/diatres/02_LA_GUERRA_QUE_AL_FIN_GANE.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/02_LA_GUERRA_QUE_AL_FIN_GANE.jpg",
+                    title: 'La guerra que salvó mi vida',
+                    description: 'Ada tiene nueve años y su madre nunca le ha permitido salir de su habitación, ya que nació con un pie zambo que le impide caminar. Su única conexión con el mundo es su hermano, Jamie, y la pequeña ventana de un tercer piso por la que ve el mundo. Irónicamente, gracias a la Segunda Guerra Mundial, la vida de Ada cambiará para siempre: escapa de su mamá, de las bombas de Hitler y de la prisión de su habitación. Pero, ¿qué pasará cuando la guerra termine y deba regresar a casa con su madre? Una narración histórica y, al mismo tiempo, un relato dolorosamente encantador sobre cómo se puede encontrar una familia en lugares inesperados.',
+                    alt: 'La guerra que salvó mi vida',
+                    url: '/book/diatres/la-guerra-que-salvo-mi-vida.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/La-guerra-que-salvo-mi-vida.jpg",
                     eventHover: false,
                 },
                 {
                     id: 8,
-                    title: 'LA MUDA',
-                    description: '"Todo lo que habían visto era gris. Los días pasaban y no había cambio entre uno y otro. Pero entonces un día trajo una sorpresa: entre una selva de fierro oxidados, escondida, encontraron una gallina roja. Una gallina tibia, tranquila y muda. El animal será una distracción para estos hermanos que viven una vida dde maltrato, abandono, pobreza y hambre. \nCon un lenguaje que juega a veces con lo simbólico y a veces es directo, esta novela retrata la historia de la violencia que viven en sus casas muchos niños y jóvenes en el mundo."',
-                    alt: 'LA MUDA',
-                    url: '/book/diatres/06_LA_MUDA.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/06_LA_MUDA.jpg",
+                    title: 'La muda',
+                    description: 'En un barrio pobre, dos hermanos sobrellevan una infancia difícil. Desatendidos por su madre, viven con su abuela, cuya sombra autoritaria los sigue a todas partes. Solo la fantasía y el amor fraterno les ayudan a soportar el abandono y el miedo. Pero un día, dentro de un carro destartalado encuentran una gallina. Desde ese momento, diario visitan al ave a escondidas para cuidarla y alimentarla, y eso le da un sentido diferente a sus vidas.',
+                    alt: 'La muda',
+                    url: '/book/diatres/la-muda.pdf',
+                    imgCaratula:"/image/imgbooks/diatres/la-muda.jpg",
                     eventHover: false,
                 },
                 {
                     id: 9,
-                    title: 'EL GRAN GIGANTE BONACHÓN',
-                    description: '"Una noche, el Gran Gigante Bonachón entra por la ventana del orfanato, envuelve a la pequeña Sofía en una sábana y se la lleva al país de los gigantes. Pero en esas tierras viven también gigantes malos. Tendrán que enfrentarlos a todos.\nUn libro lleno de fantasía, humor, ternura y sinceridad, con un protagonista a la altura de su impresionante físico."',
-                    alt: 'EL GRAN GIGANTE BONACHÓN',
-                    url: '/book/diatres/01_EL_GRAN_GIGANTE_BONACHON.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/01_EL_GRAN_GIGANTE_BONACHON.jpg",
+                    title: 'La gran Gilly Hopkins',
+                    description: 'Gilly Hopkins tiene once años. Desde muy pequeña ha vivido con diferentes familias, ya que su madre nunca se ha ocupado de ella. Debido a su carácter rebelde, todos los intentos de adopción han fracasado. Cuando llega a casa de la señora Trotter, mujer sencilla y cordial, la niña la rechaza, pero poco a poco, a fuerza de cariño y comprensión, Gilly comienza a querer a su nueva familia.',
+                    alt: 'La gran Gilly Hopkins',
+                    url: '/book/diatres/la-gran-gilly-hopkins.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/la-gran-gilly.jpg",
                     eventHover: false,
                 },
                 {
                     id: 10,
-                    title: 'MALAMANDRA',
-                    description: '"Para Herbie Lemon, la ciudad de Puerto Misterioso es su lugar todo el año. Él permanece ahí cuando los turistas se van, lo cual es algo bueno porque los turistas suelen olvidar muchas pertenencias. El trabajo de Herbie, como encargado de las cosas perdidas del Hotel Gran Nautilus, consiste en reunir a las personas con sus objetos perdidos. ¿Pero quién olvidaría a un bebé?\nCuando Violeta Parma llama a la puerta de Herbie y le insiste en que le ayude a encontrar a sus padres, quienes la dejaron en el hotel diez años antes, las habilidades detectivescas de Herbie se pondrán a prueba como nunca..."',
-                    alt: 'MALAMANDRA',
-                    url: '/book/diatres/09_MALAMANDRA.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/09_MALAMANDRA.jpg",
+                    title: 'Fortunato',
+                    description: 'El sueño de Fortunato es llegar a España. En las laderas del Cocuy, la Vuelta a Colombia se atraviesa en su camino. El muchacho de ruana y sombrero avanza como una bala, al ritmo de los ciclistas profesionales.',
+                    alt: 'Fortunato',
+                    url: '/book/diatres/fortunato.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/fortunato.jpg",
                     eventHover: false,
                 },
                 {
                     id: 11,
-                    title: 'MARTINA Y LA CARTA DEL MONJE YUKIO',
+                    title: 'Martina y la carta del monje Yukio',
                     description: 'Cuando Martina llega Nueva York a casa de su papá tras mucho tiempo sin verlo, no solo lo encuentra a él muy diferente, sino que todo le resulta nuevo y sorpresivo: los paisajes, la gente, el idioma. Martina comprenderá que las circunstancias pueden moldear el carácter y los sentimientos. Afortunadamente conoce a alguien que le ayudará a sobrellevar la nueva situación: su vecino, el monje Yukio.',
-                    alt: 'MARTINA Y LA CARTA DEL MONJE YUKIO',
-                    url: '/book/diatres/05_MARTINA_Y_LA_CARTA_DEL_MO_JE_YUKIO.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/05_MARTINA_Y_LA_CARTA_DEL_MO_JE_YUKIO.jpg",
+                    alt: 'martina y la carta del monje Yukio',
+                    url: '/book/diatres/martina-y-la-carta-del-monje-yukio.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/martina-monje-yukio.jpg",
                     eventHover: false,
                 },
                 {
                     id: 12,
-                    title: 'TEMPLE',
+                    title: 'Temple Teyuna, el infierno verde',
                     description: 'Desde pequeña, Temple ha tenido dos sueños: conocer a su padre y tener una gran aventura. Ahora, con 15 años, está a punto de cumplir ambos. Un viaje inesperado la llevará a reencontrarse con su padre y a internarse en la sierra colombiana para descubrir la ciudad Teyuna. Sin embargo, Temple comprenderá que cumplir sus deseos no es gratuito y que, en este caso, vivir una aventura implica arriesgar lo que ella más ama.',
-                    alt: 'TEMPLE',
-                    url: '/book/diatres/14_TEMPLE.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/14_TEMPLE.jpg",
+                    alt: 'Temple Teyuna, el infierno verde',
+                    url: '/book/diatres/temple.pdf',
+                    imgCaratula:"/image/imgbooks/diatres/tapa-temple.jpg",
                     eventHover: false,
                 },
                 {
                     id: 13,
-                    title: 'LOS MUNDOS DISTÓPICOS DE CAMILO CHANG',
-                    description: '"Para Camilo no ha sido fácil el paso de la infancia a la adolescencia: la magia de ser niño se disolvió poco a poco y surgieron el desconcierto, las pesadillas y el deseo de aislarse. Un juego en internet se convierte en su única guía para transitar por el mundo, y su habitación, un refugio en el que, sin embargo, constantemente imagina futuros aterradores para la raza humana. En medio de esas circunstancias Camilo toma una importante decisión, pero la llegada del coronavirus transforma su vida y la de todas las personas a su alrededor.\nCon una prosa envolvente, que atrapa al lector desde el primer momento, Alejandra Jaramillo entreteje el pasado y el presente con escenarios distópicos, para resaltar la importancia de comunicarnos con nuestros seres queridos en medio de un mundo cada vez más extraño.\nUna novela para reflexionar sobre la incertidumbre que todos vivimos y que nos recuerda la fragilidad de los seres humanos."',
-                    alt: 'LOS MUNDOS DISTÓPICOS DE CAMILO CHANG',
-                    url: '/book/diatres/13_ LOS_MUNDOS_DISTOPICOS_DE_CAMILO_CHANG.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/13_ LOS_MUNDOS_DISTOPICOS_DE_CAMILO_CHANG.jpg",
+                    title: 'Fuera de norma',
+                    description: 'Reúne los más importantes artículos, cartas y ensayos referentes a los derechos de las mujeres y a los movimientos feministas en Hispanoamérica desde el siglo XVII hasta mediados del siglo XX. Sor Juana Inés de la Cruz, Emilia Pardo Bazán, Gabriela Mistral y Victoria Ocampo son algunas de las once mujeres que contribuyeron a la reflexión y a la discusión de género en diferentes países de habla hispana.',
+                    alt: 'Fuera de norma',
+                    url: '/book/diatres/fuera-de-norma.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/fuera-de-norma.jpg",
                     eventHover: false,
                 },
                 {
                     id: 14,
-                    title: 'LOS TUCANES NO HABLAN',
-                    description: '"Tras la llegada de una carta con letra desconocida, Aquiles y su hermano deben abandonar la casa donde vivían con su mamá y mudarse a vivir a la ciudad con sus tíos Rudolf y Peggy. En la casa de sus tíos Aquiles conoce a una extraña mascota: un túcan. ¿Será que el tucán podrá decirle a Aquiles qué le pasó a su mamá y por qué su vida cambió para siempre?… Pero, los tucanes no hablan.\nUna novela profunda y conmovedora sobre los cambios a los que nos somete la vida y nuestra capacidad para adaptarnos a ellos."',
-                    alt: 'LOS TUCANES NO HABLAN',
-                    url: '/book/diatres/08_LOS_TUCANES_NO_HABLAN.pdf',
-                    imgCaratula:"/image/imgbooks/diatres/08_LOS_TUCANES_NO_HABLAN.jpg",
+                    title: 'Rompecabezas',
+                    description: 'Mora es una chica de once años que vive con su abuela y su gata. Tiene un grupo de amigas llamadas “Las Chicas de Siberia” con las que comparte horas de clase, juegos y charlas. También están Juan, su primo inseparable, y Dani, el chico de sus sueños, con quienes ella descubre la aventura y el rock. Pero su historia se ve atravesada por secretos y ausencias. Algunas piezas no encajan en el rompecabezas de su vida.',
+                    alt: 'Rompecabezas',
+                    url: '/book/diatres/rompecabezas.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/rompecabezas.jpg",
                     eventHover: false,
                 },
                 {
                     id: 15,
-                    title: 'LA GOLONDRINA QUE TRAJO EL VERANO',
-                    description: 'Jacobo no quiere que lo operen, no quiere que le pongan la anestesia ni mucho menos quiere quedarse a dormir en el hospital. Por suerte tío Eduar está aquí para convertir cada momento difícil en una nueva aventura.',
-                    alt: 'LA GOLONDRINA QUE TRAJO EL VERANO',
-                    url: '/book/diatres/11_LA_GOLONDRINA_QUE_TRAJO_EL_VERANO.pdf',
-                    imgCaratula: "/image/imgbooks/diatres/11_LA_GOLONDRINA_QUE_TRAJO_EL_VERANO.jpg",
+                    title: 'Cuando Hitler robó el conejo rosa',
+                    description: 'La llegada de Hitler al poder va a cambiar radicalmente la vida de Anna y su familia. En su huida del horror nazi deberán abandonar su país y dejar atrás muchas cosas queridas, como su conejo de peluche. Con él también quedará su infancia.',
+                    alt: 'Cuando Hitler robó el conejo rosa',
+                    url: '/book/diatres/cuando-hitler-robo-el-conejo-rosa.pdf',
+                    imgCaratula: "/image/imgbooks/diatres/cuando-hitler.jpg",
                     eventHover: false,
-                }
+                },
             ]
         },
         mounted() {
-           /*  this.intervalClock = setInterval( () => {
-                this.initClock();
-            }, 1000); 
+            this.changeBackgroudPage();
+            console.log('mounted..')
             this.intervalClock = setInterval( () => {
                 this.changeBackgroudPage();
             }, 30000);
-            */
         }
     }
 </script>
 
 <style scoped lang="scss">
+    button.video-tuto {
+        position: fixed;
+        bottom: -8%;
+        background: #9f793d;
+    }
+    button.video-tuto:hover {
+        box-shadow: 0px 10px 20px -10px #c13b2b;
+    }
 
     /* BEGIN estilos chat */
     button#btn-float-chat {
@@ -613,7 +617,7 @@
         border-radius: 1rem;
         padding: 0.4rem;
         opacity: 0;
-    } /* z-index: 99; */
+    }
     iframe#iframe-chat {
         position: absolute;
         width: 100%;
@@ -643,15 +647,12 @@
 
     .main-view {
         background-image: url("/image/imgbackground/secundaria.jpg");
-        //background-image: url("/image/background-day-one.jpg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         min-height: 100vh;
     }
-
     .main-background-book {
-        //background-image: url("/image/background-initial.jpg");
         background-image: url("/image/imgbackground/main-background.png");
     }
 
@@ -666,40 +667,41 @@
         height: 80%;
     }
 
-    /* STAR: estilos para libros */
+    /* BEGIN: estilos para libros */
     .class-position {
         position: absolute;
         //border: 1px solid red;
         cursor: pointer;
     }
 
+
     div#book-1 {
-        top: 19%;
-        left: 4.6%;
-        height: 8.5%;
+        top: 17%;
+        left: 4%;
+        height: 11%;
         width: 9%;
     }
     div#book-2 {
         top: 28.6%;
-        left: 4.6%;
-        height: 11.3%;
-        width: 9%;
+        left: 4%;
+        height: 12%;
+        width: 10%;
     }
     div#book-3 {
-        top: 18%;
-        left: 46%;
-        height: 7%;
-        width: 6.5%;
+        top: 16%;
+        left: 45.6%;
+        height: 9.5%;
+        width: 7.5%;
     }
     div#book-4 {
-        top: 25.3%;
-        left: 46%;
+        top: 25.7%;
+        left: 45.5%;
         height: 8.5%;
         width: 7%;
     }
     div#book-5 {
         top: 34.7%;
-        left: 46%;
+        left: 45.5%;
         height: 9%;
         width: 7%;
     }
@@ -707,28 +709,28 @@
         top: 45%;
         left: 9%;
         height: 11%;
-        width: 9%;
+        width: 8%;
     }
     div#book-7 {
         top: 45%;
         left: 20%;
         height: 11%;
-        width: 9%;
+        width: 8.5%;
     }
     div#book-8 {
-        top: 46%;
+        top: 45.8%;
         left: 31%;
         height: 10%;
         width: 8%;
     }
     div#book-9 {
-        top: 47%;
-        left: 40%;
-        height: 9%;
-        width: 8%;
+        top: 46%;
+        left: 40.4%;
+        height: 10%;
+        width: 7%;
     }
     div#book-10 {
-        top: 46%;
+       top: 46%;
         left: 49%;
         height: 10%;
         width: 7%;
@@ -753,8 +755,8 @@
     }
     div#book-14 {
         top: 63.5%;
-        left: 47.6%;
-        height: 11.7%;
+        left: 47.3%;
+        height: 11.2%;
         width: 8.5%;
     }
     div#book-15 {
@@ -763,7 +765,6 @@
         height: 11.2%;
         width: 8.5%;
     }
-
     /* END: estilos para libros */
 
     .content-img-hover-book {
@@ -792,9 +793,9 @@
         padding: 1rem;
     }
     img#img-info-book {
-        width: 60%;
+        width: auto;
+        height: 100%;
         cursor: pointer;
-        max-height: 350px;
     }
     #btn-info-book {
         padding: 0.25rem 1rem;
@@ -823,14 +824,7 @@
     svg#icon-view-book {
         color: #fff;
     }
-    #close-pdf-read {
-        position: absolute;
-        background: rgb(0 0 0 / 46%);
-        top: -40px;
-        right: 0;
-        padding: 0.2rem 1rem;
-        cursor: pointer;
-    }
+
     .close-pdf {
         color: #fff;
         font-size: 2rem;
@@ -840,9 +834,6 @@
         width: 92%;
         height: 100%;
         top: -8%;
-    }
-    div#close-pdf-read:hover {
-        background: #90080861;
     }
 
     #image-gif {
@@ -926,12 +917,13 @@
 
     /* Styles responsive */
     @media (min-width: 30px) and (max-width: 991.98px) {
+
         /* .class-position {
             border: 1px solid red;
         } */
 
         #content-background-books {
-            background-image: url("/image/imgbackground/movil/secundaria-2.png");
+            background-image: url("/image/imgbackground/movil/secundaria-1.png");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -948,35 +940,40 @@
         }
 
         div#book-1 {
-            top: 18%;
-            left: 1%;
-            height: 9%;
-            width: 10%;
+            top: 16%;
+            left: 0%;
+            height: 12%;
+            width: 11%;
         }
         div#book-2 {
-            left: 1%;
-            width: 10%;
+            left: 0%;
+            height: 13%;
+            width: 11%;
         }
         div#book-3 {
-            top: 17%;
-            left: 45%;
-            height: 8%;
-            width: 8%;
+            top: 15%;
+            left: 44%;
+            height: 9.5%;
+            width: 9%;
         }
         div#book-4 {
-            left: 45%;
-            width: 8%;
+            left: 44%;
+            width: 9%;
         }
         div#book-5 {
-            left: 45%;
-            width: 8%;
+            left: 44%;
+            width: 9%;
         }
         div#book-6 {
+            top: 44%;
             left: 5%;
+            height: 12%;
             width: 10%;
         }
         div#book-7 {
+            top: 44%;
             left: 17%;
+            height: 12%;
             width: 10%;
         }
         div#book-8 {
@@ -1002,22 +999,29 @@
         }
         div#book-12 {
             top: 59%;
+            left: 54.77%;
+            height: 10.7%;
             width: 10%;
         }
         div#book-13 {
             top: 59%;
-            left: 70%;
+            left: 71%;
+            height: 10.3%;
             width: 10%;
         }
         div#book-14 {
+            top: 63.5%;
+            left: 47.3%;
             height: 13%;
             width: 9%;
         }
         div#book-15 {
+            top: 63%;
             left: 63%;
             height: 13%;
             width: 10%;
         }
+
 
         .vertical-center {
             width: 100%;
@@ -1077,9 +1081,7 @@
     }
 
     /* Styles for large screens  */
-    @media (min-width: 2000px) {
-       /*  #iframe-video {
-            height: 55vh;
-        } */
+    @media (min-width: 1400px) {
+
     }
 </style>
