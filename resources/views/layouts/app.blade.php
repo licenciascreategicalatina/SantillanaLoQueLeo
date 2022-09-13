@@ -55,7 +55,7 @@
                             {{-- <a id="text-programa" class="nav-link nav-link-book" href="#">Programa de formación a profesores</a> --}}
                         </li>
 
-                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Evento 4 de mayo, no disponible">
+                        <li  class="nav-item ml-3 {{ request()->is('preescolar') ? 'active' : '' }}" data-toggle="tooltip" data-placement="bottom" title="Evento 4 de mayo, no disponible">
                             {{-- <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Preescolar</span> --}}
                             <a class="nav-link nav-link-book" href="{{ route('day-one') }}">Preescolar</a>
                         </li>
@@ -68,7 +68,7 @@
                             <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
                         </li> --}}
 
-                        <li class="nav-item ml-3" data-toggle="tooltip" data-placement="bottom" title="Evento 5 de mayo, no disponible">
+                        <li  class="nav-item ml-3 {{ request()->is('primaria') ? 'active' : '' }}" data-toggle="tooltip" data-placement="bottom" title="Evento 5 de mayo, no disponible">
                             {{-- <span class="nav-link-book" style="display: block;padding: 0.5rem 1rem;">Primaria</span> --}}
                             <a class="nav-link nav-link-book" href="{{ route('day-two') }}">Primaria</a>
 
